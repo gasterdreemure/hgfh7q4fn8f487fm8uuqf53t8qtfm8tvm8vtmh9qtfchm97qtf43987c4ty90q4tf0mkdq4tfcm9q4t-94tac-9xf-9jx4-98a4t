@@ -1,0 +1,131 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local BlockTP = Instance.new("ScreenGui")
+local BP = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local P = Instance.new("Frame")
+local Player = Instance.new("TextBox")
+local BTP = Instance.new("TextButton")
+local Rain = Instance.new("TextButton")
+
+--Properties:
+
+BlockTP.Name = "BlockTP"
+BlockTP.Parent = game.CoreGui.BlockHub
+BlockTP.ResetOnSpawn = false
+
+BP.Name = "BP"
+BP.Parent = BlockTP
+BP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BP.BackgroundTransparency = 1.000
+BP.Position = UDim2.new(0.642613351, 0, -3.12680086e-08, 0)
+BP.Size = UDim2.new(0, 151, 0, 100)
+
+Title.Name = "Title"
+Title.Parent = BP
+Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Title.Position = UDim2.new(-0.000908404589, 0, 0.133521318, 0)
+Title.Size = UDim2.new(0, 126, 0, 22)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Block Teleportation"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+Title.Draggable = true
+Title.Active = true
+Title.Selectable = true
+
+P.Name = "P"
+P.Parent = Title
+P.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+P.Position = UDim2.new(0.166666672, -21, 1.21109211, -5)
+P.Size = UDim2.new(0, 126, 0, 74)
+
+Player.Name = "Player"
+Player.Parent = P
+Player.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Player.Position = UDim2.new(0.023622036, 0, 0.0240896419, 0)
+Player.Size = UDim2.new(0, 121, 0, 26)
+Player.Font = Enum.Font.SourceSans
+Player.Text = "Player Name"
+Player.TextColor3 = Color3.fromRGB(0, 0, 0)
+Player.TextSize = 14.000
+Player.TextWrapped = true
+Player.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(Player.Text))) == string.lower(Player.Text) then
+Player.Text = v.Name
+end
+end
+end)
+
+BTP.Name = "BTP"
+BTP.Parent = P
+BTP.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+BTP.Position = UDim2.new(0.023622036, 0, 0.421761513, 0)
+BTP.Size = UDim2.new(0, 121, 0, 19)
+BTP.Font = Enum.Font.SourceSans
+BTP.Text = "Blocks Be Teleporting"
+BTP.TextColor3 = Color3.fromRGB(255, 255, 255)
+BTP.TextSize = 14.000
+BTP.MouseButton1Click:Connect(function()
+
+local PLRS = game.Players.LocalPlayer
+local targetname = Player.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+			end
+	 	end
+    end
+end
+end
+end)
+
+Rain.Name = "Rain"
+Rain.Parent = P
+Rain.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Rain.Position = UDim2.new(0.0156855397, 0, 0.719058812, 0)
+Rain.Size = UDim2.new(0, 121, 0, 19)
+Rain.Font = Enum.Font.SourceSans
+Rain.Text = "Slow Teleport"
+Rain.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rain.TextSize = 14.000
+Rain.MouseButton1Click:Connect(function()
+
+local PLRS = game.Players.LocalPlayer
+local targetname = Player.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				wait "0.00000000001"
+			end
+	 	end
+    end
+end
+end
+end)
