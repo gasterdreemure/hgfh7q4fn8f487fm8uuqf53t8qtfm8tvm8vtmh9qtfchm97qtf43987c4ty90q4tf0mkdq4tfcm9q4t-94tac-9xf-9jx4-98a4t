@@ -114,6 +114,14 @@ workspace.DescendantAdded:Connect(function(part)
 end)
 
 workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
    if part:IsA("TrussPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(part)
