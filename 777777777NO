@@ -129,6 +129,13 @@ PL.DescendantAdded:Connect(function(part)
    end
 end)
 
+PL.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+           zeroGrav(part)
+       end
+   end
+end)
+
 wait "0.2"
 
 workspace.Gravity = Y.Text
