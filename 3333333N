@@ -106,6 +106,13 @@ Rain.TextColor3 = Color3.fromRGB(255, 255, 255)
 Rain.TextSize = 14.000
 Rain.MouseButton1Click:Connect(function()
 
+spawn(function()
+local message = Instance.new("Message",workspace)
+message.Text = "Slow Teleporting Please Wait"
+wait (1)
+message:Destroy()
+end)
+
 local PLRS = game.Players.LocalPlayer
 local targetname = Player.Text
 local arget = game:GetService("Players")[targetname]
@@ -127,5 +134,16 @@ for i = 1, 1 do
 	 	end
     end
 end
+
+       for i, v in ipairs(check) do
+        if v:IsA('MeshPart') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				wait "0.00000000001"
+			end
+	 	end
+    end
+end
+print "Teleporting!"
 end
 end)
