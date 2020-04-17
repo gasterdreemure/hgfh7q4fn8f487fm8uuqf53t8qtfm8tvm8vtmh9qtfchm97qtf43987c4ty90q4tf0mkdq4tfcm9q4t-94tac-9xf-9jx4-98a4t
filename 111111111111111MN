@@ -1,8 +1,17 @@
 -- Gui to Lua
 -- Version: 3.2
 
-game:GetService("CoreGui"):FindFirstChild("BlockHub"):Destroy()
-game:GetService("CoreGui"):FindFirstChild("Gui Hider"):Destroy()
+for _, instance in pairs(game:GetService("CoreGui"):GetDescendants()) do
+	if instance:FindFirstChild("BlockHub") then
+		instance:Destroy()
+	end
+end
+
+for _, instance in pairs(game:GetService("CoreGui"):GetDescendants()) do
+	if instance:FindFirstChild("Gui Hider") then
+		instance:Destroy()
+	end
+end
 
 wait "0.01"
 
