@@ -9,7 +9,7 @@ game:GetService("RunService").Stepped:wait()
 end
 end)
 
-wait "0.001"
+wait "0.01"
 
 spawn(function()
 local message = Instance.new("Message",workspace)
