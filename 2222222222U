@@ -16,9 +16,8 @@ local HatLuanch = Instance.new("TextButton")
 --Properties:
 
 TheForceGui.Name = "TheForceGui"
-TheForceGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+TheForceGui.Parent = game.CoreGui.BlockHub
 TheForceGui.ResetOnSpawn = false
-TheForceGui.DisplayOrder = 999999998
 
 TFG.Name = "TFG"
 TFG.Parent = TheForceGui
