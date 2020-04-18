@@ -16,6 +16,7 @@ GuiHider.Name = "Gui Hider"
 GuiHider.Parent = game.CoreGui
 GuiHider.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 GuiHider.ResetOnSpawn = false
+GuiHider.DisplayOrder = 999999998
 
 Hider.Name = "Hider"
 Hider.Parent = GuiHider
