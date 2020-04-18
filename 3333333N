@@ -9,12 +9,13 @@ local Title = Instance.new("TextLabel")
 local P = Instance.new("Frame")
 local Player = Instance.new("TextBox")
 local BTP = Instance.new("TextButton")
-local Rain = Instance.new("TextButton")
+local Slow = Instance.new("TextButton")
+local Shot = Instance.new("TextButton")
 
 --Properties:
 
 BlockTP.Name = "BlockTP"
-BlockTP.Parent = game.CoreGui.BlockHub
+BlockTP.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 BlockTP.ResetOnSpawn = false
 
 BP.Name = "BP"
@@ -26,22 +27,22 @@ BP.Size = UDim2.new(0, 151, 0, 100)
 
 Title.Name = "Title"
 Title.Parent = BP
+Title.Active = true
 Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Title.Draggable = true
 Title.Position = UDim2.new(-0.000908404589, 0, 0.133521318, 0)
+Title.Selectable = true
 Title.Size = UDim2.new(0, 126, 0, 22)
 Title.Font = Enum.Font.SourceSans
 Title.Text = "Block Teleportation"
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextSize = 14.000
-Title.Draggable = true
-Title.Active = true
-Title.Selectable = true
 
 P.Name = "P"
 P.Parent = Title
 P.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 P.Position = UDim2.new(0.166666672, -21, 1.21109211, -5)
-P.Size = UDim2.new(0, 126, 0, 74)
+P.Size = UDim2.new(0, 126, 0, 93)
 
 Player.Name = "Player"
 Player.Parent = P
@@ -64,7 +65,7 @@ end)
 BTP.Name = "BTP"
 BTP.Parent = P
 BTP.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-BTP.Position = UDim2.new(0.023622036, 0, 0.421761513, 0)
+BTP.Position = UDim2.new(0.023622036, 0, 0.336047232, 0)
 BTP.Size = UDim2.new(0, 121, 0, 19)
 BTP.Font = Enum.Font.SourceSans
 BTP.Text = "Blocks Be Teleporting"
@@ -95,16 +96,16 @@ end
 end
 end)
 
-Rain.Name = "Rain"
-Rain.Parent = P
-Rain.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Rain.Position = UDim2.new(0.0156855397, 0, 0.719058812, 0)
-Rain.Size = UDim2.new(0, 121, 0, 19)
-Rain.Font = Enum.Font.SourceSans
-Rain.Text = "Slow Teleport"
-Rain.TextColor3 = Color3.fromRGB(255, 255, 255)
-Rain.TextSize = 14.000
-Rain.MouseButton1Click:Connect(function()
+Slow.Name = "Slow"
+Slow.Parent = P
+Slow.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Slow.Position = UDim2.new(0.0236220472, 0, 0.530733168, 0)
+Slow.Size = UDim2.new(0, 121, 0, 19)
+Slow.Font = Enum.Font.SourceSans
+Slow.Text = "Slow Teleport"
+Slow.TextColor3 = Color3.fromRGB(255, 255, 255)
+Slow.TextSize = 14.000
+Slow.MouseButton1Click:Connect(function()
 
 spawn(function()
 local message = Instance.new("Message",workspace)
@@ -129,21 +130,63 @@ for i = 1, 1 do
         if v:IsA('Part') and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
- 				wait "0.00000000001"
+ 				wait ""
 			end
 	 	end
     end
 end
-
+wait "0.1"
        for i, v in ipairs(check) do
         if v:IsA('MeshPart') and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
- 				wait "0.00000000001"
+ 				wait ""
 			end
 	 	end
     end
 end
 print "Teleporting!"
 end
+end)
+
+Shot.Name = "Shot"
+Shot.Parent = P
+Shot.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Shot.Position = UDim2.new(0.0236220472, 0, 0.735034227, 0)
+Shot.Size = UDim2.new(0, 121, 0, 19)
+Shot.Font = Enum.Font.SourceSans
+Shot.Text = "Mini Gun Mode!"
+Shot.TextColor3 = Color3.fromRGB(255, 255, 255)
+Shot.TextSize = 14.000
+Shot.MouseButton1Click:Connect(function()
+game.workspace.Camera.CameraType = "Custom"
+local ca = game.workspace.Camera
+local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , -ca.CFrame.Y+ca.Focus.Y*0.6, ca.CFrame.Z+-ca.Focus.Z)
+local arget = game.Players.LocalPlayer
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+ 				v.Velocity = v:GetMass()*-cam*0.5
+ 				wait ""
+			end
+	 	end
+    end
+end
+wait "0.1"
+       for i, v in ipairs(check) do
+        if v:IsA('MeshPart') and v.Anchored == false then
+			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+ 				v.Velocity = v:GetMass()*-cam*0.5
+ 				wait ""
+			end
+	 	end
+    end
+print "Firing!"
 end)
