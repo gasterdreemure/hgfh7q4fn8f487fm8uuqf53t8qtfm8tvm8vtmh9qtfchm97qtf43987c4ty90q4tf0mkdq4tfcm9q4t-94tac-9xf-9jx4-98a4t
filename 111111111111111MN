@@ -1,22 +1,6 @@
 -- Gui to Lua
 -- Version: 3.2
 
-for i,v in ipairs(game.CoreGui:GetDescendants()) do
-   if i:FindFirstChild("BlockHub") then
-           v:Destroy()
-       end
-   end
-end
-
-for i,v in ipairs(game.CoreGui:GetDescendants()) do
-   if i:FindFirstChild("Hider Gui") then
-           v:Destroy()
-       end
-   end
-end
-
-wait "0.01"
-
 spawn(function()
 while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
