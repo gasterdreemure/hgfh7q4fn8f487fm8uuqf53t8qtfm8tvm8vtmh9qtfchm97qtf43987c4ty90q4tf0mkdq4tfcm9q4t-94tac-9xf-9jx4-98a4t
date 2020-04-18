@@ -79,7 +79,7 @@ for _, instance in pairs(game:GetDescendants()) do
 	end
 end
 
-wait "0.001"
+wait "0.01"
 
 local savepos = game:GetService("Players")[Player.Text].Character.HumanoidRootPart.Position
 
