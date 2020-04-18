@@ -66,6 +66,7 @@ local Gui9 = Instance.new("TextButton")
 BlockHub.Name = "BlockHub"
 BlockHub.Parent = game.CoreGui
 BlockHub.ResetOnSpawn = false
+BlockHub.DisplayOrder = 999999998
 
 Guis.Name = "Guis"
 Guis.Parent = BlockHub
