@@ -1,0 +1,215 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Hatter = Instance.new("ScreenGui")
+local HG = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local EEE = Instance.new("Frame")
+local Player = Instance.new("TextBox")
+local Spawn = Instance.new("TextButton")
+local Remover = Instance.new("TextButton")
+local HatLuanch = Instance.new("TextButton")
+local Times = Instance.new("TextBox")
+
+--Properties:
+
+Hatter.Name = "Top Hatter"
+Hatter.Parent = game.CoreGui.BlockHub
+Hatter.ResetOnSpawn = false
+
+HG.Name = "HG"
+HG.Parent = Hatter
+HG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HG.BackgroundTransparency = 1.000
+HG.Position = UDim2.new(0.361201316, 0, 0.119331799, 0)
+HG.Size = UDim2.new(0, 152, 0, 100)
+
+Title.Name = "Title"
+Title.Parent = HG
+Title.Active = true
+Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Title.Draggable = true
+Title.Position = UDim2.new(-0.399999917, 0, 0.576999664, 6)
+Title.Selectable = true
+Title.Size = UDim2.new(0, 127, 0, 22)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Hat Luancher"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+
+EEE.Name = "EEE"
+EEE.Parent = Title
+EEE.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+EEE.Position = UDim2.new(-0.000900148414, 0, 0.980999947, 0)
+EEE.Size = UDim2.new(0, 127, 0, 124)
+
+Player.Name = "Player"
+Player.Parent = EEE
+Player.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Player.Position = UDim2.new(0.0236220472, 0, -0.00280112028, 0)
+Player.Size = UDim2.new(0, 121, 0, 26)
+Player.Font = Enum.Font.SourceSans
+Player.Text = "Short Name Here"
+Player.TextColor3 = Color3.fromRGB(0, 0, 0)
+Player.TextSize = 14.000
+Player.TextWrapped = true
+Player.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(Player.Text))) == string.lower(Player.Text) then
+Player.Text = v.Name
+end
+end
+end)
+
+Spawn.Name = "Spawn"
+Spawn.Parent = EEE
+Spawn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Spawn.Position = UDim2.new(0.031496048, 0, 0.641827703, 0)
+Spawn.Size = UDim2.new(0, 120, 0, 20)
+Spawn.Font = Enum.Font.SourceSans
+Spawn.Text = "Spawn The Hats!"
+Spawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Spawn.TextSize = 14.000
+Spawn.MouseButton1Click:Connect(function()
+for i = 1, Times.Text do
+    while wait() do
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Accessory")) then
+    v.Parent = workspace
+    end
+    end
+    game.Players.LocalPlayer.Character.Humanoid.Health = "0"
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = "0"
+    end
+end
+end)
+
+Remover.Name = "Remover"
+Remover.Parent = EEE
+Remover.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Remover.Position = UDim2.new(0.0309999995, 0, 0.420967728, 0)
+Remover.Size = UDim2.new(0, 120, 0, 20)
+Remover.Font = Enum.Font.SourceSans
+Remover.Text = "Stop! (Buggy)"
+Remover.TextColor3 = Color3.fromRGB(255, 255, 255)
+Remover.TextSize = 14.000
+Remover.MouseButton1Click:Connect(function()
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance.Parent.CanCollide = true
+	end
+end
+wait "0.05"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+print "Removed!"
+
+end)
+
+HatLuanch.Name = "HatLuanch"
+HatLuanch.Parent = EEE
+HatLuanch.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+HatLuanch.Position = UDim2.new(0.0314960629, 0, 0.255283296, 0)
+HatLuanch.Size = UDim2.new(0, 120, 0, 20)
+HatLuanch.Font = Enum.Font.SourceSans
+HatLuanch.Text = "Hat Attack!"
+HatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
+HatLuanch.TextSize = 14.000
+HatLuanch.MouseButton1Click:Connect(function()
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Accessory")) then
+v.Parent = workspace
+end
+end
+wait "0.00001"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+wait "0.0001"
+
+local targetname = Player.Text
+local arget = game:GetService("Players")[targetname]
+local save = arget.Character.HumanoidRootPart
+local PLRS = game.Players.LocalPlayer
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local function zeroGrav(part)
+   if part:FindFirstChild("RocketPropulsion") then return end
+   local temp = Instance.new("RocketPropulsion")
+   temp.Target = save
+   temp.MaxSpeed = part:GetMass() *400000
+   temp.MaxThrust = part:GetMass() *400000
+   temp.ThrustD = 0.12
+   temp.ThrustP = part:GetMass() *10000
+   temp.Parent = part
+   temp:fire()
+   temp.Parent.CanCollide = false
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false and(v.Name == "Handle")then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false and(part.Name == "Handle")then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+    end
+end
+end)
+
+wait"0.1"
+print "Luanching!"
+end)
+
+Times.Name = "Times"
+Times.Parent = EEE
+Times.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Times.Position = UDim2.new(0.0314960629, 0, 0.803650618, 0)
+Times.Size = UDim2.new(0, 120, 0, 18)
+Times.Font = Enum.Font.SourceSans
+Times.Text = "10"
+Times.TextColor3 = Color3.fromRGB(0, 0, 0)
+Times.TextSize = 15.000
+Times.TextWrapped = true
