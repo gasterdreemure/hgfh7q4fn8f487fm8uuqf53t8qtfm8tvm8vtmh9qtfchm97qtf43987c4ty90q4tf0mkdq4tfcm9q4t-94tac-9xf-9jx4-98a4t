@@ -80,7 +80,6 @@ game:GetService("RunService").Stepped:wait()
 end
 end)
 wait "0.001"
-    while wait() do
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
     v.Parent = workspace
