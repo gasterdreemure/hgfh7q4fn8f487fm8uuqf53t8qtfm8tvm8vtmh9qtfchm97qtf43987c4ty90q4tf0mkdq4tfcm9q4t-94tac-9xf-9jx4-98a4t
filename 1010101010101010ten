@@ -80,7 +80,6 @@ game:GetService("RunService").Stepped:wait()
 end
 end)
 wait "0.001"
-for i = 1, Times.Text do
     while wait() do
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
@@ -92,7 +91,6 @@ for i = 1, Times.Text do
     game.Players.LocalPlayer.Character.Humanoid.MaxHealth = "0"
     game.Players.LocalPlayer.Character:BreakJoints()
     end
-end
 end)
 
 Remover.Name = "Remover"
