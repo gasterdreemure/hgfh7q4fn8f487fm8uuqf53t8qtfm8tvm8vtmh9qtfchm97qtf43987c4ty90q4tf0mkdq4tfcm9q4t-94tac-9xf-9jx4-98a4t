@@ -85,7 +85,6 @@ wait "0.001"
     v.Parent = workspace
     wait ""
     end
-    end
     game.Players.LocalPlayer.Character.Humanoid.Health = "0"
     game.Players.LocalPlayer.Character.Humanoid.MaxHealth = "0"
     game.Players.LocalPlayer.Character:BreakJoints()
