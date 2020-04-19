@@ -11,7 +11,6 @@ local Player = Instance.new("TextBox")
 local Spawn = Instance.new("TextButton")
 local Remover = Instance.new("TextButton")
 local HatLuanch = Instance.new("TextButton")
-local Times = Instance.new("TextBox")
 
 --Properties:
 
@@ -43,7 +42,7 @@ EEE.Name = "EEE"
 EEE.Parent = Title
 EEE.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 EEE.Position = UDim2.new(-0.000900148414, 0, 0.980999947, 0)
-EEE.Size = UDim2.new(0, 127, 0, 124)
+EEE.Size = UDim2.new(0, 127, 0, 98)
 
 Player.Name = "Player"
 Player.Parent = EEE
@@ -212,14 +211,3 @@ end)
 wait"0.1"
 print "Luanching!"
 end)
-
-Times.Name = "Times"
-Times.Parent = EEE
-Times.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Times.Position = UDim2.new(0.0314960629, 0, 0.803650618, 0)
-Times.Size = UDim2.new(0, 120, 0, 18)
-Times.Font = Enum.Font.SourceSans
-Times.Text = "10"
-Times.TextColor3 = Color3.fromRGB(0, 0, 0)
-Times.TextSize = 15.000
-Times.TextWrapped = true
