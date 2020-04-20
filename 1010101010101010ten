@@ -80,11 +80,13 @@ game:GetService("RunService").Stepped:wait()
 end
 end)
 wait "0.001"
+    do
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
     v.Parent = workspace
-    wait ""
     end
+    end
+    wait "0.01"
     game.Players.LocalPlayer.Character.Humanoid.Health = "0"
     game.Players.LocalPlayer.Character.Humanoid.MaxHealth = "0"
     game.Players.LocalPlayer.Character:BreakJoints()
