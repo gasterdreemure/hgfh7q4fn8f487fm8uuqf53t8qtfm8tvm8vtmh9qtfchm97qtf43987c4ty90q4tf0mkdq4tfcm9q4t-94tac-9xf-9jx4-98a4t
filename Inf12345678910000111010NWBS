@@ -1,0 +1,2419 @@
+-- Gui to Lua
+-- Version: 3.2
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+
+wait "0.01"
+
+spawn(function()
+local message = Instance.new("Message",workspace)
+message.Text = "Bypassing The Matrix Please Wait"
+wait (0.8)
+message:Destroy()
+end)
+
+local PL = game.Players.LocalPlayer
+local Min = "-nan(ind)"
+local INFIN = math.pow(math.huge,math.huge)*math.huge
+
+local function Oof(iinstance)
+        if(iinstance.Name ~= PL.Name) then
+            spawn(function()
+            while true do
+            iinstance.MaximumSimulationRadius = Min
+            iinstance.SimulationRadius = Min
+            game:GetService("RunService").Stepped:wait()
+            end
+            end)
+        end
+end
+
+for _, iinstance in pairs(game.Players:GetPlayers()) do print ""
+	Oof(iinstance)
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    Oof(player)
+end)
+
+print "Finished"
+wait "1.1"
+
+-- Instances:
+
+local BlockHub = Instance.new("ScreenGui")
+local Title = Instance.new("TextLabel")
+local Scrip = Instance.new("Frame")
+local List = Instance.new("Frame")
+local PList = Instance.new("TextLabel")
+local Next = Instance.new("TextButton")
+local Back = Instance.new("TextButton")
+local Script1 = Instance.new("TextButton")
+local S1 = Instance.new("Frame")
+local GravityY = Instance.new("TextBox")
+local GravityX = Instance.new("TextBox")
+local GravityZ = Instance.new("TextBox")
+local GravityTextBox = Instance.new("Frame")
+local XGravityHelp = Instance.new("TextLabel")
+local YGravityHelp = Instance.new("TextLabel")
+local ZGravityHelp = Instance.new("TextLabel")
+local NeGravityHelp = Instance.new("TextLabel")
+local GravityRemover = Instance.new("TextButton")
+local GravityChanger = Instance.new("TextButton")
+local Script2 = Instance.new("TextButton")
+local S2 = Instance.new("Frame")
+local BlockPlayerName = Instance.new("TextBox")
+local BlockMover2 = Instance.new("TextButton")
+local BlockMover = Instance.new("TextButton")
+local ForceRemover = Instance.new("TextButton")
+local Script3 = Instance.new("TextButton")
+local S3 = Instance.new("Frame")
+local TelePlayerName = Instance.new("TextBox")
+local BlockTeleporter = Instance.new("TextButton")
+local BlockTeleporter2 = Instance.new("TextButton")
+local MiniGun = Instance.new("TextButton")
+local Script4 = Instance.new("TextButton")
+local S4 = Instance.new("Frame")
+local GyroUp = Instance.new("TextButton")
+local NoGyro = Instance.new("TextButton")
+local Script5 = Instance.new("TextButton")
+local S5 = Instance.new("Frame")
+local SpinY = Instance.new("TextBox")
+local SpinX = Instance.new("TextBox")
+local SpinZ = Instance.new("TextBox")
+local BlockSpin = Instance.new("TextButton")
+local NoBlockSpin = Instance.new("TextButton")
+local Script6 = Instance.new("TextButton")
+local S6 = Instance.new("Frame")
+local BoostX = Instance.new("TextBox")
+local BoostY = Instance.new("TextBox")
+local BoostZ = Instance.new("TextBox")
+local BlockBoost = Instance.new("TextButton")
+local BlockRotBoost = Instance.new("TextButton")
+local Script7 = Instance.new("TextButton")
+local S7 = Instance.new("Frame")
+local OneWay = Instance.new("TextBox")
+local OGravity = Instance.new("TextLabel")
+local OneWayChange = Instance.new("TextButton")
+local UndoOneWay = Instance.new("TextButton")
+local Script8 = Instance.new("TextButton")
+local S8 = Instance.new("Frame")
+local GravityY_2 = Instance.new("TextBox")
+local GravityX_2 = Instance.new("TextBox")
+local GravityZ_2 = Instance.new("TextBox")
+local NoBlockSpeed = Instance.new("TextButton")
+local BlockSpeed = Instance.new("TextButton")
+local Script9 = Instance.new("TextButton")
+local S9 = Instance.new("Frame")
+local UnAnchor = Instance.new("TextButton")
+local AnchorBlocks = Instance.new("TextButton")
+local Script10 = Instance.new("TextButton")
+local S10 = Instance.new("Frame")
+local BlockPlayerName_2 = Instance.new("TextBox")
+local HatLuanch = Instance.new("TextButton")
+local UnHatLuanch = Instance.new("TextButton")
+local ForceRemover_2 = Instance.new("TextButton")
+local Line = Instance.new("Frame")
+local ClosedList = Instance.new("TextButton")
+local Line_2 = Instance.new("Frame")
+local OpenedList = Instance.new("TextButton")
+local CloseButton = Instance.new("TextButton")
+local Info = Instance.new("TextButton")
+local Infoo = Instance.new("Frame")
+local Versionnn = Instance.new("Frame")
+local Version = Instance.new("TextLabel")
+local ChangeText = Instance.new("TextLabel")
+local ChangeText1 = Instance.new("TextLabel")
+local ChangeText2 = Instance.new("TextLabel")
+local ChangeText3 = Instance.new("TextLabel")
+local ChangeL = Instance.new("TextLabel")
+local InfoText1 = Instance.new("TextLabel")
+local InfoText2 = Instance.new("TextLabel")
+local InfoText3 = Instance.new("TextLabel")
+local InfoText4 = Instance.new("TextLabel")
+local OpenButton = Instance.new("TextButton")
+
+--Properties:
+
+BlockHub.Name = "BlockHub"
+BlockHub.Parent = game.CoreGui
+BlockHub.DisplayOrder = 999999998
+BlockHub.ResetOnSpawn = false
+
+Title.Name = "Title"
+Title.Parent = BlockHub
+Title.Active = true
+Title.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Title.BorderColor3 = Color3.fromRGB(20, 20, 20)
+Title.Draggable = true
+Title.Position = UDim2.new(0.439782172, 12, 0.32158646, -80)
+Title.Selectable = true
+Title.Size = UDim2.new(0, 197, 0, 20)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Mega Block Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 15.000
+Title.TextWrapped = true
+
+Scrip.Name = "Scrip"
+Scrip.Parent = Title
+Scrip.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Scrip.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Scrip.Position = UDim2.new(0, 0, 1, 0)
+Scrip.Size = UDim2.new(0, 197, 0, 238)
+
+List.Name = "List"
+List.Parent = Scrip
+List.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+List.BorderColor3 = Color3.fromRGB(50, 50, 50)
+List.Position = UDim2.new(0.998254836, 0, 0, 0)
+List.Size = UDim2.new(0, 92, 0, 238)
+List.Visible = false
+
+PList.Name = "PList"
+PList.Parent = List
+PList.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+PList.BackgroundTransparency = 0.500
+PList.BorderColor3 = Color3.fromRGB(50, 50, 50)
+PList.Position = UDim2.new(0.186508894, 0, 0.936974823, 0)
+PList.Size = UDim2.new(0, 57, 0, 15)
+PList.Font = Enum.Font.SourceSans
+PList.Text = "List 1"
+PList.TextColor3 = Color3.fromRGB(255, 255, 255)
+PList.TextSize = 14.000
+
+Next.Name = "Next"
+Next.Parent = PList
+Next.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Next.BackgroundTransparency = 0.600
+Next.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Next.Position = UDim2.new(1, 0, 0, 0)
+Next.Size = UDim2.new(0, 17, 0, 15)
+Next.Font = Enum.Font.SourceSans
+Next.Text = ">"
+Next.TextColor3 = Color3.fromRGB(255, 255, 255)
+Next.TextSize = 14.000
+
+Back.Name = "Back"
+Back.Parent = PList
+Back.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Back.BackgroundTransparency = 0.600
+Back.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Back.Position = UDim2.new(-0.298245668, 0, 0, 0)
+Back.Size = UDim2.new(0, 17, 0, 15)
+Back.Font = Enum.Font.SourceSans
+Back.Text = "<"
+Back.TextColor3 = Color3.fromRGB(255, 255, 255)
+Back.TextSize = 14.000
+
+Script1.Name = "Script1"
+Script1.Parent = List
+Script1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script1.BackgroundTransparency = 0.200
+Script1.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script1.Position = UDim2.new(0, 0, -7.4505806e-09, 0)
+Script1.Size = UDim2.new(0, 92, 0, 15)
+Script1.Font = Enum.Font.SourceSans
+Script1.Text = "Gravity Changer"
+Script1.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script1.TextSize = 14.000
+Script1.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S1.Visible = true
+end)
+
+S1.Name = "S1"
+S1.Parent = Script1
+S1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S1.BackgroundTransparency = 1.000
+S1.Position = UDim2.new(0.00373707642, 0, 0, 0)
+S1.Size = UDim2.new(0, 91, 0, 15)
+S1.Visible = false
+
+GravityY.Name = "GravityY"
+GravityY.Parent = S1
+GravityY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityY.Position = UDim2.new(-1.359, 0,0.533, 0)
+GravityY.Size = UDim2.new(0, 47, 0, 25)
+GravityY.Font = Enum.Font.SourceSans
+GravityY.Text = "1"
+GravityY.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityY.TextSize = 15.000
+
+GravityX.Name = "GravityX"
+GravityX.Parent = S1
+GravityX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityX.Position = UDim2.new(-1.879, 0,0.533, 0)
+GravityX.Size = UDim2.new(0, 47, 0, 25)
+GravityX.Font = Enum.Font.SourceSans
+GravityX.Text = "0"
+GravityX.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityX.TextSize = 15.000
+
+GravityZ.Name = "GravityZ"
+GravityZ.Parent = S1
+GravityZ.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityZ.Position = UDim2.new(-0.839, 0,0.533, 0)
+GravityZ.Size = UDim2.new(0, 47, 0, 25)
+GravityZ.Font = Enum.Font.SourceSans
+GravityZ.Text = "0"
+GravityZ.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityZ.TextSize = 15.000
+
+GravityTextBox.Name = "GravityTextBox"
+GravityTextBox.Parent = S1
+GravityTextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityTextBox.BackgroundTransparency = 1.000
+GravityTextBox.Position = UDim2.new(-2, 0,7, 0)
+GravityTextBox.Size = UDim2.new(0, 165, 0, 102)
+
+XGravityHelp.Name = "XGravityHelp"
+XGravityHelp.Parent = GravityTextBox
+XGravityHelp.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+XGravityHelp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+XGravityHelp.Position = UDim2.new(0, 0,-0.157, 0)
+XGravityHelp.Size = UDim2.new(0, 55, 0, 104)
+XGravityHelp.Font = Enum.Font.SourceSans
+XGravityHelp.Text = "X Gravity will go forward and backward EX. 100 forward -100 Backward"
+XGravityHelp.TextColor3 = Color3.fromRGB(255, 255, 255)
+XGravityHelp.TextScaled = true
+XGravityHelp.TextSize = 14.000
+XGravityHelp.TextWrapped = true
+XGravityHelp.TextYAlignment = Enum.TextYAlignment.Top
+
+YGravityHelp.Name = "YGravityHelp"
+YGravityHelp.Parent = GravityTextBox
+YGravityHelp.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+YGravityHelp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+YGravityHelp.Position = UDim2.new(0.333, 0,-0.157, 0)
+YGravityHelp.Size = UDim2.new(0, 55, 0, 104)
+YGravityHelp.Font = Enum.Font.SourceSans
+YGravityHelp.Text = "Y Gravity is sencitive, games with low gravity can go up to 10000, games with high gravity can go up to 100"
+YGravityHelp.TextColor3 = Color3.fromRGB(255, 255, 255)
+YGravityHelp.TextScaled = true
+YGravityHelp.TextSize = 11.000
+YGravityHelp.TextWrapped = true
+YGravityHelp.TextYAlignment = Enum.TextYAlignment.Top
+
+ZGravityHelp.Name = "ZGravityHelp"
+ZGravityHelp.Parent = GravityTextBox
+ZGravityHelp.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ZGravityHelp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ZGravityHelp.Position = UDim2.new(0.667, 0,-0.157, 0)
+ZGravityHelp.Size = UDim2.new(0, 55, 0, 104)
+ZGravityHelp.Font = Enum.Font.SourceSans
+ZGravityHelp.Text = "Z Gravity is left and right EX. 100 right -100 left"
+ZGravityHelp.TextColor3 = Color3.fromRGB(255, 255, 255)
+ZGravityHelp.TextSize = 13.000
+ZGravityHelp.TextWrapped = true
+ZGravityHelp.TextYAlignment = Enum.TextYAlignment.Top
+
+NeGravityHelp.Name = "NeGravityHelp"
+NeGravityHelp.Parent = GravityTextBox
+NeGravityHelp.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+NeGravityHelp.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NeGravityHelp.Position = UDim2.new(0, 0,0.863, 0)
+NeGravityHelp.Size = UDim2.new(0, 165, 0, 27)
+NeGravityHelp.Font = Enum.Font.SourceSans
+NeGravityHelp.Text = "*All Values can go into the negatives*"
+NeGravityHelp.TextColor3 = Color3.fromRGB(255, 255, 255)
+NeGravityHelp.TextSize = 12.000
+
+GravityRemover.Name = "GravityRemover"
+GravityRemover.Parent = S1
+GravityRemover.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+GravityRemover.Position = UDim2.new(-1.869, 0,3.933, 0)
+GravityRemover.Size = UDim2.new(0, 140, 0, 15)
+GravityRemover.Font = Enum.Font.SourceSans
+GravityRemover.Text = "Undo Gravity (Buggy)"
+GravityRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
+GravityRemover.TextSize = 14.000
+GravityRemover.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+
+print "Removed"
+
+end)
+
+GravityChanger.Name = "GravityChanger"
+GravityChanger.Parent = S1
+GravityChanger.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+GravityChanger.Position = UDim2.new(-1.869, 0,2.4, 0)
+GravityChanger.Size = UDim2.new(0, 140, 0, 15)
+GravityChanger.Font = Enum.Font.SourceSans
+GravityChanger.Text = "Change Gravity!"
+GravityChanger.TextColor3 = Color3.fromRGB(255, 255, 255)
+GravityChanger.TextSize = 14.000
+GravityChanger.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+
+wait "0.4"
+
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyForce") then return end
+   local temp = Instance.new("BodyForce")
+   temp.Force = part:GetMass() * Vector3.new(GravityX.Text,workspace.Gravity*GravityY.Text,GravityZ.Text)
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(TrussPart)
+   if TrussPart:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(TrussPart)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(VehicleSeat)
+   if VehicleSeat:IsA("VehicleSeat") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(VehicleSeat)
+       end
+   end
+end)
+
+wait"0.1"
+print "Gravity Changed!"
+
+end)
+
+Script2.Name = "Script2"
+Script2.Parent = List
+Script2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script2.BackgroundTransparency = 0.200
+Script2.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script2.Position = UDim2.new(0, 0, 0.0630252138, 0)
+Script2.Size = UDim2.new(0, 92, 0, 15)
+Script2.Font = Enum.Font.SourceSans
+Script2.Text = "Block Mover"
+Script2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script2.TextSize = 14.000
+Script2.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S2.Visible = true
+end)
+
+S2.Name = "S2"
+S2.Parent = Script2
+S2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S2.BackgroundTransparency = 1.000
+S2.Position = UDim2.new(-2.14130425, 0, -2, 0)
+S2.Size = UDim2.new(0, 196, 0, 238)
+S2.Visible = false
+
+BlockPlayerName.Name = "BlockPlayerName"
+BlockPlayerName.Parent = S2
+BlockPlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BlockPlayerName.Position = UDim2.new(0.137, 0,0.096, 0)
+BlockPlayerName.Size = UDim2.new(0, 141, 0, 27)
+BlockPlayerName.Font = Enum.Font.SourceSans
+BlockPlayerName.Text = "Short Name Here"
+BlockPlayerName.TextColor3 = Color3.fromRGB(0, 0, 0)
+BlockPlayerName.TextSize = 15.000
+BlockPlayerName.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(BlockPlayerName.Text))) == string.lower(BlockPlayerName.Text) then
+BlockPlayerName.Text = v.Name
+end
+end
+end)
+
+BlockMover2.Name = "BlockMover2"
+BlockMover2.Parent = S2
+BlockMover2.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockMover2.Position = UDim2.new(0.141, 0,0.311, 0)
+BlockMover2.Size = UDim2.new(0, 140, 0, 15)
+BlockMover2.Font = Enum.Font.SourceSans
+BlockMover2.Text = "Luanch Them!"
+BlockMover2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockMover2.TextSize = 14.000
+BlockMover2.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+wait "0.1"
+
+local targetname = BlockPlayerName.Text
+local arget = game:GetService("Players")[targetname]
+local save = arget.Character.HumanoidRootPart
+local PLRS = game.Players.LocalPlayer
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("RocketPropulsion") then return end
+   local temp = Instance.new("RocketPropulsion")
+   temp.Target = save
+   temp.MaxSpeed = part:GetMass() *1000
+   temp.MaxThrust = part:GetMass() *4000
+   temp.ThrustD = 0.05
+   temp.ThrustP = part:GetMass() *1000
+   temp.Parent = part
+   temp:fire()
+   temp.Parent.CanCollide = false
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+    end
+end
+end)
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("MeshPart") and v.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("TrussPart") and part.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("WedgePart") and part.Anchored == false then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+
+wait"0.1"
+print "Luanching!"
+
+end)
+
+BlockMover.Name = "BlockMover"
+BlockMover.Parent = S2
+BlockMover.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockMover.Position = UDim2.new(0.141, 0,0.248, 0)
+BlockMover.Size = UDim2.new(0, 140, 0, 15)
+BlockMover.Font = Enum.Font.SourceSans
+BlockMover.Text = "Use The Force!"
+BlockMover.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockMover.TextSize = 14.000
+BlockMover.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+
+wait "0.01"
+
+local savepos = game:GetService("Players")[BlockPlayerName.Text].Character.HumanoidRootPart.Position
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyPosition") then return end
+   local temp = Instance.new("BodyPosition")
+   temp.Position = savepos
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+wait "0.005"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		local Partt = instance.Parent
+		instance.MaxForce = Partt:GetMass() * Vector3.new(40000,100000,40000)
+		instance.D = 2500
+		instance.P = 32000
+		instance.Name = "Movemet"
+	end
+end
+
+wait"0.1"
+print "Moving Blocks"
+
+end)
+
+ForceRemover.Name = "ForceRemover"
+ForceRemover.Parent = S2
+ForceRemover.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+ForceRemover.Position = UDim2.new(0.141, 0,0.412, 0)
+ForceRemover.Size = UDim2.new(0, 140, 0, 15)
+ForceRemover.Font = Enum.Font.SourceSans
+ForceRemover.Text = "Stop The Force(Buggy)"
+ForceRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
+ForceRemover.TextSize = 14.000
+ForceRemover.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance.Parent.CanCollide = true
+	end
+end
+wait "0.05"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+print "Removed!"
+
+end)
+
+Script3.Name = "Script3"
+Script3.Parent = List
+Script3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script3.BackgroundTransparency = 0.200
+Script3.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script3.Position = UDim2.new(0, 0, 0.126050442, 0)
+Script3.Size = UDim2.new(0, 92, 0, 15)
+Script3.Font = Enum.Font.SourceSans
+Script3.Text = "Block Teleporter"
+Script3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script3.TextSize = 14.000
+Script3.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S3.Visible = true
+end)
+
+S3.Name = "S3"
+S3.Parent = Script3
+S3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S3.BackgroundTransparency = 1.000
+S3.Size = UDim2.new(0, 90, 0, 15)
+S3.Visible = false
+
+TelePlayerName.Name = "TelePlayerName"
+TelePlayerName.Parent = S3
+TelePlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TelePlayerName.Position = UDim2.new(-1.88, 0,-1.234, 0)
+TelePlayerName.Size = UDim2.new(0, 141, 0, 27)
+TelePlayerName.Font = Enum.Font.SourceSans
+TelePlayerName.Text = "Short Player Name Here"
+TelePlayerName.TextColor3 = Color3.fromRGB(0, 0, 0)
+TelePlayerName.TextSize = 15.000
+TelePlayerName.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(TelePlayerName.Text))) == string.lower(TelePlayerName.Text) then
+TelePlayerName.Text = v.Name
+end
+end
+end)
+
+BlockTeleporter.Name = "BlockTeleporter"
+BlockTeleporter.Parent = S3
+BlockTeleporter.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockTeleporter.Position = UDim2.new(-1.869, 0,1.133, 0)
+BlockTeleporter.Size = UDim2.new(0, 140, 0, 15)
+BlockTeleporter.Font = Enum.Font.SourceSans
+BlockTeleporter.Text = "Blocks Be Teleporting"
+BlockTeleporter.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockTeleporter.TextSize = 14.000
+BlockTeleporter.MouseButton1Click:Connect(function()
+
+local PLRS = game.Players.LocalPlayer
+local targetname = TelePlayerName.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+			end
+	 	end
+    end
+end
+end
+end)
+
+BlockTeleporter2.Name = "BlockTeleporter2"
+BlockTeleporter2.Parent = S3
+BlockTeleporter2.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockTeleporter2.Position = UDim2.new(-1.869, 0,2.133, 0)
+BlockTeleporter2.Size = UDim2.new(0, 140, 0, 15)
+BlockTeleporter2.Font = Enum.Font.SourceSans
+BlockTeleporter2.Text = "Slow Teleport"
+BlockTeleporter2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockTeleporter2.TextSize = 14.000
+BlockTeleporter2.MouseButton1Click:Connect(function()
+
+spawn(function()
+local message = Instance.new("Message",workspace)
+message.Text = "Slow Teleporting Please Wait"
+wait (1)
+message:Destroy()
+end)
+
+local PLRS = game.Players.LocalPlayer
+local targetname = TelePlayerName.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				wait ""
+			end
+	 	end
+    end
+end
+wait "0.1"
+       for i, v in ipairs(check) do
+        if v:IsA('MeshPart') and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				wait ""
+			end
+	 	end
+    end
+end
+print "Teleporting!"
+end
+end)
+local noclipp = false
+MiniGun.Name = "MiniGun"
+MiniGun.Parent = S3
+MiniGun.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MiniGun.Position = UDim2.new(-1.869, 0,3.2, 0)
+MiniGun.Size = UDim2.new(0, 140, 0, 15)
+MiniGun.Font = Enum.Font.SourceSans
+MiniGun.Text = "Mini Gun Mode!"
+MiniGun.TextColor3 = Color3.fromRGB(255, 255, 255)
+MiniGun.TextSize = 14.000
+MiniGun.MouseButton1Click:Connect(function()
+local character = game.Players.LocalPlayer.Character
+    if noclipp then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+wait "0.05"
+print "Firing!"
+game.workspace.Camera.CameraType = "Custom"
+local ca = game.workspace.Camera
+local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , 3, ca.CFrame.Z+-ca.Focus.Z)
+local arget = game.Players.LocalPlayer
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       for i, v in ipairs(check) do
+        if v:IsA('Part') and v.Anchored == false then
+			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
+ 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				v.Velocity = -cam*0.5*v:GetMass()*0.4
+ 				wait ""
+			end
+	 	end
+    end
+end
+end
+end)
+
+Script4.Name = "Script4"
+Script4.Parent = List
+Script4.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script4.BackgroundTransparency = 0.200
+Script4.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script4.Position = UDim2.new(0, 0, 0.189075649, 0)
+Script4.Size = UDim2.new(0, 92, 0, 15)
+Script4.Font = Enum.Font.SourceSans
+Script4.Text = "Block Gyro Fixer"
+Script4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script4.TextSize = 14.000
+Script4.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S4.Visible = true
+end)
+
+S4.Name = "S4"
+S4.Parent = Script4
+S4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S4.BackgroundTransparency = 1.000
+S4.Size = UDim2.new(0, 90, 0, 15)
+S4.Visible = false
+
+GyroUp.Name = "GyroUp"
+GyroUp.Parent = S4
+GyroUp.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+GyroUp.Position = UDim2.new(-1.88525188, 0, -2.47981358, 0)
+GyroUp.Size = UDim2.new(0, 142, 0, 18)
+GyroUp.Font = Enum.Font.SourceSans
+GyroUp.Text = "Stand UP!"
+GyroUp.TextColor3 = Color3.fromRGB(255, 255, 255)
+GyroUp.TextSize = 14.000
+GyroUp.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+		instance:Destroy()
+	end
+end
+
+wait "0.5"
+
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyGyro") then return end
+   local temp = Instance.new("BodyGyro")
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(TrussPart)
+   if TrussPart:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(TrussPart)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(VehicleSeat)
+   if VehicleSeat:IsA("VehicleSeat") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(VehicleSeat)
+       end
+   end
+end)
+
+wait "0.01"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+	    instance.D = "500"
+		instance.P = "3000"
+		instance.MaxTorque = Vector3.new(400000, 0, 400000)
+	end
+end
+
+wait"0.01"
+print "Geting Up!"
+
+end)
+
+NoGyro.Name = "NoGyro"
+NoGyro.Parent = S4
+NoGyro.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+NoGyro.Position = UDim2.new(-1.88525188, 0, -0.714619935, 0)
+NoGyro.Size = UDim2.new(0, 142, 0, 18)
+NoGyro.Font = Enum.Font.SourceSans
+NoGyro.Text = "Get Down!"
+NoGyro.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoGyro.TextSize = 14.000
+NoGyro.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("BodyGyro") then
+		instance:Destroy()
+	end
+end
+
+print "Removed!"
+
+end)
+
+
+Script5.Name = "Script5"
+Script5.Parent = List
+Script5.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script5.BackgroundTransparency = 0.200
+Script5.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script5.Position = UDim2.new(0, 0, 0.252100855, 0)
+Script5.Size = UDim2.new(0, 92, 0, 15)
+Script5.Font = Enum.Font.SourceSans
+Script5.Text = "Block Spiner Gui"
+Script5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script5.TextSize = 14.000
+Script5.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S5.Visible = true
+end)
+
+S5.Name = "S5"
+S5.Parent = Script5
+S5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S5.BackgroundTransparency = 1.000
+S5.Size = UDim2.new(0, 90, 0, 15)
+S5.Visible = false
+
+SpinY.Name = "SpinY"
+SpinY.Parent = S5
+SpinY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpinY.Position = UDim2.new(-1.359, 0,-3.333, 0)
+SpinY.Size = UDim2.new(0, 47, 0, 25)
+SpinY.Font = Enum.Font.SourceSans
+SpinY.Text = "0"
+SpinY.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpinY.TextSize = 15.000
+
+SpinX.Name = "SpinX"
+SpinX.Parent = S5
+SpinX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpinX.Position = UDim2.new(-1.879, 0,-3.333, 0)
+SpinX.Size = UDim2.new(0, 47, 0, 25)
+SpinX.Font = Enum.Font.SourceSans
+SpinX.Text = "0"
+SpinX.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpinX.TextSize = 15.000
+
+SpinZ.Name = "SpinZ"
+SpinZ.Parent = S5
+SpinZ.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpinZ.Position = UDim2.new(-0.839, 0,-3.333, 0)
+SpinZ.Size = UDim2.new(0, 47, 0, 25)
+SpinZ.Font = Enum.Font.SourceSans
+SpinZ.Text = "0"
+SpinZ.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpinZ.TextSize = 15.000
+
+BlockSpin.Name = "BlockSpin"
+BlockSpin.Parent = S5
+BlockSpin.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockSpin.Position = UDim2.new(-1.869, 0,-1, 0)
+BlockSpin.Size = UDim2.new(0, 140, 0, 15)
+BlockSpin.Font = Enum.Font.SourceSans
+BlockSpin.Text = "Get Spinen!"
+BlockSpin.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockSpin.TextSize = 14.000
+BlockSpin.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		instance:Destroy()
+	end
+end
+
+wait "0.001"
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyAngularVelocity") then return end
+   local temp = Instance.new("BodyAngularVelocity")
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+wait "0.005"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		local Partt = instance.Parent
+		instance.MaxTorque = Partt:GetMass() * Vector3.new(4000,4000,4000)
+		instance.P = 2000
+		instance.AngularVelocity = Vector3.new(SpinX.Text,SpinY.Text,SpinZ.Text)
+		instance.Name = "Spin"
+	end
+end
+
+wait"0.01"
+print "Spining Blocks"
+
+end)
+
+NoBlockSpin.Name = "NoBlockSpin"
+NoBlockSpin.Parent = S5
+NoBlockSpin.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+NoBlockSpin.Position = UDim2.new(-1.869, 0, 0, 0)
+NoBlockSpin.Size = UDim2.new(0, 140, 0, 15)
+NoBlockSpin.Font = Enum.Font.SourceSans
+NoBlockSpin.Text = "No More Spining!"
+NoBlockSpin.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoBlockSpin.TextSize = 14.000
+NoBlockSpin.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("BodyAngularVelocity") then
+		instance:Destroy()
+	end
+end
+
+print "Removed!"
+
+end)
+
+Script6.Name = "Script6"
+Script6.Parent = List
+Script6.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script6.BackgroundTransparency = 0.200
+Script6.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script6.Position = UDim2.new(0, 0, 0.315126061, 0)
+Script6.Size = UDim2.new(0, 92, 0, 15)
+Script6.Font = Enum.Font.SourceSans
+Script6.Text = "Booster Gui"
+Script6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script6.TextSize = 14.000
+Script6.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S6.Visible = true
+end)
+
+S6.Name = "S6"
+S6.Parent = Script6
+S6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S6.BackgroundTransparency = 1.000
+S6.Size = UDim2.new(0, 90, 0, 15)
+S6.Visible = false
+
+BoostX.Name = "BoostX"
+BoostX.Parent = S6
+BoostX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoostX.Position = UDim2.new(-1.879, 0,-4.333, 0)
+BoostX.Size = UDim2.new(0, 47, 0, 25)
+BoostX.Font = Enum.Font.SourceSans
+BoostX.Text = "0"
+BoostX.TextColor3 = Color3.fromRGB(0, 0, 0)
+BoostX.TextSize = 15.000
+
+BoostY.Name = "BoostY"
+BoostY.Parent = S6
+BoostY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoostY.Position = UDim2.new(-1.359, 0,-4.333, 0)
+BoostY.Size = UDim2.new(0, 47, 0, 25)
+BoostY.Font = Enum.Font.SourceSans
+BoostY.Text = "0"
+BoostY.TextColor3 = Color3.fromRGB(0, 0, 0)
+BoostY.TextSize = 15.000
+
+BoostZ.Name = "BoostZ"
+BoostZ.Parent = S6
+BoostZ.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoostZ.Position = UDim2.new(-0.839, 0,-4.333, 0)
+BoostZ.Size = UDim2.new(0, 47, 0, 25)
+BoostZ.Font = Enum.Font.SourceSans
+BoostZ.Text = "0"
+BoostZ.TextColor3 = Color3.fromRGB(0, 0, 0)
+BoostZ.TextSize = 15.000
+
+BlockBoost.Name = "BlockBoost"
+BlockBoost.Parent = S6
+BlockBoost.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockBoost.Position = UDim2.new(-1.869, 0,-2, 0)
+BlockBoost.Size = UDim2.new(0, 140, 0, 15)
+BlockBoost.Font = Enum.Font.SourceSans
+BlockBoost.Text = "Change Velocity"
+BlockBoost.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockBoost.TextSize = 14.000
+BlockBoost.MouseButton1Click:Connect(function()
+ 
+for _, instance in pairs(game:GetDescendants()) do
+    if instance:IsA("BodyForce") then
+        instance:Destroy()
+    end
+end
+ 
+wait "0.4"
+ 
+ 
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   part.Velocity = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
+end
+ 
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+ 
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+ 
+workspace.DescendantAdded:Connect(function(TrussPart)
+   if TrussPart:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(TrussPart)
+       end
+   end
+end)
+ 
+workspace.DescendantAdded:Connect(function(VehicleSeat)
+   if VehicleSeat:IsA("VehicleSeat") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(VehicleSeat)
+       end
+   end
+end)
+ 
+wait"0.1"
+print "Velocity Changed!"
+ 
+end)
+
+BlockRotBoost.Name = "BlockRotBoost"
+BlockRotBoost.Parent = S6
+BlockRotBoost.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockRotBoost.Position = UDim2.new(-1.869, 0,-0.533, 0)
+BlockRotBoost.Size = UDim2.new(0, 140, 0, 15)
+BlockRotBoost.Font = Enum.Font.SourceSans
+BlockRotBoost.Text = "Change RotVelocity"
+BlockRotBoost.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockRotBoost.TextSize = 14.000
+BlockRotBoost.MouseButton1Click:Connect(function()
+ 
+for _, instance in pairs(game:GetDescendants()) do
+    if instance:IsA("BodyForce") then
+        instance:Destroy()
+    end
+end
+ 
+wait "0.4"
+ 
+ 
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   part.RotVelocity = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
+end
+ 
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+ 
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+ 
+workspace.DescendantAdded:Connect(function(TrussPart)
+   if TrussPart:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(TrussPart)
+       end
+   end
+end)
+ 
+workspace.DescendantAdded:Connect(function(VehicleSeat)
+   if VehicleSeat:IsA("VehicleSeat") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(VehicleSeat)
+       end
+   end
+end)
+ 
+wait"0.1"
+print "RotVelocity Changed!"
+ 
+end)
+
+Script7.Name = "Script7"
+Script7.Parent = List
+Script7.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script7.BackgroundTransparency = 0.200
+Script7.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script7.Position = UDim2.new(0, 0, 0.378151268, 0)
+Script7.Size = UDim2.new(0, 92, 0, 15)
+Script7.Font = Enum.Font.SourceSans
+Script7.Text = "0 Gravity (Less Lag)"
+Script7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script7.TextSize = 13.000
+Script7.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S7.Visible = true
+end)
+
+S7.Name = "S7"
+S7.Parent = Script7
+S7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S7.BackgroundTransparency = 1.000
+S7.Size = UDim2.new(0, 90, 0, 15)
+S7.Visible = false
+
+OneWay.Name = "OneWay"
+OneWay.Parent = S7
+OneWay.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OneWay.Position = UDim2.new(-1.88, 0,-4.367, 0)
+OneWay.Size = UDim2.new(0, 141, 0, 27)
+OneWay.Font = Enum.Font.SourceSans
+OneWay.Text = "0"
+OneWay.TextColor3 = Color3.fromRGB(0, 0, 0)
+OneWay.TextSize = 16.000
+
+OGravity.Name = "OGravity"
+OGravity.Parent = S7
+OGravity.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OGravity.Position = UDim2.new(-1.88, 0,-5.6, 0)
+OGravity.Size = UDim2.new(0, 141, 0, 18)
+OGravity.Font = Enum.Font.SourceSans
+OGravity.TextColor3 = Color3.fromRGB(0, 0, 0)
+OGravity.TextSize = 14.000
+OGravity.TextWrapped = true
+
+OneWayChange.Name = "OneWayChange"
+OneWayChange.Parent = S7
+OneWayChange.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+OneWayChange.Position = UDim2.new(-1.86903882, 0, -3, 0)
+OneWayChange.Size = UDim2.new(0, 140, 0, 15)
+OneWayChange.Font = Enum.Font.SourceSans
+OneWayChange.Text = "Change Gravity!!"
+OneWayChange.TextColor3 = Color3.fromRGB(255, 255, 255)
+OneWayChange.TextSize = 14.000
+OneWayChange.MouseButton1Click:Connect(function()
+
+local PL = game.Players.LocalPlayer.Character
+for _, instance in pairs(PL:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+
+wait "0.01"
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyForce") then return end
+   local temp = Instance.new("BodyForce")
+   temp.Force = part:GetMass() * Vector3.new(0,OneWay.Text*-1,0)
+   temp.Parent = part
+end
+
+for i,v in ipairs(PL:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+           zeroGrav(v)
+        
+   end
+end
+
+PL.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+          zeroGrav(part)
+   end
+end)
+
+wait "0.2"
+
+workspace.Gravity = OneWay.Text
+	
+wait"0.01"
+
+print "Changing!"
+
+end)
+
+UndoOneWay.Name = "UndoOneWay"
+UndoOneWay.Parent = S7
+UndoOneWay.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+UndoOneWay.Position = UDim2.new(-1.869, 0,-1, 0)
+UndoOneWay.Size = UDim2.new(0, 140, 0, 15)
+UndoOneWay.Font = Enum.Font.SourceSans
+UndoOneWay.Text = "Undo Gravity"
+UndoOneWay.TextColor3 = Color3.fromRGB(255, 255, 255)
+UndoOneWay.TextSize = 14.000
+UndoOneWay.MouseButton1Click:Connect(function()
+
+local PL = game.Players.LocalPlayer.Character
+for _, instance in pairs(PL:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+
+wait "0.01"
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+
+wait"0.01"
+
+workspace.Gravity = OGravity.Text
+
+print "Undoing!"
+
+end)
+
+Script8.Name = "Script8"
+Script8.Parent = List
+Script8.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script8.BackgroundTransparency = 0.200
+Script8.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script8.Position = UDim2.new(0, 0, 0.441176444, 0)
+Script8.Size = UDim2.new(0, 92, 0, 15)
+Script8.Font = Enum.Font.SourceSans
+Script8.Text = "Speedy Gui"
+Script8.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script8.TextSize = 14.000
+Script8.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S8.Visible = true
+end)
+
+S8.Name = "S8"
+S8.Parent = Script8
+S8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S8.BackgroundTransparency = 1.000
+S8.Size = UDim2.new(0, 90, 0, 15)
+S8.Visible = false
+
+GravityY_2.Name = "GravityY_2"
+GravityY_2.Parent = S8
+GravityY_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityY_2.Position = UDim2.new(-1.359, 0,-6.333, 0)
+GravityY_2.Size = UDim2.new(0, 47, 0, 25)
+GravityY_2.Font = Enum.Font.SourceSans
+GravityY_2.Text = "0"
+GravityY_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityY_2.TextSize = 15.000
+
+GravityX_2.Name = "GravityX_2"
+GravityX_2.Parent = S8
+GravityX_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityX_2.Position = UDim2.new(-1.879, 0,-6.333, 0)
+GravityX_2.Size = UDim2.new(0, 47, 0, 25)
+GravityX_2.Font = Enum.Font.SourceSans
+GravityX_2.Text = "0"
+GravityX_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityX_2.TextSize = 15.000
+
+GravityZ_2.Name = "GravityZ_2"
+GravityZ_2.Parent = S8
+GravityZ_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityZ_2.Position = UDim2.new(-0.839, 0,-6.333, 0)
+GravityZ_2.Size = UDim2.new(0, 47, 0, 25)
+GravityZ_2.Font = Enum.Font.SourceSans
+GravityZ_2.Text = "0"
+GravityZ_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityZ_2.TextSize = 15.000
+
+NoBlockSpeed.Name = "NoBlockSpeed"
+NoBlockSpeed.Parent = S8
+NoBlockSpeed.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+NoBlockSpeed.Position = UDim2.new(-1.869, 0,-3, 0)
+NoBlockSpeed.Size = UDim2.new(0, 140, 0, 15)
+NoBlockSpeed.Font = Enum.Font.SourceSans
+NoBlockSpeed.Text = "Hold it there Blocks!"
+NoBlockSpeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+NoBlockSpeed.TextSize = 14.000
+NoBlockSpeed.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyThrust") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("BodyThrust") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("BodyThrust") then
+		instance:Destroy()
+	end
+end
+wait "0.5"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("BodyThrust") then
+		instance:Destroy()
+	end
+end
+
+print "Removed"
+
+end)
+
+BlockSpeed.Name = "BlockSpeed"
+BlockSpeed.Parent = S8
+BlockSpeed.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockSpeed.Position = UDim2.new(-1.869, 0,-4, 0)
+BlockSpeed.Size = UDim2.new(0, 140, 0, 15)
+BlockSpeed.Font = Enum.Font.SourceSans
+BlockSpeed.Text = "Run Blocks Run!"
+BlockSpeed.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockSpeed.TextSize = 14.000
+BlockSpeed.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyThrust") then
+		instance:Destroy()
+	end
+end
+
+wait "0.4"
+
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyThrust") then return end
+   local temp = Instance.new("BodyThrust")
+   temp.Force = part:GetMass() * Vector3.new(GravityX_2.Text,GravityY_2.Text,GravityZ_2.Text)
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(TrussPart)
+   if TrussPart:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(TrussPart)
+       end
+   end
+end)
+
+workspace.DescendantAdded:Connect(function(VehicleSeat)
+   if VehicleSeat:IsA("VehicleSeat") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(VehicleSeat)
+       end
+   end
+end)
+
+wait"0.1"
+print "Speeding!"
+
+end)
+
+Script9.Name = "Script9"
+Script9.Parent = List
+Script9.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script9.BackgroundTransparency = 0.200
+Script9.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script9.Position = UDim2.new(0, 0, 0.504201651, 0)
+Script9.Size = UDim2.new(0, 92, 0, 15)
+Script9.Font = Enum.Font.SourceSans
+Script9.Text = "Anchor Gui"
+Script9.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script9.TextSize = 14.000
+Script9.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S9.Visible = true
+end)
+
+S9.Name = "S9"
+S9.Parent = Script9
+S9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S9.BackgroundTransparency = 1.000
+S9.Size = UDim2.new(0, 90, 0, 15)
+S9.Visible = false
+
+UnAnchor.Name = "UnAnchor"
+UnAnchor.Parent = S9
+UnAnchor.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+UnAnchor.Position = UDim2.new(-1.86916089, 0, -6.26666641, 0)
+UnAnchor.Size = UDim2.new(0, 140, 0, 15)
+UnAnchor.Font = Enum.Font.SourceSans
+UnAnchor.Text = "Move Blocks!"
+UnAnchor.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnAnchor.TextSize = 14.000
+UnAnchor.MouseButton1Click:Connect(function()
+for _, instance in pairs(game:GetDescendants()) do
+    if instance:IsA("BodyForce") then
+        local Partt = instance.Parent
+		Partt.Anchored = false
+    end
+end
+wait "0.05"
+for _, instance in pairs(game:GetDescendants()) do
+    if instance:IsA("BodyForce") then
+		instance:Destroy()
+    end
+end
+
+end)
+
+AnchorBlocks.Name = "AnchorBlocks"
+AnchorBlocks.Parent = S9
+AnchorBlocks.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+AnchorBlocks.Position = UDim2.new(-1.86916089, 0, -7.80000019, 0)
+AnchorBlocks.Size = UDim2.new(0, 140, 0, 15)
+AnchorBlocks.Font = Enum.Font.SourceSans
+AnchorBlocks.Text = "Stop the Blocks!"
+AnchorBlocks.TextColor3 = Color3.fromRGB(255, 255, 255)
+AnchorBlocks.TextSize = 14.000
+AnchorBlocks.MouseButton1Click:Connect(function()
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyForce") then return end
+   local temp = Instance.new("BodyForce")
+	temp.Parent = part
+	part.Anchored = true
+end
+ 
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")and(v.Name ~= "Handle")then
+           zeroGrav(v)
+       end
+   end
+end
+end
+ 
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(part.Name ~= "HumanoidRootPart")and(part.Name ~= "LeftArm")and(part.Name ~= "RightArm")and(part.Name ~= "Tip")and(part.Name ~= "Weld")and(part.Name ~= "Light")and(part.Name ~= "Ammo")and(part.Name ~= "Body")and(part.Name ~= "Center")and(part.Name ~= "Taser")and(part.Name ~= "Handcuffs")and(part.Name ~= "Head")and(part.Name ~= "UpperTorso")and(part.Name ~= "LowerTorso")and(part.Name ~= "LeftFoot")and(part.Name ~= "RightFoot")and(part.Name ~= "LeftHand")and(part.Name ~= "RightHand")and(part.Name ~= "RightUpperArm")and(part.Name ~= "LeftLowerArm")and(part.Name ~= "RightLowerArm")and(part.Name ~= "RightUpperLeg")and(part.Name ~= "LeftUpperLeg")and(part.Name ~= "LeftLowerLeg")and(part.Name ~= "RightLowerLeg")and(part.Name ~= "Head")and(part.Name ~= "HumanoidRootPart")and(part.Name ~= "Torso")and(part.Name ~= "Right Leg")and(part.Name ~= "Right Arm")and(part.Name ~= "Left Arm")and(part.Name ~= "Left Leg")and(part.Name ~= "Handle")then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("MeshPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(part.Name ~= "HumanoidRootPart")and(part.Name ~= "LeftArm")and(part.Name ~= "RightArm")and(part.Name ~= "Tip")and(part.Name ~= "Weld")and(part.Name ~= "Light")and(part.Name ~= "Ammo")and(part.Name ~= "Body")and(part.Name ~= "Center")and(part.Name ~= "Taser")and(part.Name ~= "Handcuffs")and(part.Name ~= "Head")and(part.Name ~= "UpperTorso")and(part.Name ~= "LowerTorso")and(part.Name ~= "LeftFoot")and(part.Name ~= "RightFoot")and(part.Name ~= "LeftHand")and(part.Name ~= "RightHand")and(part.Name ~= "RightUpperArm")and(part.Name ~= "LeftLowerArm")and(part.Name ~= "RightLowerArm")and(part.Name ~= "RightUpperLeg")and(part.Name ~= "LeftUpperLeg")and(part.Name ~= "LeftLowerLeg")and(part.Name ~= "RightLowerLeg")and(part.Name ~= "Head")and(part.Name ~= "HumanoidRootPart")and(part.Name ~= "Torso")and(part.Name ~= "Right Leg")and(part.Name ~= "Right Arm")and(part.Name ~= "Left Arm")and(part.Name ~= "Left Leg")and(part.Name ~= "Handle")then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+ 
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("TrussPart") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(part.Name ~= "HumanoidRootPart")and(part.Name ~= "LeftArm")and(part.Name ~= "RightArm")and(part.Name ~= "Tip")and(part.Name ~= "Weld")and(part.Name ~= "Light")and(part.Name ~= "Ammo")and(part.Name ~= "Body")and(part.Name ~= "Center")and(part.Name ~= "Taser")and(part.Name ~= "Handcuffs")and(part.Name ~= "Head")and(part.Name ~= "UpperTorso")and(part.Name ~= "LowerTorso")and(part.Name ~= "LeftFoot")and(part.Name ~= "RightFoot")and(part.Name ~= "LeftHand")and(part.Name ~= "RightHand")and(part.Name ~= "RightUpperArm")and(part.Name ~= "LeftLowerArm")and(part.Name ~= "RightLowerArm")and(part.Name ~= "RightUpperLeg")and(part.Name ~= "LeftUpperLeg")and(part.Name ~= "LeftLowerLeg")and(part.Name ~= "RightLowerLeg")and(part.Name ~= "Head")and(part.Name ~= "HumanoidRootPart")and(part.Name ~= "Torso")and(part.Name ~= "Right Leg")and(part.Name ~= "Right Arm")and(part.Name ~= "Left Arm")and(part.Name ~= "Left Leg")and(part.Name ~= "Handle")then
+           zeroGrav(part)
+       end
+   end
+end
+end)
+
+wait"0.1"
+print "Freezing Blocks"
+ 
+end)
+
+Script10.Name = "Script10"
+Script10.Parent = List
+Script10.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script10.BackgroundTransparency = 0.200
+Script10.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script10.Position = UDim2.new(0, 0, 0.567226887, 0)
+Script10.Size = UDim2.new(0, 92, 0, 15)
+Script10.Font = Enum.Font.SourceSans
+Script10.Text = "Hat Luancher"
+Script10.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script10.TextSize = 14.000
+Script10.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S10.Visible = true
+end)
+
+S10.Name = "S10"
+S10.Parent = Script10
+S10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S10.BackgroundTransparency = 1.000
+S10.Size = UDim2.new(0, 90, 0, 15)
+S10.Visible = false
+
+BlockPlayerName_2.Name = "BlockPlayerName_2"
+BlockPlayerName_2.Parent = S10
+BlockPlayerName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BlockPlayerName_2.Position = UDim2.new(-1.876, 0,-8.434, 0)
+BlockPlayerName_2.Size = UDim2.new(0, 140, 0, 27)
+BlockPlayerName_2.Font = Enum.Font.SourceSans
+BlockPlayerName_2.Text = "Short Player Name Here"
+BlockPlayerName_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+BlockPlayerName_2.TextSize = 15.000
+BlockPlayerName_2.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(BlockPlayerName_2.Text))) == string.lower(BlockPlayerName_2.Text) then
+BlockPlayerName_2.Text = v.Name
+end
+end
+end)
+
+HatLuanch.Name = "HatLuanch"
+HatLuanch.Parent = S10
+HatLuanch.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+HatLuanch.Position = UDim2.new(-1.876, 0,-6.681, 0)
+HatLuanch.Size = UDim2.new(0, 140, 0, 15)
+HatLuanch.Font = Enum.Font.SourceSans
+HatLuanch.Text = "Hit Them With It"
+HatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
+HatLuanch.TextSize = 14.000
+HatLuanch.MouseButton1Click:Connect(function()
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if (v:IsA("Accessory")) then
+v.Parent = workspace
+end
+end
+wait "0.00001"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+wait "0.0001"
+
+local targetname = BlockPlayerName_2.Text
+local arget = game:GetService("Players")[targetname]
+local save = arget.Character.HumanoidRootPart
+local PLRS = game.Players.LocalPlayer
+
+local function zeroGrav(part)
+   if part:FindFirstChild("RocketPropulsion") then return end
+   local temp = Instance.new("RocketPropulsion")
+   temp.Target = save
+   temp.MaxSpeed = part:GetMass() *400000
+   temp.MaxThrust = part:GetMass() *400000
+   temp.ThrustD = 0.12
+   temp.ThrustP = part:GetMass() *10000
+   temp.Parent = part
+   temp:fire()
+   temp.Parent.CanCollide = false
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("Part") and v.Anchored == false and(v.Name == "Handle")then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("Part") and part.Anchored == false and(part.Name == "Handle")then
+       if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
+           zeroGrav(part)
+       end
+    end
+end
+end)
+
+wait"0.1"
+print "Luanching!"
+end)
+
+UnHatLuanch.Name = "UnHatLuanch"
+UnHatLuanch.Parent = S10
+UnHatLuanch.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+UnHatLuanch.Position = UDim2.new(-1.876, 0,-4.018, 0)
+UnHatLuanch.Size = UDim2.new(0, 140, 0, 15)
+UnHatLuanch.Font = Enum.Font.SourceSans
+UnHatLuanch.Text = "Spawn The Hats In"
+UnHatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
+UnHatLuanch.TextSize = 14.000
+UnHatLuanch.MouseButton1Click:Connect(function()
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+wait "0.001"
+    do
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if (v:IsA("Accessory")) then
+    v.Parent = workspace
+    end
+    end
+    wait "0.01"
+    game.Players.LocalPlayer.Character.Humanoid.Health = "0"
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = "0"
+    game.Players.LocalPlayer.Character:BreakJoints()
+    end
+end)
+
+ForceRemover_2.Name = "ForceRemover_2"
+ForceRemover_2.Parent = S10
+ForceRemover_2.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+ForceRemover_2.Position = UDim2.new(-1.876, 0,-5.718, 0)
+ForceRemover_2.Size = UDim2.new(0, 140, 0, 15)
+ForceRemover_2.Font = Enum.Font.SourceSans
+ForceRemover_2.Text = "Stop It"
+ForceRemover_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ForceRemover_2.TextSize = 14.000
+ForceRemover_2.MouseButton1Click:Connect(function()
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance.Parent.CanCollide = true
+	end
+end
+wait "0.05"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance:Destroy()
+	end
+end
+
+print "Removed!"
+
+end)
+
+Line.Name = "Line"
+Line.Parent = List
+Line.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Line.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Line.Position = UDim2.new(0, 0, 0.928571403, 0)
+Line.Size = UDim2.new(0, 92, 0, 2)
+
+ClosedList.Name = "ClosedList"
+ClosedList.Parent = Scrip
+ClosedList.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ClosedList.BackgroundTransparency = 0.500
+ClosedList.BorderColor3 = Color3.fromRGB(30, 30, 30)
+ClosedList.Position = UDim2.new(0.893401027, 0, 0.928571403, 0)
+ClosedList.Size = UDim2.new(0, 20, 0, 17)
+ClosedList.Font = Enum.Font.SourceSans
+ClosedList.Text = "<"
+ClosedList.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClosedList.TextScaled = true
+ClosedList.TextSize = 14.000
+ClosedList.TextWrapped = true
+ClosedList.Visible = true
+ClosedList.MouseButton1Click:Connect(function()
+OpenedList.Visible = true
+ClosedList.Visible = false
+List.Visible = false
+Infoo.Visible = false
+end)
+
+Line_2.Name = "Line"
+Line_2.Parent = Scrip
+Line_2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Line_2.BorderColor3 = Color3.fromRGB(40, 40, 40)
+Line_2.Position = UDim2.new(0, 0, 0.928571403, 0)
+Line_2.Size = UDim2.new(0, 196, 0, 0)
+
+OpenedList.Name = "OpenedList"
+OpenedList.Parent = Scrip
+OpenedList.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+OpenedList.BackgroundTransparency = 0.500
+OpenedList.BorderColor3 = Color3.fromRGB(30, 30, 30)
+OpenedList.Position = UDim2.new(0.893401027, 0, 0.928571403, 0)
+OpenedList.Size = UDim2.new(0, 20, 0, 17)
+OpenedList.Visible = false
+OpenedList.Font = Enum.Font.SourceSans
+OpenedList.Text = ">"
+OpenedList.TextColor3 = Color3.fromRGB(0, 0, 0)
+OpenedList.TextScaled = true
+OpenedList.TextSize = 14.000
+OpenedList.TextWrapped = true
+OpenedList.Visible = false
+OpenedList.MouseButton1Click:Connect(function()
+OpenedList.Visible = false
+ClosedList.Visible = true
+List.Visible = true
+Infoo.Visible = false
+end)
+
+CloseButton.Name = "CloseButton"
+CloseButton.Parent = Title
+CloseButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+CloseButton.BackgroundTransparency = 0.500
+CloseButton.Position = UDim2.new(0.893401027, 0, 0, 0)
+CloseButton.Size = UDim2.new(0, 21, 0, 19)
+CloseButton.Font = Enum.Font.SourceSans
+CloseButton.Text = "-"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextScaled = true
+CloseButton.TextSize = 14.000
+CloseButton.TextWrapped = true
+CloseButton.Visible = false
+CloseButton.MouseButton1Click:Connect(function()
+OpenButton.Visible = true
+CloseButton.Visible = false
+Scrip.Visible = false
+Info.Visible = false
+end)
+
+Info.Name = "Info"
+Info.Parent = Title
+Info.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Info.BackgroundTransparency = 0.200
+Info.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Info.Position = UDim2.new(0, 0, 12.0500002, 0)
+Info.Selectable = false
+Info.Size = UDim2.new(0, 176, 0, 17)
+Info.Font = Enum.Font.SourceSans
+Info.Text = "Information"
+Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+Info.TextSize = 14.000
+Info.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+Infoo.Visible = true
+end)
+
+Infoo.Name = "Infoo"
+Infoo.Parent = Info
+Infoo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Infoo.BackgroundTransparency = 1.000
+Infoo.Position = UDim2.new(0.00373707642, 0, 0, 0)
+Infoo.Size = UDim2.new(0, 90, 0, 15)
+Infoo.Visible = false
+
+Versionnn.Name = "Versionnn"
+Versionnn.Parent = Infoo
+Versionnn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Versionnn.BorderColor3 = Color3.fromRGB(35, 35, 35)
+Versionnn.Position = UDim2.new(0.21, 0,-8.333, 0)
+Versionnn.Size = UDim2.new(0, 158, 0, 98)
+
+Version.Name = "Version"
+Version.Parent = Versionnn
+Version.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Version.BackgroundTransparency = 0.500
+Version.Position = UDim2.new(0.057, 0, 0, 0)
+Version.Size = UDim2.new(0, 142, 0, 91)
+Version.Font = Enum.Font.SourceSans
+Version.Text = "Version V1.3"
+Version.TextColor3 = Color3.fromRGB(255, 255, 255)
+Version.TextSize = 14.000
+Version.TextYAlignment = Enum.TextYAlignment.Top
+
+ChangeText.Name = "ChangeText"
+ChangeText.Parent = Versionnn
+ChangeText.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ChangeText.BackgroundTransparency = 0.990
+ChangeText.Position = UDim2.new(0.057, 0,0.163, 0)
+ChangeText.Size = UDim2.new(0, 142, 0, 16)
+ChangeText.Font = Enum.Font.SourceSans
+ChangeText.Text = "* New Gui "
+ChangeText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChangeText.TextSize = 14.000
+ChangeText.TextWrapped = true
+ChangeText.TextXAlignment = Enum.TextXAlignment.Left
+ChangeText.TextYAlignment = Enum.TextYAlignment.Top
+
+ChangeText1.Name = "ChangeText1"
+ChangeText1.Parent = Versionnn
+ChangeText1.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ChangeText1.BackgroundTransparency = 0.990
+ChangeText1.Position = UDim2.new(0.057, 0,0.327, 0)
+ChangeText1.Size = UDim2.new(0, 142, 0, 16)
+ChangeText1.Font = Enum.Font.SourceSans
+ChangeText1.Text = ""
+ChangeText1.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChangeText1.TextSize = 14.000
+ChangeText1.TextWrapped = true
+ChangeText1.TextXAlignment = Enum.TextXAlignment.Left
+ChangeText1.TextYAlignment = Enum.TextYAlignment.Top
+
+ChangeText2.Name = "ChangeText2"
+ChangeText2.Parent = Versionnn
+ChangeText2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ChangeText2.BackgroundTransparency = 0.990
+ChangeText2.Position = UDim2.new(0.057, 0,0.49, 0)
+ChangeText2.Size = UDim2.new(0, 142, 0, 16)
+ChangeText2.Font = Enum.Font.SourceSans
+ChangeText2.Text = ""
+ChangeText2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChangeText2.TextSize = 14.000
+ChangeText2.TextWrapped = true
+ChangeText2.TextXAlignment = Enum.TextXAlignment.Left
+ChangeText2.TextYAlignment = Enum.TextYAlignment.Top
+
+ChangeText3.Name = "ChangeText3"
+ChangeText3.Parent = Versionnn
+ChangeText3.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+ChangeText3.BackgroundTransparency = 0.990
+ChangeText3.Position = UDim2.new(0.057, 0,0.653, 0)
+ChangeText3.Size = UDim2.new(0, 142, 0, 16)
+ChangeText3.Font = Enum.Font.SourceSans
+ChangeText3.Text = ""
+ChangeText3.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChangeText3.TextSize = 14.000
+ChangeText3.TextWrapped = true
+ChangeText3.TextXAlignment = Enum.TextXAlignment.Left
+ChangeText3.TextYAlignment = Enum.TextYAlignment.Top
+
+ChangeL.Name = "ChangeL"
+ChangeL.Parent = Infoo
+ChangeL.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ChangeL.BackgroundTransparency = 0.500
+ChangeL.BorderColor3 = Color3.fromRGB(35, 35, 35)
+ChangeL.Position = UDim2.new(0.21, 0,-9.333, 0)
+ChangeL.Size = UDim2.new(0, 158, 0, 15)
+ChangeL.Font = Enum.Font.SourceSans
+ChangeL.Text = "Change Log:"
+ChangeL.TextColor3 = Color3.fromRGB(255, 255, 255)
+ChangeL.TextSize = 16.000
+
+InfoText1.Name = "InfoText1"
+InfoText1.Parent = Infoo
+InfoText1.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+InfoText1.BackgroundTransparency = 0.500
+InfoText1.Position = UDim2.new(0.21, 0,-14.467, 0)
+InfoText1.Size = UDim2.new(0, 158, 0, 20)
+InfoText1.Font = Enum.Font.SourceSans
+InfoText1.Text = "Block Hub Made By:"
+InfoText1.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoText1.TextSize = 16.000
+
+InfoText2.Name = "InfoText2"
+InfoText2.Parent = Infoo
+InfoText2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+InfoText2.BackgroundTransparency = 0.500
+InfoText2.Position = UDim2.new(0.21, 0,-13.133, 0)
+InfoText2.Size = UDim2.new(0, 158, 0, 20)
+InfoText2.Font = Enum.Font.SourceSans
+InfoText2.Text = "Drgaster"
+InfoText2.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoText2.TextSize = 16.000
+
+InfoText3.Name = "InfoText3"
+InfoText3.Parent = Infoo
+InfoText3.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+InfoText3.BackgroundTransparency = 0.500
+InfoText3.Position = UDim2.new(0.21, 0,-11.133, 0)
+InfoText3.Size = UDim2.new(0, 158, 0, 20)
+InfoText3.Font = Enum.Font.SourceSans
+InfoText3.Text = "Script List ~~>"
+InfoText3.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoText3.TextSize = 16.000
+
+InfoText4.Name = "InfoText4"
+InfoText4.Parent = Infoo
+InfoText4.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+InfoText4.BackgroundTransparency = 0.500
+InfoText4.Position = UDim2.new(0.743, 0,-1.4, 0)
+InfoText4.Size = UDim2.new(0, 129, 0, 20)
+InfoText4.Font = Enum.Font.SourceSans
+InfoText4.Text = "Script List Button \\/"
+InfoText4.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfoText4.TextSize = 16.000
+
+OpenButton.Name = "OpenButton"
+OpenButton.Parent = Title
+OpenButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+OpenButton.BackgroundTransparency = 0.500
+OpenButton.Position = UDim2.new(0.893401027, 0, 0, 0)
+OpenButton.Size = UDim2.new(0, 21, 0, 19)
+OpenButton.Visible = false
+OpenButton.Font = Enum.Font.SourceSans
+OpenButton.Text = "+"
+OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenButton.TextScaled = true
+OpenButton.TextSize = 14.000
+OpenButton.TextWrapped = true
+OpenButton.MouseButton1Click:Connect(function()
+OpenButton.Visible = false
+CloseButton.Visible = true
+Scrip.Visible = true
+Info.Visible = true
+end)
+
+wait "0.1"
+local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press Q to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "p" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+end
+wait "0.3"
+
+game:GetService("CoreGui").BlockHub.Title.Scrip.List.Script7.S7.OGravity.Text = game.Workspace.Gravity
+
+wait "0.1"
+print "Finished"
