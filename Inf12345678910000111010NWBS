@@ -791,6 +791,7 @@ RemoverBlocks.TextSize = 14.000
 RemoverBlocks.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
+local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 for i = 1, 1 do
        spawn(function()
        while true do
@@ -802,7 +803,7 @@ for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA('Part') and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then
- 				v.CFrame = v.CFrame + Vector3.new(0, -50000, 0)
+ 				v.CFrame = CFrame.new(0,BlockNumberCheck+-11,0)
 			end
 	 	end
     end
