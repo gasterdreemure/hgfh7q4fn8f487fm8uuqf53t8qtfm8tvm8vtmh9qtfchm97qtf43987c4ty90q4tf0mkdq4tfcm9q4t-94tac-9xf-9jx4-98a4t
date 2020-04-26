@@ -48,7 +48,6 @@ wait "1.1"
 
 -- Instances:
 
-local PLLL = game.Players.LocalPlayer.Character
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
 local Scrip = Instance.new("Frame")
@@ -1562,7 +1561,8 @@ OGravity.TextColor3 = Color3.fromRGB(0, 0, 0)
 OGravity.TextSize = 14.000
 OGravity.TextWrapped = true
 OGravity.Text = game.workspace.Gravity
-
+local PLLL = game.Players.LocalPlayer.Character
+local PL = game.Players.LocalPlayer.Character
 OneWayChange.Name = "OneWayChange"
 OneWayChange.Parent = S7
 OneWayChange.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
@@ -1574,7 +1574,7 @@ OneWayChange.TextColor3 = Color3.fromRGB(255, 255, 255)
 OneWayChange.TextSize = 14.000
 OneWayChange.MouseButton1Click:Connect(function()
 
-local PL = game.Players.LocalPlayer.Character
+local PLLL = game.Players.LocalPlayer.Character
 for _, instance in pairs(PL:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		instance:Destroy()
