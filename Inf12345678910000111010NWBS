@@ -6,9 +6,10 @@ while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
+game.workspace.FilteringEnabled = false
 end
 end)
-
+-- i know FilteringEnabled = false dose nothing but just becuase
 wait "0.01"
 
 spawn(function()
@@ -47,6 +48,7 @@ wait "1.1"
 
 -- Instances:
 
+local PLLL = game.Players.LocalPlayer.Character
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
 local Scrip = Instance.new("Frame")
@@ -1592,18 +1594,18 @@ end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
-   temp.Force = part:GetMass() * Vector3.new(0,OneWay.Text*-1,0)
+   temp.Force = part:GetMass() * Vector3.new(0,OGravity.Text*-1,0)
    temp.Parent = part
 end
 
-for i,v in ipairs(PL:GetDescendants()) do
+for i,v in ipairs(PLLL:GetDescendants()) do
    if v:IsA("Part") and v.Anchored == false then
            zeroGrav(v)
         
    end
 end
 
-PL.DescendantAdded:Connect(function(part)
+PLLL.DescendantAdded:Connect(function(part)
    if part:IsA("Part") and part.Anchored == false then
           zeroGrav(part)
    end
