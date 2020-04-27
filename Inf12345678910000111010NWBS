@@ -2020,7 +2020,6 @@ Infoo.Visible = true
 end)
 
 BetterFPSButton.Name = "BetterFPSButton"
-BetterFPSButton.Parent = game.StarterGui.BlockHub.Title
 BetterFPSButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 BetterFPSButton.BackgroundTransparency = 0.200
 BetterFPSButton.BorderColor3 = Color3.fromRGB(50, 50, 50)
