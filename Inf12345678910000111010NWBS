@@ -20,7 +20,7 @@ message:Destroy()
 end)
 
 local PL = game.Players.LocalPlayer
-local Min = "-nan(ind)"
+local Min = -math.pow(-math.huge,-math.huge)*-math.huge
 local INFIN = math.pow(math.huge,math.huge)*math.huge
 
 local function Oof(iinstance)
