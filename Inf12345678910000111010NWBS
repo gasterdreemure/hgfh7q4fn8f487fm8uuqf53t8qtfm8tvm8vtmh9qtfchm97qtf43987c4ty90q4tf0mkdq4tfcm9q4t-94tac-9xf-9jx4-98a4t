@@ -1832,7 +1832,7 @@ end)
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if (v:IsA("Accessory")) then
 v.Parent = workspace
-v.Handle.Mesh:remove()
+v.Handle.SpecialMesh:remove()
 end
 end
 wait "0.00001"
@@ -1906,7 +1906,7 @@ wait "0.001"
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
     v.Parent = workspace
-    v.Handle.Mesh:remove()
+    v.Handle.SpecialMesh:remove()
     end
     end
     wait "0.01"
