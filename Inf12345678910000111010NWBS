@@ -1831,6 +1831,7 @@ end)
 
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if (v:IsA("Accessory")) then
+v.Handle.CanCollide = true
 v.Parent = workspace
 v.Handle.SpecialMesh:remove()
 end
@@ -1905,6 +1906,7 @@ wait "0.001"
     do
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
+    v.Handle.CanCollide = true
     v.Parent = workspace
     v.Handle.SpecialMesh:remove()
     end
