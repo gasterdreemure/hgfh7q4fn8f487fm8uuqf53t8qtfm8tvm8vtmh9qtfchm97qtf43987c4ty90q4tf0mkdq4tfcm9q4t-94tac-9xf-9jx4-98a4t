@@ -2,7 +2,7 @@
 -- Version: 3.2
 
 -- Instances:
-
+print "Starting"
 local BlockHub = Instance.new("ScreenGui")
 local BetterFPSButton = Instance.new("TextButton")
 local Title = Instance.new("TextLabel")
