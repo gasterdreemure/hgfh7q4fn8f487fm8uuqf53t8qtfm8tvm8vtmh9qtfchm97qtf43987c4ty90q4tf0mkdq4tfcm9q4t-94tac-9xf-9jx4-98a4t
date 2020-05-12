@@ -1,4 +1,24 @@
 -- Gui to Lua
+local PLRS = game.Players.LocalPlayer
+local check = game.workspace:GetDescendants()
+local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
+for i = 1, 4 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       wait "0.1"
+       for i, v in ipairs(check) do
+        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then
+ 				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+-20,v.CFrame.Z)
+			end
+	 	end
+       end
+end
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.5"
 local ChangeLine1 = "*Fixed Gui For Smooth Dragging"
