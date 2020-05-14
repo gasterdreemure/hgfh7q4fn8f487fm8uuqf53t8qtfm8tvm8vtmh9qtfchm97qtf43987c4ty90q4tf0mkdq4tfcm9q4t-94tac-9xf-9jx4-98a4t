@@ -8,6 +8,7 @@ for i = 1, 4 do
        game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
+       game.workspace.FilteringEnabled = false
        end
        end)
        wait "0.1"
@@ -20,8 +21,8 @@ for i = 1, 4 do
        end
 end
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.5"
-local ChangeLine1 = "*Fixed Gui For Smooth Dragging"
+local VersionNumberV = "1.55"
+local ChangeLine1 = "*Added Block RKO"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -120,6 +121,7 @@ local InfoText4 = Instance.new("TextLabel")
 local OpenButton = Instance.new("TextButton")
 local RemoverBlocks = Instance.new("TextButton")
 local BlockSettings = Instance.new("TextButton")
+local BlockRKO = Instance.new("TextButton")
 local BHGS = Instance.new("Frame")
 local BetterFPSButton = Instance.new("TextButton")
 local BlockDiscarder = Instance.new("TextButton")
@@ -586,9 +588,10 @@ end
 end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
-   local temp = Instance.new("BodyForce")
-   temp.Force = part:GetMass() * Vector3.new(GravityX.Text,workspace.Gravity*GravityY.Text,GravityZ.Text)
    temp.Parent = part
+   local Ppart = temp.Parent
+   local temp = Instance.new("BodyForce")
+   temp.Force = Ppart:GetMass() * Vector3.new(GravityX.Text,workspace.Gravity*GravityY.Text,GravityZ.Text)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
@@ -793,10 +796,93 @@ print "Moving Blocks"
 
 end)
 
+BlockRKO.Name = "BlockRKO"
+BlockRKO.Parent = S2
+BlockRKO.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockRKO.Position = UDim2.new(0.141000003, 0, 0.374184847, 0)
+BlockRKO.Size = UDim2.new(0, 140, 0, 15)
+BlockRKO.Font = Enum.Font.SourceSans
+BlockRKO.Text = "RKO Out Of NoWhere"
+BlockRKO.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockRKO.TextSize = 14.000
+BlockRKO.MouseButton1Click:Connect(function()
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+
+wait "1"
+
+
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyForce") then return end
+   local temp = Instance.new("BodyForce")
+   temp.Force = part:GetMass() * Vector3.new(0,workspace.Gravity*4.6,0)
+   temp.Parent = part
+end
+
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyForce") then return end
+   local temp = Instance.new("BodyForce")
+   temp.Force = part:GetMass() * Vector3.new(0,workspace.Gravity*0,0)
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+wait "1.5"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		local Partt = instance.Parent
+		instance.Force = Partt:GetMass() * Vector3.new(0,workspace.Gravity*-1.6,0)
+	end
+end
+wait "1.3"
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+wait "0.001"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
+wait"0.1"
+print "Gravity Changed!"
+end)
+
 ForceRemover.Name = "ForceRemover"
 ForceRemover.Parent = S2
 ForceRemover.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-ForceRemover.Position = UDim2.new(0.141, 0,0.412, 0)
+ForceRemover.Position = UDim2.new(0.141, 0,0.475, 0)
 ForceRemover.Size = UDim2.new(0, 140, 0, 15)
 ForceRemover.Font = Enum.Font.SourceSans
 ForceRemover.Text = "Stop The Force(Buggy)"
@@ -857,7 +943,12 @@ for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 		instance:Destroy()
 	end
 end
-
+wait "0.05"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+		instance:Destroy()
+	end
+end
 print "Removed!"
 
 end)
