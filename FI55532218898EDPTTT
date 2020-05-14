@@ -24,7 +24,7 @@ end
 local VersionNumberV = "1.6"
 local ChangeLine1 = "*Added Block Nuke"
 local ChangeLine2 = "*Added Super Nova"
-local ChangeLine3 = ""
+local ChangeLine3 = "*All In the Misc Launcher*"
 local ChangeLine4 = ""
 -- Instances:
 print "Starting"
