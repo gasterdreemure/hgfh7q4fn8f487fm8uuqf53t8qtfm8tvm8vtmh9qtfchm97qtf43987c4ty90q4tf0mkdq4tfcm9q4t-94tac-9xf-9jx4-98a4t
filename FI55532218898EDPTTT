@@ -2213,6 +2213,15 @@ Script11.Font = Enum.Font.SourceSans
 Script11.Text = "Misc Laucher"
 Script11.TextColor3 = Color3.fromRGB(255, 255, 255)
 Script11.TextSize = 14.000
+Script11.MouseButton1Click:Connect(function()
+for _, instance in pairs(game.CoreGui.BlockHub.Title.Scrip.List:GetDescendants()) do
+	if instance:IsA("Frame") then
+		instance.Visible = false
+	end
+end
+wait "0.0001"
+S10.Visible = true
+end)
 
 S11.Name = "S11"
 S11.Parent = Script11
