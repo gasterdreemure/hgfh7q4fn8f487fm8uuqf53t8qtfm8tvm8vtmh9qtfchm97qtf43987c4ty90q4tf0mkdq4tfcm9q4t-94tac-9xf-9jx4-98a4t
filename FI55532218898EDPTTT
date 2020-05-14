@@ -442,7 +442,7 @@ S1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 S1.BackgroundTransparency = 1.000
 S1.Position = UDim2.new(0.00373707642, 0, 0, 0)
 S1.Size = UDim2.new(0, 91, 0, 15)
-S1.Visible = false
+S1.Visible = true
 
 GravityY.Name = "GravityY"
 GravityY.Parent = S1
@@ -2219,6 +2219,7 @@ S11.Parent = Script11
 S11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 S11.BackgroundTransparency = 1.000
 S11.Size = UDim2.new(0, 90, 0, 15)
+S11.Visible = false
 
 MiscPlayerName.Name = "MiscPlayerName"
 MiscPlayerName.Parent = S11
