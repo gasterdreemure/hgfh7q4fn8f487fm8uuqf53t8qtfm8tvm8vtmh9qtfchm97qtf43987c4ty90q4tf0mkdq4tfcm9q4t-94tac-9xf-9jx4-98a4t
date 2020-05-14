@@ -125,6 +125,11 @@ local BlockRKO = Instance.new("TextButton")
 local BHGS = Instance.new("Frame")
 local BetterFPSButton = Instance.new("TextButton")
 local BlockDiscarder = Instance.new("TextButton")
+local Script11 = Instance.new("TextButton")
+local S11 = Instance.new("Frame")
+local MiscPlayerName = Instance.new("TextBox")
+local MiscMover2 = Instance.new("TextButton")
+local MiscMover = Instance.new("TextButton")
 -- /\
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
@@ -2194,6 +2199,202 @@ for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 end
 
 print "Removed!"
+
+end)
+
+Script11.Name = "Script11"
+Script11.Parent = List
+Script11.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Script11.BackgroundTransparency = 0.200
+Script11.BorderColor3 = Color3.fromRGB(50, 50, 50)
+Script11.Position = UDim2.new(0, 0, 0.630252123, 0)
+Script11.Size = UDim2.new(0, 92, 0, 15)
+Script11.Font = Enum.Font.SourceSans
+Script11.Text = "Misc Laucher"
+Script11.TextColor3 = Color3.fromRGB(255, 255, 255)
+Script11.TextSize = 14.000
+
+S11.Name = "S11"
+S11.Parent = Script11
+S11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+S11.BackgroundTransparency = 1.000
+S11.Size = UDim2.new(0, 90, 0, 15)
+
+MiscPlayerName.Name = "MiscPlayerName"
+MiscPlayerName.Parent = S11
+MiscPlayerName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MiscPlayerName.Position = UDim2.new(-1.87411141, 0, -9.03733253, 0)
+MiscPlayerName.Size = UDim2.new(0, 141, 0, 27)
+MiscPlayerName.Font = Enum.Font.SourceSans
+MiscPlayerName.Text = "Short Player Name Here"
+MiscPlayerName.TextColor3 = Color3.fromRGB(0, 0, 0)
+MiscPlayerName.TextSize = 15.000
+MiscPlayerName.FocusLost:connect(function()
+for i,v in pairs(game.Players:GetChildren()) do
+if (string.sub(string.lower(v.Name),1,string.len(MiscPlayerName.Text))) == string.lower(MiscPlayerName.Text) then
+MiscPlayerName.Text = v.Name
+end
+end
+end)
+
+MiscMover2.Name = "MiscMover2"
+MiscMover2.Parent = S11
+MiscMover2.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MiscMover2.Position = UDim2.new(-1.87399995, 0, -6.02199984, 0)
+MiscMover2.Size = UDim2.new(0, 140, 0, 15)
+MiscMover2.Font = Enum.Font.SourceSans
+MiscMover2.Text = "Spawn Super Nova"
+MiscMover2.TextColor3 = Color3.fromRGB(255, 255, 255)
+MiscMover2.TextSize = 14.000
+MiscMover2.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+
+wait "0.01"
+
+local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyPosition") then return end
+   local temp = Instance.new("BodyPosition")
+   temp.Position = savepos
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+wait "0.00001"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		local Partt = instance.Parent
+		instance.MaxForce = Partt:GetMass() * Vector3.new(40000,100000,40000)
+		instance.D = 2000
+		instance.P = 10000
+		instance.Name = "Movemet"
+	end
+end
+
+wait "4"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		local Partt = instance.Parent
+		instance.MaxForce = Partt:GetMass() * Vector3.new(40000,100000,40000)
+		instance.D = 200
+		instance.P = -10000
+		instance.Name = "Movemet"
+	end
+end
+wait "4"
+for _, instance in pairs(game.workspace:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+print "Super Nova Spawned"
+end)
+
+MiscMover.Name = "MiscMover"
+MiscMover.Parent = S11
+MiscMover.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MiscMover.Position = UDim2.new(-1.87399995, 0, -7.01900005, 0)
+MiscMover.Size = UDim2.new(0, 140, 0, 15)
+MiscMover.Font = Enum.Font.SourceSans
+MiscMover.Text = "Nuke Em"
+MiscMover.TextColor3 = Color3.fromRGB(255, 255, 255)
+MiscMover.TextSize = 14.000
+MiscMover.MouseButton1Click:Connect(function()
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+
+wait "0.01"
+
+local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
+
+spawn(function()
+while true do
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("RunService").Stepped:wait()
+end
+end)
+local function zeroGrav(part)
+   if part:FindFirstChild("BodyPosition") then return end
+   local temp = Instance.new("BodyPosition")
+   temp.Position = savepos
+   temp.Parent = part
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(v)
+       end
+   end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+           zeroGrav(part)
+       end
+   end
+end)
+
+wait "0.005"
+
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		local Partt = instance.Parent
+		instance.MaxForce = Partt:GetMass() * Vector3.new(40000,100000,40000)
+		instance.D = 2000
+		instance.P = -20000
+		instance.Name = "Movemet"
+	end
+end
+
+wait "4"
+for _, instance in pairs(game:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then
+		instance.Parent.CanCollide = true
+	end
+end
+wait "0.0001"
+for _, instance in pairs(game.workspace:GetDescendants()) do
+	if instance:IsA("BodyPosition") then
+		instance:Destroy()
+	end
+end
+print "Nuked"
 
 end)
 
