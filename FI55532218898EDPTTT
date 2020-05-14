@@ -126,6 +126,14 @@ local BHGS = Instance.new("Frame")
 local BetterFPSButton = Instance.new("TextButton")
 local BlockDiscarder = Instance.new("TextButton")
 -- /\
+for _, instance in pairs(game.CoreGui:GetDescendants()) do
+	if instance:IsA("ScreenGui") then
+	    if instance.Name == "BlockHub" == true then
+		instance:Destroy()
+		end
+	end
+end
+
 BlockHub.Name = "BlockHub"
 BlockHub.Parent = game.CoreGui
 BlockHub.DisplayOrder = 999999998
@@ -814,8 +822,6 @@ end
 
 wait "1"
 
-
-
 spawn(function()
 while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
@@ -827,13 +833,6 @@ local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
    temp.Force = part:GetMass() * Vector3.new(0,workspace.Gravity*4.6,0)
-   temp.Parent = part
-end
-
-local function zeroGrav1(part)
-   if part:FindFirstChild("BodyForce") then return end
-   local temp = Instance.new("BodyForce")
-   temp.Force = part:GetMass() * Vector3.new(0,workspace.Gravity*0,0)
    temp.Parent = part
 end
 
@@ -858,22 +857,22 @@ wait "1.5"
 for _, instance in pairs(game:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		local Partt = instance.Parent
-		instance.Force = Partt:GetMass() * Vector3.new(0,workspace.Gravity*-4.2,0)
+		instance.Force = Partt:GetMass() * Vector3.new(0,workspace.Gravity*-7.5,0)
 	end
 end
 wait "1.3"
-for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
-       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav1(v)
-       end
-   end
-end
-wait "0.001"
 for _, instance in pairs(game:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		instance:Destroy()
 	end
+end
+
+for i,v in ipairs(workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+       v.Velocity = Vector3.new(v.Velocity.X,Partt:GetMass()*50,v.Velocity.Z)
+      end
+   end
 end
 wait"0.1"
 print "Gravity Changed!"
