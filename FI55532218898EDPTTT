@@ -2,7 +2,7 @@
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
-for i = 1, 4 do
+for i = 1, 3 do
        spawn(function()
        while true do
        game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
@@ -22,8 +22,8 @@ for i = 1, 4 do
 end
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.55"
-local ChangeLine1 = "*Added Block RKO"
-local ChangeLine2 = ""
+local ChangeLine1 = "*Added Block RKO!"
+local ChangeLine2 = "*Adding Nuke and Black Hole Soon*"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
