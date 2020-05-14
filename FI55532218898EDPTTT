@@ -21,9 +21,9 @@ for i = 1, 3 do
        end
 end
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.55"
-local ChangeLine1 = "*Added Block RKO!"
-local ChangeLine2 = "*Adding Nuke and Black Hole Soon*"
+local VersionNumberV = "1.6"
+local ChangeLine1 = "*Added Block Nuke"
+local ChangeLine2 = "*Added Super Nova"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
