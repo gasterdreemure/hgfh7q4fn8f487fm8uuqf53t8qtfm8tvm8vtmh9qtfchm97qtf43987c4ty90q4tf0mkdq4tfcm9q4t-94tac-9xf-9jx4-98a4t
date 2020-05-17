@@ -1,4 +1,6 @@
 -- Gui to Lua
+
+
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
@@ -2526,7 +2528,7 @@ Version.BackgroundTransparency = 0.500
 Version.Position = UDim2.new(0.057, 0, 0, 0)
 Version.Size = UDim2.new(0, 142, 0, 91)
 Version.Font = Enum.Font.SourceSans
-Version.Text = "Version V1.5"
+Version.Text = VersionNumberV
 Version.TextColor3 = Color3.fromRGB(255, 255, 255)
 Version.TextSize = 14.000
 Version.TextYAlignment = Enum.TextYAlignment.Top
