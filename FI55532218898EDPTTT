@@ -841,7 +841,7 @@ workspace.DescendantAdded:Connect(function(part)
    end
 end)
 
-wait "1.2"
+wait "0.2"
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
@@ -849,13 +849,13 @@ for _, instance in pairs(game.workspace:GetDescendants()) do
 		instance.Force = Partt:GetMass() * Vector3.new(0,workspace.Gravity*-7.5,0)
 	end
 end
-wait "1.2"
+wait "1.4"
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		instance:Destroy()
 	end
 end
-
+wait "0.5"
 for i,v in ipairs(workspace:GetDescendants()) do
    if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
