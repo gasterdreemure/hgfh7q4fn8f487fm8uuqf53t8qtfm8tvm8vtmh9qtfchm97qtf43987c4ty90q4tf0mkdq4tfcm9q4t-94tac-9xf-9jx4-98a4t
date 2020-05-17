@@ -2754,7 +2754,7 @@ for i,v in ipairs(PLLL:GetDescendants()) do
    end
 end
 
-PL.DescendantAdded:Connect(function(part)
+PLLL.DescendantAdded:Connect(function(part)
    if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
           zeroGrav(part)
    end
@@ -2766,8 +2766,7 @@ workspace.Gravity = OneWay.Text
 
 wait "0.1"
 
-local PL = game.Players.LocalPlayer.Character
-for _, instance in pairs(PL:GetDescendants()) do
+for _, instance in pairs(PLLL:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		instance:Destroy()
 	end
