@@ -1,6 +1,7 @@
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.workspace.FilteringEnabled = false
 wait ()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
@@ -177,12 +178,12 @@ end)
 -- i know FilteringEnabled = false dose nothing but just becuase
 wait "0.01"
 
-spawn(function()
-local message = Instance.new("Message",workspace)
-message.Text = "Bypassing The Matrix Please Wait"
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub"; 
+Text = "Bypassing The Matrix Please Wait"; 
+Duration = 1; 
+})
 wait (0.8)
-message:Destroy()
-end)
 
 local function Oof(iinstance)
         if(iinstance ~= PL) then
