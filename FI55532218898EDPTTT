@@ -1,6 +1,7 @@
 -- Gui to Lua
-
-
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+wait ()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
@@ -22,10 +23,25 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
             end)
         end
 end
-
+--             \/
+local heartbeat = game:GetService("RunService").Heartbeat
+spawn(function()
+    while true do heartbeat:Wait()
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v == game.Players.LocalPlayer == false then
+            game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+            game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+            v.MaximumSimulationRadius = Min
+            v.SimulationRadius = Min
+            game:GetService("RunService").Stepped:wait()
+    end
+end
+end
+end)
+--            /\ Part Made by TomQ
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.61"
-local ChangeLine1 = "*Fixed Bug"
+local VersionNumberV = "1.62"
+local ChangeLine1 = "*Fixed Other Bug"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -1680,8 +1696,10 @@ OGravity.TextColor3 = Color3.fromRGB(0, 0, 0)
 OGravity.TextSize = 14.000
 OGravity.TextWrapped = true
 OGravity.Text = game.workspace.Gravity
+
 local PLLL = game.Players.LocalPlayer.Character
 local PL = game.Players.LocalPlayer.Character
+
 OneWayChange.Name = "OneWayChange"
 OneWayChange.Parent = S7
 OneWayChange.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
@@ -1713,7 +1731,7 @@ end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
-   temp.Force = part:GetMass() * Vector3.new(0,OGravity.Text*-1,0)
+   temp.Force = part:GetMass() * Vector3.new(0,OGravity.Text*-1 - OneWay.Text,0)
    temp.Parent = part
 end
 
