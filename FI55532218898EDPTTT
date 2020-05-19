@@ -2468,7 +2468,7 @@ ClosedList.TextColor3 = Color3.fromRGB(0, 0, 0)
 ClosedList.TextScaled = true
 ClosedList.TextSize = 14.000
 ClosedList.TextWrapped = true
-ClosedList.Visible = true
+ClosedList.Visible = false
 ClosedList.MouseButton1Click:Connect(function()
 OpenedList.Visible = true
 ClosedList.Visible = false
@@ -2496,7 +2496,7 @@ OpenedList.TextColor3 = Color3.fromRGB(0, 0, 0)
 OpenedList.TextScaled = true
 OpenedList.TextSize = 14.000
 OpenedList.TextWrapped = true
-OpenedList.Visible = false
+OpenedList.Visible = true
 OpenedList.MouseButton1Click:Connect(function()
 OpenedList.Visible = false
 ClosedList.Visible = true
@@ -2709,11 +2709,9 @@ CloseButton.Visible = true
 Scrip.Visible = true
 Info.Visible = true
 end)
--- things i forgot when i first made the gui
 
--- Ye
 wait "0.1"
-local StealthMode = true -- If game has an anticheat that checks the logs
+local StealthMode = true
 
 local Indicator
 
