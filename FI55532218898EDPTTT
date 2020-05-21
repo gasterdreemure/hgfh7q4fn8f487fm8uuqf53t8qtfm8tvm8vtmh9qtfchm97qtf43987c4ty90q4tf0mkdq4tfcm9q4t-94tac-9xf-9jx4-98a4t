@@ -364,7 +364,7 @@ l.FogEnd = 9e9
 l.Brightness = 1.5
 settings().Rendering.QualityLevel = "Level05"
 for i, v in pairs(g:GetDescendants()) do
-    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+    if v:IsA("BasePart" or "UnionOperation" or "Model") then
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
