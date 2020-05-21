@@ -7,7 +7,7 @@ local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 local PL = game.Players.LocalPlayer
-local Min = "-1e6"
+local Min = -1e6*-1e6
 local INFIN = math.pow(math.huge,math.huge)*math.huge
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
@@ -41,8 +41,8 @@ end
 end)
 --            /\ Part Made by TomQ
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.65"
-local ChangeLine1 = "*Lowered Block Teleport Lag"
+local VersionNumberV = "1.66"
+local ChangeLine1 = "*Update SemiPerm Lag Help script"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -361,25 +361,31 @@ t.WaterReflectance = 0
 t.WaterTransparency = 0
 l.GlobalShadows = false
 l.FogEnd = 9e9
-l.Brightness = 0.3
+l.Brightness = 1.5
 settings().Rendering.QualityLevel = "Level05"
-for i,v in pairs(g:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") then
-       v.Material = "Plastic"
-v.Reflectance = 0
-elseif v:IsA("Decal") and decalsyeeted then
-v.Transparency = 1
-elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
-v.Lifetime = NumberRange.new(0)
-elseif v:IsA("Explosion") then
-v.BlastPressure = 1
-v.BlastRadius = 1
-   end
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
 end
-for i,e in pairs(l:GetChildren()) do
-if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
-e.Enabled = false
-end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
 end
 print "Fixed"
 end)
