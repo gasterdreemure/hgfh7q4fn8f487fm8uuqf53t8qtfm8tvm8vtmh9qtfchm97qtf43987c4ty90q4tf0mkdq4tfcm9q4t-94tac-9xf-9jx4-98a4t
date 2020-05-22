@@ -368,7 +368,7 @@ for i, v in pairs(g:GetDescendants()) do
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
-        v.Transparency = 1
+        v.Transparency = 0.2
     elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
         v.Lifetime = NumberRange.new(0)
     elseif v:IsA("Explosion") then
@@ -1032,6 +1032,7 @@ for i = 1, 1 do
         if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+15,v.CFrame.Z)
+                v.Velocity = Vector3.new(0,0,0)
 			end
 	 	end
        end
@@ -1083,6 +1084,7 @@ for i = 1, 1 do
         if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+                v.Velocity = Vector3.new(0,0,0)
 			end
 	 	end
     end
@@ -1125,6 +1127,7 @@ for i = 1, 1 do
         if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+                v.Velocity = Vector3.new(0,0,0)
  				wait ""
 			end
 	 	end
@@ -1172,6 +1175,7 @@ for i = 1, 1 do
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
  				v.Velocity = -cam*0.5*v:GetMass()*0.4
+                v.RotVelocity = Vector3.new(0,0,0)
  				wait ""
 			end
 	 	end
@@ -1557,14 +1561,11 @@ game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.h
 game:GetService("RunService").Stepped:wait()
 end
 end)
-local function zeroGrav(part)
-   part.Velocity = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
-end
- 
+local Velocityyy = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
 for i,v in ipairs(workspace:GetDescendants()) do
    if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav(v)
+           v.Velocity = Velocityyy
        end
    end
 end
@@ -1572,7 +1573,7 @@ end
 workspace.DescendantAdded:Connect(function(part)
    if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav(part)
+           v.Velocity = Velocityyy
        end
    end
 end)
@@ -1609,14 +1610,11 @@ game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.h
 game:GetService("RunService").Stepped:wait()
 end
 end)
-local function zeroGrav(part)
-   part.RotVelocity = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
-end
- 
+local RotVelocityyy = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
 for i,v in ipairs(workspace:GetDescendants()) do
    if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav(v)
+           v.RotVelocity = RotVelocityyy
        end
    end
 end
@@ -1624,7 +1622,7 @@ end
 workspace.DescendantAdded:Connect(function(part)
    if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav(part)
+           v.RotVelocity = RotVelocityyy
        end
    end
 end)
