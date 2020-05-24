@@ -1,14 +1,14 @@
 -- Gui to Lua
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game.workspace.FilteringEnabled = false
 wait ()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 local PL = game.Players.LocalPlayer
-local Min = -1e6*-1e6
-local INFIN = math.pow(math.huge,"1e6")
+local Min = "-999999995904"
+local INFIN = math.pow(math.huge,math.huge)*math.huge
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= PL) then
@@ -30,8 +30,8 @@ spawn(function()
     while true do heartbeat:Wait()
     for i,v in pairs(game.Players:GetPlayers()) do
         if v == game.Players.LocalPlayer == false then
-            game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-            game.Players.LocalPlayer.SimulationRadius = INFIN
+            game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+            game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
             v.MaximumSimulationRadius = Min
             v.SimulationRadius = Min
             game:GetService("RunService").Stepped:wait()
@@ -41,8 +41,8 @@ end
 end)
 --            /\ Part Made by TomQ
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.70"
-local ChangeLine1 = "*Updated Just Becuase "
+local VersionNumberV = "1.69"
+local ChangeLine1 = "*Updated Just Becuase"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -169,8 +169,8 @@ local pll = game:GetService("Players").LocalPlayer
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 game.workspace.FilteringEnabled = false
 end
@@ -405,8 +405,8 @@ local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 for i = 1, 1 do
        spawn(function()
        while true do
-       game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-       game.Players.LocalPlayer.SimulationRadius = INFIN
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        end
        end)
@@ -602,8 +602,8 @@ wait "0.4"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -708,8 +708,8 @@ local PLRS = game.Players.LocalPlayer
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -772,8 +772,8 @@ local savepos = game:GetService("Players")[BlockPlayerName.Text].Character.Human
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -829,8 +829,8 @@ wait "1"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1023,8 +1023,8 @@ local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 for i = 1, 1 do
        spawn(function()
        while true do
-       game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-       game.Players.LocalPlayer.SimulationRadius = INFIN
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        end
        end)
@@ -1075,8 +1075,8 @@ local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        spawn(function()
        while true do
-       game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-       game.Players.LocalPlayer.SimulationRadius = INFIN
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        end
        end)
@@ -1118,8 +1118,8 @@ local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        spawn(function()
        while true do
-       game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-       game.Players.LocalPlayer.SimulationRadius = INFIN
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        end
        end)
@@ -1167,8 +1167,8 @@ local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , 3, ca.CFrame.Z+-ca.Focus.Z)
 local arget = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-       game.Players.LocalPlayer.SimulationRadius = INFIN
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
@@ -1235,8 +1235,8 @@ wait "0.5"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1389,8 +1389,8 @@ wait "0.001"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1556,8 +1556,8 @@ wait "0.4"
  
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1605,8 +1605,8 @@ wait "0.4"
  
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1707,8 +1707,8 @@ wait "0.01"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1764,8 +1764,8 @@ end
 wait "0.01"
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1898,8 +1898,8 @@ wait "0.4"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -1998,8 +1998,8 @@ AnchorBlocks.MouseButton1Click:Connect(function()
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2083,8 +2083,8 @@ HatLuanch.MouseButton1Click:Connect(function()
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2160,8 +2160,8 @@ UnHatLuanch.TextSize = 14.000
 UnHatLuanch.MouseButton1Click:Connect(function()
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2299,8 +2299,8 @@ local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.Humano
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2373,8 +2373,8 @@ local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.Humano
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2748,8 +2748,8 @@ wait "0.01"
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -2789,8 +2789,8 @@ end
 wait "0.01"
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
-game.Players.LocalPlayer.SimulationRadius = INFIN
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
