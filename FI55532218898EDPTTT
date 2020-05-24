@@ -154,11 +154,19 @@ local MiscMover = Instance.new("TextButton")
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
 	    if instance.Name == "BlockHub" == true then
+        workspace.Gravity = OGravity.Text
+        wait ()
 		instance:Destroy()
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Block Hub"; 
+        Text = "Removed Old Instance"; 
+        Duration = 0.5; 
+        })
+        wait (0.8)
 		end
 	end
 end
-
+wait (0.001)
 BlockHub.Name = "BlockHub"
 BlockHub.Parent = game.CoreGui
 BlockHub.DisplayOrder = 999999998
@@ -1103,7 +1111,6 @@ BlockTeleporter2.Text = "Slow Teleport"
 BlockTeleporter2.TextColor3 = Color3.fromRGB(255, 255, 255)
 BlockTeleporter2.TextSize = 14.000
 BlockTeleporter2.MouseButton1Click:Connect(function()
-
 spawn(function()
 local message = Instance.new("Message",workspace)
 message.Text = "Slow Teleporting Please Wait"
@@ -1148,6 +1155,13 @@ MiniGun.Text = "Mini Gun Mode!"
 MiniGun.TextColor3 = Color3.fromRGB(255, 255, 255)
 MiniGun.TextSize = 14.000
 MiniGun.MouseButton1Click:Connect(function()
+spawn(function()
+local message = Instance.new("Message",workspace)
+message.Text = "Starting Mini Gun Please Wait"
+wait (1)
+message:Destroy()
+end)
+
 local character = game.Players.LocalPlayer.Character
     if noclipp then
         for _, v in pairs(character:GetDescendants()) do
@@ -1244,6 +1258,9 @@ local function zeroGrav(part)
    if part:FindFirstChild("BodyGyro") then return end
    local temp = Instance.new("BodyGyro")
    temp.Parent = part
+   temp.D = "500"
+   temp.P = "3000"
+   temp.MaxTorque = Vector3.new(400000, 0, 400000)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
@@ -1252,16 +1269,6 @@ for i,v in ipairs(workspace:GetDescendants()) do
            zeroGrav(v)
        end
    end
-end
-
-wait "0.01"
-
-for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyGyro") then
-	    instance.D = "500"
-		instance.P = "3000"
-		instance.MaxTorque = Vector3.new(400000, 0, 400000)
-	end
 end
 
 wait"0.01"
@@ -1400,6 +1407,7 @@ local function zeroGrav(part)
    temp.Parent = part
    temp.MaxTorque = part:GetMass() * Vector3.new(4000,4000,4000)
    temp.P = 2000
+   temp.Name = "Spin"
    temp.AngularVelocity = Vector3.new(SpinX.Text,SpinY.Text,SpinZ.Text)
 end
 
@@ -1419,21 +1427,8 @@ workspace.DescendantAdded:Connect(function(part)
    end
 end)
 
-wait "0.005"
-
-for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyAngularVelocity") then
-		local Partt = instance.Parent
-		instance.MaxTorque = Partt:GetMass() * Vector3.new(4000,4000,4000)
-		instance.P = 2000
-		instance.AngularVelocity = Vector3.new(SpinX.Text,SpinY.Text,SpinZ.Text)
-		instance.Name = "Spin"
-	end
-end
-
 wait"0.01"
 print "Spining Blocks"
-
 end)
 
 NoBlockSpin.Name = "NoBlockSpin"
@@ -1716,8 +1711,8 @@ end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
-   temp.Force = part:GetMass() * Vector3.new(0,OGravity.Text*-1 - OneWay.Text,0)
    temp.Parent = part
+   temp.Force = part:GetMass() * Vector3.new(0,OGravity.Text*-1 - OneWay.Text,0)
 end
 
 for i,v in ipairs(PLLL:GetDescendants()) do
