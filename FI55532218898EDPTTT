@@ -7,7 +7,7 @@ local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 local PL = game.Players.LocalPlayer
-local Min = "-999999995904"*math.huge
+local Min = "-999999995904"*904
 local INFIN = math.pow(math.huge,math.huge)*math.huge
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
