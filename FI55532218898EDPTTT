@@ -1398,7 +1398,7 @@ local function zeroGrav(part)
    if part:FindFirstChild("BodyAngularVelocity") then return end
    local temp = Instance.new("BodyAngularVelocity")
    temp.Parent = part
-   temp.MaxTorque = Partt:GetMass() * Vector3.new(4000,4000,4000)
+   temp.MaxTorque = part:GetMass() * Vector3.new(4000,4000,4000)
    temp.P = 2000
    temp.AngularVelocity = Vector3.new(SpinX.Text,SpinY.Text,SpinZ.Text)
 end
