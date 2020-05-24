@@ -30,8 +30,8 @@ spawn(function()
     while true do heartbeat:Wait()
     for i,v in pairs(game.Players:GetPlayers()) do
         if v == game.Players.LocalPlayer == false then
-            game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
-            game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+            game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
+            game.Players.LocalPlayer.SimulationRadius = INFIN
             v.MaximumSimulationRadius = Min
             v.SimulationRadius = Min
             game:GetService("RunService").Stepped:wait()
@@ -169,8 +169,8 @@ local pll = game:GetService("Players").LocalPlayer
 
 spawn(function()
 while true do
-game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
-game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
+game.Players.LocalPlayer.SimulationRadius = INFIN
 game:GetService("RunService").Stepped:wait()
 game.workspace.FilteringEnabled = false
 end
