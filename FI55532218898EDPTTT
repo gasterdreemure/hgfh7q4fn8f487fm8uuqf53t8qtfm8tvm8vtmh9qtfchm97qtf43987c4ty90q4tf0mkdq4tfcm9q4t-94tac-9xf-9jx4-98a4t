@@ -1,3 +1,6 @@
+if not game:IsLoaded() then 
+    game.Loaded:Wait()
+end
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
 wait ()
@@ -53,14 +56,16 @@ spawn(function()
     end
 end)
 --            /\ Part Made by TomQ
+
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.72"
-local ChangeLine1 = "*Updated Script Power!*"
+local ChangeLine1 = "*Updated Script Power!"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
 print "Starting"
+local Valuee = Instance.new("NumberValue")
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
 local Scrip = Instance.new("Frame")
@@ -167,7 +172,7 @@ local MiscMover = Instance.new("TextButton")
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
 	    if instance.Name == "BlockHub" == true then
-        workspace.Gravity = game:GetService("CoreGui").BlockHub.Title.Scrip.List.Script7.S7.OGravity
+        workspace.Gravity = game:GetService("CoreGui").GravityValue
         wait ()
 		instance:Destroy()
         game.StarterGui:SetCore("SendNotification", {
@@ -175,10 +180,17 @@ for _, instance in pairs(game.CoreGui:GetDescendants()) do
         Text = "Removed Old Instance"; 
         Duration = 0.5; 
         })
-        wait (0.8)
-		end
-	end
-end
+        wait (0.08)
+        game:GetService("CoreGui").GravityValue:Destroy()
+	 end
+   end
+ end
+wait (0.001)
+Valuee.Name = "GravityValue"
+Valuee.Parent = game.CoreGui
+Valuee.RobloxLocked = true
+Valuee.Value = game.workspace.Gravity
+
 wait (0.001)
 BlockHub.Name = "BlockHub"
 BlockHub.Parent = game.CoreGui
