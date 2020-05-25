@@ -172,13 +172,13 @@ local MiscMover = Instance.new("TextButton")
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
 	    if instance.Name == "BlockHub" == true then
-        workspace.Gravity = game:GetService("CoreGui").GravityValue
+        workspace.Gravity = game:GetService("CoreGui").GravityValue.Value
         wait ()
 		instance:Destroy()
         game.StarterGui:SetCore("SendNotification", {
-        Title = "Block Hub"; 
+        Title = "Block Hub";
         Text = "Removed Old Instance"; 
-        Duration = 0.5; 
+        Duration = 0.5;
         })
         wait (0.08)
         game:GetService("CoreGui").GravityValue:Destroy()
