@@ -55,7 +55,7 @@ end)
 --            /\ Part Made by TomQ
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.72"
-local ChangeLine1 = "*Updated Script Power!"
+local ChangeLine1 = "*Updated Script Power!*"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -1685,7 +1685,7 @@ OneWay.Text = "0"
 OneWay.TextColor3 = Color3.fromRGB(0, 0, 0)
 OneWay.TextSize = 16.000
 OneWay.FocusLost:connect(function()
-if OneWay.Text == nil == true then
+if OneWay.Text == "" == true then
 OneWay.Text = "0"
 end
 end)
