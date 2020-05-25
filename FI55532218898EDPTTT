@@ -55,7 +55,7 @@ end)
 --            /\ Part Made by TomQ
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.72"
-local ChangeLine1 = "*Updated Script Power!*"
+local ChangeLine1 = "*Updated Script Power!"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
