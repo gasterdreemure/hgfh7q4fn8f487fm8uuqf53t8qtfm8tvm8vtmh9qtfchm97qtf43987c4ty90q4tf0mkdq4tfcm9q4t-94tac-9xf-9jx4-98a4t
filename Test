@@ -1,1 +1,6 @@
-local Testtt = true
+local Valuee = Instance.new("NumberValue")
+
+Valuee.Name = "GravityValue"
+Valuee.Parent = game.CoreGui
+Valuee.RobloxLocked = true
+Valuee.Value = "100"
