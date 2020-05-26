@@ -1,0 +1,3 @@
+local Testtt = false
+
+print (Testtt)
