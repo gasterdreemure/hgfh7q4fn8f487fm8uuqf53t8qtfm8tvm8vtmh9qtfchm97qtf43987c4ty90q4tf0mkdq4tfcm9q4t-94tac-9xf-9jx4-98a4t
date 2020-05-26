@@ -1,6 +1,6 @@
 local Valuee = Instance.new("NumberValue")
 
-Valuee.Name = "GravityValue"
+Valuee.Name = "Valuee"
 Valuee.Parent = game.CoreGui
 Valuee.RobloxLocked = true
 Valuee.Value = "100"
