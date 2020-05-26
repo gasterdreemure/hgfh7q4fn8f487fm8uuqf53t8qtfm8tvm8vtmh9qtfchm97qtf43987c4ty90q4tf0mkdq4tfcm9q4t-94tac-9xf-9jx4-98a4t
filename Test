@@ -3,4 +3,4 @@ local Valuee = Instance.new("NumberValue")
 Valuee.Name = "Valuee"
 Valuee.Parent = game.CoreGui
 Valuee.RobloxLocked = true
-Valuee.Value = "100"
+Valuee.Value = "99"
