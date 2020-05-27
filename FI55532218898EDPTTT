@@ -58,9 +58,9 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.735"
-local ChangeLine1 = "*Updated Block Part Finder"
-local ChangeLine2 = "*Updated Block Teleport"
+local VersionNumberV = "1.75"
+local ChangeLine1 = "*Added NPC Teleporter"
+local ChangeLine2 = "*ReAdded Minimize/Maximize"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -168,6 +168,7 @@ local S11 = Instance.new("Frame")
 local MiscPlayerName = Instance.new("TextBox")
 local MiscMover2 = Instance.new("TextButton")
 local MiscMover = Instance.new("TextButton")
+local NPCTeleport = Instance.new("TextButton")
 -- /\
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
@@ -1049,7 +1050,7 @@ S3.Visible = false
 RemoverBlocks.Name = "RemoverBlocks"
 RemoverBlocks.Parent = S3
 RemoverBlocks.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-RemoverBlocks.Position = UDim2.new(-1.86903882, 0, 4.19999981, 0)
+RemoverBlocks.Position = UDim2.new(-1.86903882, 0, 6, 0)
 RemoverBlocks.Size = UDim2.new(0, 140, 0, 15)
 RemoverBlocks.Font = Enum.Font.SourceSans
 RemoverBlocks.Text = "Remove All Blocks"
@@ -1059,7 +1060,7 @@ RemoverBlocks.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
-for i = 1, 1 do
+for i = 1, 2 do
        spawn(function()
        while true do
        game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
@@ -1175,6 +1176,43 @@ print "Teleporting!"
 end
 end
 end)
+
+NPCTeleport.Name = "NPCTeleport"
+NPCTeleport.Parent = S3
+NPCTeleport.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+NPCTeleport.Position = UDim2.new(-1.86899996, 0, 4.19999981, 0)
+NPCTeleport.Size = UDim2.new(0, 140, 0, 15)
+NPCTeleport.Font = Enum.Font.SourceSans
+NPCTeleport.Text = "Teleport NPCs"
+NPCTeleport.TextColor3 = Color3.fromRGB(255, 255, 255)
+NPCTeleport.TextSize = 14.000
+NPCTeleport.MouseButton1Click:Connect(function()
+local PLRS = game.Players.LocalPlayer
+local targetname = TelePlayerName.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
+            if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name == "HumanoidRootPart")and(v.Name == "LeftArm")and(v.Name == "RightArm")and(v.Name == "Tip")and(v.Name == "Weld")and(v.Name == "light")and(v.Name == "Ammo")and(v.Name == "Body")and(v.Name == "Center")and(v.Name == "Taser")and(v.Name == "Handcuffs")and(v.Name == "UpperTorso")and(v.Name == "LowerTorso")and(v.Name == "LeftFoot")and(v.Name == "RightFoot")and(v.Name == "LeftHand")and(v.Name == "RightHand")and(v.Name == "RightUpperArm")and(v.Name == "LeftLowerArm")and(v.Name == "RightLowerArm")and(v.Name == "RightUpperLeg")and(v.Name == "LeftUpperLeg")and(v.Name == "LeftLowerLeg")and(v.Name == "RightLowerLeg")and(v.Name == "HumanoidRootPart")and(v.Name == "Torso")and(v.Name == "Right Leg")and(v.Name == "Right Arm")and(v.Name == "Left Arm")and(v.Name == "Left Leg") then
+ 			 v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+              v.Velocity = Vector3.new(0,0,0)
+			end
+	 	  end
+        end
+      end
+    end
+  end
+end)
+
 local noclipp = false
 MiniGun.Name = "MiniGun"
 MiniGun.Parent = S3
@@ -1218,15 +1256,15 @@ for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
- 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
- 				v.Velocity = -cam*0.5*v:GetMass()*0.4
-                v.RotVelocity = Vector3.new(0,0,0)
- 				wait ""
-			end
+            v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 			 v.Velocity = -cam*0.5*v:GetMass()*0.4
+              v.RotVelocity = Vector3.new(0,0,0)
+ 			wait ""
+		  end
 	 	end
+      end
     end
-end
-end
+  end
 end)
 
 Script4.Name = "Script4"
@@ -2519,7 +2557,7 @@ CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CloseButton.TextScaled = true
 CloseButton.TextSize = 14.000
 CloseButton.TextWrapped = true
-CloseButton.Visible = false
+CloseButton.Visible = true
 CloseButton.MouseButton1Click:Connect(function()
 OpenButton.Visible = true
 CloseButton.Visible = false
