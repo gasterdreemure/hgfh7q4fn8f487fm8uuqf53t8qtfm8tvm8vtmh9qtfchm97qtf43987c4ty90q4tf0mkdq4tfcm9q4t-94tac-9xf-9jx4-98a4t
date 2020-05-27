@@ -58,8 +58,8 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.72"
-local ChangeLine1 = "*Updated Script Power!*"
+local VersionNumberV = "1.73"
+local ChangeLine1 = "*Updated Block Part Finder"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -403,7 +403,7 @@ l.FogEnd = 9e9
 l.Brightness = 1.5
 settings().Rendering.QualityLevel = "Level05"
 for i, v in pairs(g:GetDescendants()) do
-    if v:IsA("BasePart" or "UnionOperation" or "Model") then
+    if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") then
         v.Material = "Plastic"
         v.Reflectance = 0
     elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
@@ -451,7 +451,7 @@ for i = 1, 1 do
        end)
        wait "0.1"
        for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+-20,v.CFrame.Z)
 			end
@@ -654,7 +654,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -662,7 +662,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
 
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(part)
        end
@@ -766,7 +766,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
            zeroGrav(v)
        end
@@ -775,7 +775,7 @@ end
 end
 
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
            zeroGrav(part)
        end
@@ -824,7 +824,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -881,7 +881,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -911,7 +911,7 @@ for _, instance in pairs(game.workspace:GetDescendants()) do
 end
 wait "0.5"
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
        v.Velocity = Vector3.new(v.Velocity.X,Partt:GetMass()*50,v.Velocity.Z)
       end
@@ -928,7 +928,7 @@ local function Fix(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            Fix(v)
        end
@@ -1068,7 +1068,7 @@ for i = 1, 1 do
        end
        end)
        for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+15,v.CFrame.Z)
                 v.Velocity = Vector3.new(0,0,0)
@@ -1120,7 +1120,7 @@ for i = 1, 1 do
        end
        end)
        for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
                 v.Velocity = Vector3.new(0,0,0)
@@ -1162,7 +1162,7 @@ for i = 1, 1 do
        end
        end)
        for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
                 v.Velocity = Vector3.new(0,0,0)
@@ -1216,7 +1216,7 @@ for i = 1, 1 do
        game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
        game:GetService("RunService").Stepped:wait()
        for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
  				v.Velocity = -cam*0.5*v:GetMass()*0.4
@@ -1295,7 +1295,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -1443,7 +1443,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -1451,7 +1451,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
 
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(part)
        end
@@ -1589,7 +1589,7 @@ end
 end)
 local Velocityyy = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            v.Velocity = Velocityyy
        end
@@ -1597,7 +1597,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
  
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            v.Velocity = Velocityyy
        end
@@ -1638,7 +1638,7 @@ end
 end)
 local RotVelocityyy = Vector3.new(BoostX.Text,BoostY.Text,BoostZ.Text)
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            v.RotVelocity = RotVelocityyy
        end
@@ -1646,7 +1646,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
  
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            v.RotVelocity = RotVelocityyy
        end
@@ -1752,14 +1752,14 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(PLLL:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
            zeroGrav(v)
         
    end
 end
 
 PL.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
           zeroGrav(part)
    end
 end)
@@ -1942,7 +1942,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -1950,7 +1950,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
 
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(part)
        end
@@ -2042,7 +2042,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "Head")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "Head")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")and(v.Name ~= "Handle")and(v.Name ~= "LeftUpperArm")then
            zeroGrav(v)
        end
@@ -2158,7 +2158,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false and(v.Name == "Handle")then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false and(v.Name == "Handle")then
        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
            zeroGrav(v)
        end
@@ -2167,7 +2167,7 @@ end
 end
 
 workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and(part.Name == "Handle")then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false and(part.Name == "Handle")then
        if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then
            zeroGrav(part)
        end
@@ -2343,7 +2343,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -2417,7 +2417,7 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
        if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
            zeroGrav(v)
        end
@@ -2793,14 +2793,14 @@ local function zeroGrav(part)
 end
 
 for i,v in ipairs(PLLL:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model") and v.Anchored == false then
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and v.Anchored == false then
            zeroGrav(v)
         
    end
 end
 
 PLLL.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false then
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart") and part.Anchored == false then
           zeroGrav(part)
    end
 end)
