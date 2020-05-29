@@ -1,10 +1,10 @@
 keys = {
-["tSbYF8i4D6q9"] = true, 
-["89tQE9GB3MSP"] = true,
-["QHHJDkYL85d4"] = true,
-["k6hYLzxHKi55"] = true,
-["jkbde5qEPzg3"] = true,
-["XkdbKEtixEc6"] = true,
-["a3TCqdDGq7h9"] = true
+[tSbYF8i4D6q9] = true, 
+[T9tQE9GB3MSP] = true,
+[QHHJDkYL85d4] = true,
+[k6hYLzxHKi55] = true,
+[jkbde5qEPzg3] = true,
+[XkdbKEtixEc6] = true,
+[a3TCqdDGq7h9] = true
 }
 return keys
