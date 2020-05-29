@@ -13,7 +13,6 @@ local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 local PL = game.Players.LocalPlayer
 local Min = -math.pow(-math.huge,-math.huge)*-math.huge*-math.pow(-math.huge,-math.huge)*-math.huge
 local INFIN = math.pow(math.huge,math.huge)*math.huge
-
 local NetworkAccess = coroutine.create(function()
     spawn(function()
     while true do
