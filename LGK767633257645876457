@@ -1,1 +1,9 @@
-keys = { [tSbYF8i4D6q9] = true, [T9tQE9GB3MSP] = true,[QHHJDkYL85d4] = true,[k6hYLzxHKi55] = true,[jkbde5qEPzg3] = true,[XkdbKEtixEc6] = true,[a3TCqdDGq7h9] = true} return keys
+keys = { 
+[79833977744565] = true, 
+[39588577768438] = true,
+[84786556499585] = true,
+[43668464443994] = true,
+[34489737655797] = true,
+[73849734874463] = true,
+[73975668947986] = true
+}return keys
