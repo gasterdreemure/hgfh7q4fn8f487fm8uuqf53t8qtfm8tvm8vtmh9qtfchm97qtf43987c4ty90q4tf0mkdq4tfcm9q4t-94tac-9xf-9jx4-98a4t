@@ -58,10 +58,10 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.75"
-local ChangeLine1 = "*Added NPC Teleporter"
-local ChangeLine2 = "*ReAdded Minimize/Maximize"
-local ChangeLine3 = ""
+local VersionNumberV = "1.76"
+local ChangeLine1 = "*Strengthened Remove Blocks"
+local ChangeLine2 = "*Sorry for not updating im just lazy*"
+local ChangeLine3 = "*Starting to work on Game scripts*"
 local ChangeLine4 = ""
 -- Instances:
 print "Starting"
