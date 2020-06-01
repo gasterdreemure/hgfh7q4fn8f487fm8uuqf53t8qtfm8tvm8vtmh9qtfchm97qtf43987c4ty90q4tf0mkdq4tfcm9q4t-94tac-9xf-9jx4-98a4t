@@ -1,28 +1,36 @@
 if not game:IsLoaded() then 
     game.Loaded:Wait()
 end
-wait (0)
-spawn(function()
-while true do
-wait "0.5"
-for _, instance in pairs(workspace:GetDescendants()) do
+wait ()
+
+for _, instance in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if instance:IsA("LocalScript") then
         instance:Destroy()
-	  end
-   end
+	end
 end
-end)
+
+wait(0.4)
+
+for _, instance in pairs(game:GetService("Workspace"):GetDescendants()) do
+	if instance:IsA("LocalScript") then
+        instance.RobloxLocked = true
+        instance.Disabled = true
+	end
+end
 
 spawn(function()
 while true do
-wait "0.5"
+wait "1.2"
 for _, instance in pairs(game:GetService("Players").LocalPlayer:GetDescendants()) do
-	if instance:IsA("LocalScript") then
-        instance:Destroy()
+	if instance:IsA("LocalScript") then if(instance.Name ~= "ChatScript")and(instance.Name ~= "BubbleChat")and(instance.Name ~= "FindItemsAndAssignListeners")and(instance.Name ~= "SetUpRagdollLS")and(instance.Name ~= "PlayerScriptsLoader")and(instance.Name ~= "RbxCharacterSounds")and(instance.Name ~= "RequestRecievedScript")and(instance.Name ~= "RequestRecievedScript")
+        instance.RobloxLocked = true
+        instance.Disabled = true
 	  end
    end
 end
+end
 end)
+
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
 wait ()
@@ -38,6 +46,8 @@ local INFIN = math.pow(math.huge,math.huge)*math.huge
 local NetworkAccess = coroutine.create(function()
     spawn(function()
     while true do
+    game:GetService("RunService").Stepped:wait()
+    game:GetService("RunService").Heartbeat:wait()
     settings().Physics.AllowSleep = false
     game:GetService("Players").LocalPlayer.MaximumSimulationRadius = INFIN
     game:GetService("Players").LocalPlayer.SimulationRadius = INFIN
@@ -82,7 +92,7 @@ end)
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.76"
 local ChangeLine1 = "*Strengthened Remove Blocks"
-local ChangeLine2 = "*Fixed So Game Cant Detect Script"
+local ChangeLine2 = "*Fixed So Games Cant Detect Script"
 local ChangeLine3 = "*May Be Buggy*"
 local ChangeLine4 = ""
 -- Instances:
