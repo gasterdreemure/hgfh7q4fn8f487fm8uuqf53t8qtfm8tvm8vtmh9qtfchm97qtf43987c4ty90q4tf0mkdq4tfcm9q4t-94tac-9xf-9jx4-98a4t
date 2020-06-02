@@ -28,19 +28,6 @@ end
 end
 end)
 
-spawn(function()
-while true do print "Check"
-wait "2"
-for _, instance in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-	if instance:IsA("LocalScript") then if(instance.Name ~= "Animate")and(instance.Name ~= "Animatee") then
-        instance.RobloxLocked = true
-        instance:Destroy()
-	  end
-   end
-end
-end
-end)
-
 game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
@@ -2946,6 +2933,19 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
 end
 
 wait "0.01"
+
+spawn(function()
+while true do print "Check"
+wait "2"
+for _, instance in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+	if instance:IsA("LocalScript") then if(instance.Name ~= "Animate")and(instance.Name ~= "Animate") then
+        instance.RobloxLocked = true
+        instance:Destroy()
+	  end
+   end
+end
+end
+end)
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "Block Hub"; 
