@@ -2951,5 +2951,5 @@ Text = "Loaded!";
 Duration = 0.5; 
 })
 wait (0.8)
-
+wait ""
 print "Finished Loading!"
