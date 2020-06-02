@@ -1117,13 +1117,14 @@ for i = 1, 2 do
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+15,v.CFrame.Z)
                 v.Velocity = Vector3.new(0,-100,0)
                 v.CanCollide = false
-                wait "1.5"
+                wait "1.4"
                 v.CanCollide = true
 			end
 	 	end
        end
     end
 end
+print "Removing"
 end)
 
 TelePlayerName.Name = "TelePlayerName"
