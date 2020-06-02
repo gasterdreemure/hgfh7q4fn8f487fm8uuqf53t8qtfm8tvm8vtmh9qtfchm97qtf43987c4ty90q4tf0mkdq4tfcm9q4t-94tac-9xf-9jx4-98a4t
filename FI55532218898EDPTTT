@@ -92,8 +92,8 @@ end)
 local VersionNumberV = "1.76"
 local ChangeLine1 = "*Strengthened Remove Blocks"
 local ChangeLine2 = "*Fixed So Games Cant Detect Script"
-local ChangeLine3 = "*Semi Buggy*"
-local ChangeLine4 = ""
+local ChangeLine3 = ""
+local ChangeLine4 = "*Semi Buggy*"
 -- Instances:
 print "Starting"
 local Valuee = Instance.new("NumberValue")
