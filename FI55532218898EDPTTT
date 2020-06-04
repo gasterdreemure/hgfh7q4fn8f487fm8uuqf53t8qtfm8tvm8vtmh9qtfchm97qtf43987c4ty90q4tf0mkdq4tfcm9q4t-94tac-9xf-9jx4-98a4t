@@ -833,7 +833,9 @@ BlockMover.MouseButton1Click:Connect(function()
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyPosition") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
 		instance:Destroy()
+        end
 	end
 end
 
@@ -892,7 +894,9 @@ BlockRKO.TextSize = 14.000
 BlockRKO.MouseButton1Click:Connect(function()
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
 		instance:Destroy()
+        end
 	end
 end
 
@@ -938,7 +942,9 @@ end
 wait "1.4"
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
 		instance:Destroy()
+        end
 	end
 end
 wait "0.5"
@@ -969,7 +975,9 @@ end
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
 		instance:Destroy()
+        end
 	end
 end
 
@@ -1042,7 +1050,9 @@ end
 wait "0.05"
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
 		instance:Destroy()
+        end
 	end
 end
 print "Removed!"
