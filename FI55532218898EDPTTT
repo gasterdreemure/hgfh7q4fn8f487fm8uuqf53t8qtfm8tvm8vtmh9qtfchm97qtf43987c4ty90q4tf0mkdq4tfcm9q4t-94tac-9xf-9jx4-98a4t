@@ -2,6 +2,7 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 wait ()
+game.workspace.FilteringEnabled = false
 -- Ye
 for _, instance in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if instance:IsA("LocalScript") then
@@ -28,13 +29,15 @@ for _, instance in pairs(game:GetService("Players").LocalPlayer:GetDescendants()
 end
 end
 end)
-
+game.workspace.FilteringEnabled = false
+settings().Physics.AllowSleep = false
+game:GetService("RunService").Stepped:wait()
+game:GetService("RunService").Heartbeat:wait()
 game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 -- Gui to Lua
-game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*math.pow(math.huge,math.huge)*math.huge
 wait ()
-game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
-game.workspace.FilteringEnabled = false
+game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge*math.pow(math.huge,math.huge)*math.huge
 wait ()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
@@ -92,7 +95,7 @@ end)
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.77"
 local ChangeLine1 = "*Fixed so player keeps gravity"
-local ChangeLine2 = ""
+local ChangeLine2 = "*Improving Network Access"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -1122,7 +1125,7 @@ for i = 1, 2 do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+15,v.CFrame.Z)
-                v.Velocity = Vector3.new(0,-10000,0)
+                v.Velocity = Vector3.new(0,-100,0)
 			end
 	 	end
        end
