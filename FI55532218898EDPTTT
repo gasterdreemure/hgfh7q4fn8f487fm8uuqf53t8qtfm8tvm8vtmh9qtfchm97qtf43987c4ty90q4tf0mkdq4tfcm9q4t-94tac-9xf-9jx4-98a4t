@@ -2,18 +2,6 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 wait ()
--- Ye
-
-for _, instance in pairs(game:GetService("Players").LocalPlayer:GetDescendants()) do
-	if instance:IsA("LocalScript") then if(instance.Name ~= "ChatScript")and(instance.Name ~= "BubbleChat")and(instance.Name ~= "FindItemsAndAssignListeners")and(instance.Name ~= "SetUpRagdollLS")and(instance.Name ~= "PlayerScriptsLoader")and(instance.Name ~= "RbxCharacterSounds")and(instance.Name ~= "RequestRecievedScript")and(instance.Name ~= "RequestRecievedScript") then
-        instance.RobloxLocked = true
-        instance:Destroy()
-	  end
-   end
-end
-wait ()
-game:GetService("Players").LocalPlayer.Character.Head:Destroy()
-
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*math.pow(math.huge,math.huge)*math.huge
 wait ()
@@ -74,7 +62,7 @@ end)
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.78"
-local ChangeLine1 = "*Made Anti-Detection Into A Setting"
+local ChangeLine1 = "*Made Anti-Detection Into A Setting*"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
