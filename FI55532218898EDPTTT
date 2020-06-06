@@ -62,8 +62,8 @@ end)
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "1.78"
-local ChangeLine1 = "*Made Anti-Detection Into A Setting*"
-local ChangeLine2 = ""
+local ChangeLine1 = "*Made Anti-Detection Into A Setting"
+local ChangeLine2 = "*Made Script Run Bit Smoother"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -394,7 +394,7 @@ ScriptRemover.Font = Enum.Font.SourceSans
 ScriptRemover.Text = "Go Undercover (Antidetection)"
 ScriptRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptRemover.TextSize = 13.000
-BetterFPSButton.MouseButton1Click:Connect(function()
+ScriptRemover.MouseButton1Click:Connect(function()
 
 game.workspace.FilteringEnabled = false
 settings().Physics.AllowSleep = false
