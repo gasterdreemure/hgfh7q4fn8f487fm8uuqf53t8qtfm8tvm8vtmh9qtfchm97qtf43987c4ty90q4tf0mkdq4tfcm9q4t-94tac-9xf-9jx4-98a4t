@@ -1,5 +1,9 @@
-if not game:IsLoaded() then 
-    game.Loaded:Wait()
+if not game:IsLoaded() then
+	local Waiting = Instance.new("Message",workspace)
+	Waiting.Text = 'Gravity Hub is waiting for the game to load'
+	game.Loaded:Wait()
+	Waiting:Destroy()
+    game.workspace.FilteringEnabled = false
 end
 wait ()
 -- Gui to Lua
@@ -395,7 +399,7 @@ ScriptRemover.Text = "Go Undercover (Antidetection)"
 ScriptRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptRemover.TextSize = 13.000
 ScriptRemover.MouseButton1Click:Connect(function()
-
+game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 game.workspace.FilteringEnabled = false
 settings().Physics.AllowSleep = false
 game:GetService("RunService").Stepped:wait()
@@ -425,8 +429,6 @@ for _, instance in pairs(game:GetService("Players").LocalPlayer:GetDescendants()
 end
 end
 end)
-game:GetService("Players").LocalPlayer.Character.Head:Destroy()
-
 end)
 
 BetterFPSButton.Name = "BetterFPSButton"
