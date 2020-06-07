@@ -229,6 +229,7 @@ local function Oof(iinstance)
         if(iinstance ~= PL) then
             spawn(function()
             while true do
+            game:GetService("RunService").Stepped:wait()
             iinstance.MaximumSimulationRadius = Min
             iinstance.SimulationRadius = Min
             end
@@ -2814,6 +2815,16 @@ Scrip.Visible = true
 Info.Visible = true
 end)
 
+wait ()
+print "Checking Game"
+if game.PlaceId == 606849621 then
+    wait ()
+    loadstring(game:HttpGet("https://pastebin.com/raw/keJsQVjE"))()
+    else
+    warn "Nay"
+end
+print "Finnished"
+
 wait "0.1"
 local StealthMode = true
 
@@ -2934,6 +2945,7 @@ local NetworkAccess = coroutine.create(function()
     game:GetService("Players").LocalPlayer.SimulationRadius = INFIN
     end
     end)
+    coroutine.resume(NetworkAccess)
 end)
 
 wait"0.01"
@@ -2962,34 +2974,10 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
         end)
     end
 end
-
-wait "0.01"
-
-spawn(function()
-while true do print "Check"
-wait "2"
-for _, instance in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
-	if instance:IsA("LocalScript") then if(instance.Name ~= "Animate")and(instance.Name ~= "Animate") then
-        instance.RobloxLocked = true
-        instance:Destroy()
-	  end
-   end
-end
-end
-end)
-
+wait ()
 game.StarterGui:SetCore("SendNotification", {
 Title = "Block Hub"; 
 Text = "Loaded!"; 
 Duration = 0.5; 
 })
-wait (0.8)
-wait ""
-print "Finished Loading!"
-print "Checking Game"
-if game.PlaceId == 606849621 then
-    loadstring(game:HttpGet("https://pastebin.com/raw/keJsQVjE"))()
-    else
-    warn "Nay"
-end
-print "Finnished"
+wait ()
