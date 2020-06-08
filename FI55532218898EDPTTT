@@ -654,33 +654,12 @@ GravityRemover.Text = "Undo Gravity (Buggy)"
 GravityRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
 GravityRemover.TextSize = 14.000
 GravityRemover.MouseButton1Click:Connect(function()
-
-for _, instance in pairs(game.workspace:GetDescendants()) do
+for _, instance in pairs(game:GetDescendants()) do
 	if instance:IsA("BodyForce") then
 		instance:Destroy()
 	end
 end
-wait "0.5"
-for _, instance in pairs(workspace:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-		instance:Destroy()
-	end
-end
-wait "0.5"
-for _, instance in pairs(game.Players:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-		instance:Destroy()
-	end
-end
-wait "0.5"
-for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-		instance:Destroy()
-	end
-end
-
 print "Removed"
-
 end)
 
 GravityChanger.Name = "GravityChanger"
