@@ -7,7 +7,7 @@ if not game:IsLoaded() then
 end
 wait ()
 Min = -math.pow(-math.huge,-math.huge)*-math.huge*-math.pow(-math.huge,-math.huge)*-math.huge
-INFIN = math.pow(math.huge,math.huge)*math.huge*math.pow(math.huge,math.huge)*math.huge
+INFIN = math.pow(math.huge,math.huge)*math.huge*2
 wait ()
 -- Gui to Lua
 game.Players.LocalPlayer.MaximumSimulationRadius = INFIN
