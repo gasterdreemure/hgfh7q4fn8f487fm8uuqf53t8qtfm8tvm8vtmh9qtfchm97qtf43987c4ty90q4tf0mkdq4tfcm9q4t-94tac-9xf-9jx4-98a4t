@@ -10,6 +10,7 @@ end
 wait ()
 -- Gui to Lua
 game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
+print "Changed To Administrator Privilege"
 game:GetService("Players").LocalPlayer.CameraMode = "Classic"
 game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = "400"
 game:GetService("Workspace").Camera.CameraType = "Custom"
