@@ -72,9 +72,9 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.86"
-local ChangeLine1 = "*Earth Quake Is More Random"
-local ChangeLine2 = "*Earth Quake Wont Interact With Player"
+local VersionNumberV = "1.865"
+local ChangeLine1 = "*Added Warning"
+local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -185,6 +185,10 @@ local MiscMover = Instance.new("TextButton")
 local NPCTeleport = Instance.new("TextButton")
 local ScriptRemover = Instance.new("TextButton")
 local MiscMover3 = Instance.new("TextButton")
+local WarningBox = Instance.new("Frame")
+local WarningLable = Instance.new("TextLabel")
+local TheYesButton = Instance.new("TextButton")
+local TheNoButton = Instance.new("TextButton")
 -- /\
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
@@ -446,6 +450,71 @@ BetterFPSButton.Text = "FPS Helper(Semi-Perm)"
 BetterFPSButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 BetterFPSButton.TextSize = 14.000
 BetterFPSButton.MouseButton1Click:Connect(function()
+WarningBox.Visible = true
+end)
+
+BlockDiscarder.Name = "BlockDiscarder"
+BlockDiscarder.Parent = BHGS
+BlockDiscarder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+BlockDiscarder.Position = UDim2.new(-1.86899996, 0, -11.3336678, 0)
+BlockDiscarder.Size = UDim2.new(0, 140, 0, 15)
+BlockDiscarder.Font = Enum.Font.SourceSans
+BlockDiscarder.Text = "Recover Full FPS(Temp)"
+BlockDiscarder.TextColor3 = Color3.fromRGB(255, 255, 255)
+BlockDiscarder.TextSize = 14.000
+BlockDiscarder.MouseButton1Click:Connect(function()
+local PLRS = game.Players.LocalPlayer
+local check = game.workspace:GetDescendants()
+local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       wait "0.1"
+       for i, v in ipairs(check) do
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
+        if not (v:IsDescendantOf(PLRS.Character)) then
+ 				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+-20,v.CFrame.Z)
+			end
+	 	end
+       end
+end
+end)
+
+WarningBox.Name = "WarningBox"
+WarningBox.Parent = BHGS
+WarningBox.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+WarningBox.BorderColor3 = Color3.fromRGB(30, 30, 30)
+WarningBox.Position = UDim2.new(-1.97777772, 0, -7.86666679, 0)
+WarningBox.Size = UDim2.new(0, 159, 0, 75)
+WarningBox.Visible = false
+
+WarningLable.Name = "WarningLable"
+WarningLable.Parent = WarningBox
+WarningLable.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+WarningLable.BackgroundTransparency = 0.800
+WarningLable.BorderColor3 = Color3.fromRGB(30, 30, 30)
+WarningLable.Size = UDim2.new(0, 159, 0, 45)
+WarningLable.Font = Enum.Font.SourceSans
+WarningLable.Text = "Warning: Using FPS Helper Will Cause You To Lose Block Stability!"
+WarningLable.TextColor3 = Color3.fromRGB(255, 255, 255)
+WarningLable.TextSize = 14.000
+WarningLable.TextWrapped = true
+
+TheYesButton.Name = "TheYesButton"
+TheYesButton.Parent = WarningBox
+TheYesButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TheYesButton.Position = UDim2.new(0.0566037744, 0, 0.706666648, 0)
+TheYesButton.Size = UDim2.new(0, 70, 0, 15)
+TheYesButton.Font = Enum.Font.SourceSans
+TheYesButton.Text = "Yes"
+TheYesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TheYesButton.TextSize = 14.000
+TheYesButton.MouseButton1Click:Connect(function()
 
 local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
@@ -458,8 +527,8 @@ t.WaterReflectance = 0
 t.WaterTransparency = 0
 l.GlobalShadows = false
 spawn(function()
-while true do wait (0.05)
-l.FogEnd = 9e9
+while true do wait (0.06)
+l.FogEnd = 8999999488
 end
 end)
 l.Brightness = 1
@@ -499,38 +568,20 @@ if part:IsA("BasePart" or "UnionOperation" or "Model") then
 end)
 
 print "Fixed"
+WarningBox.Visible = false
 end)
 
-BlockDiscarder.Name = "BlockDiscarder"
-BlockDiscarder.Parent = BHGS
-BlockDiscarder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-BlockDiscarder.Position = UDim2.new(-1.86899996, 0, -11.3336678, 0)
-BlockDiscarder.Size = UDim2.new(0, 140, 0, 15)
-BlockDiscarder.Font = Enum.Font.SourceSans
-BlockDiscarder.Text = "Recover Full FPS(Temp)"
-BlockDiscarder.TextColor3 = Color3.fromRGB(255, 255, 255)
-BlockDiscarder.TextSize = 14.000
-BlockDiscarder.MouseButton1Click:Connect(function()
-local PLRS = game.Players.LocalPlayer
-local check = game.workspace:GetDescendants()
-local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
-for i = 1, 1 do
-       spawn(function()
-       while true do
-       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
-       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
-       wait "0.1"
-       for i, v in ipairs(check) do
-        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
-        if not (v:IsDescendantOf(PLRS.Character)) then
- 				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+-20,v.CFrame.Z)
-			end
-	 	end
-       end
-end
+TheNoButton.Name = "TheNoButton"
+TheNoButton.Parent = WarningBox
+TheNoButton.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TheNoButton.Position = UDim2.new(0.490962267, 0, 0.706666648, 0)
+TheNoButton.Size = UDim2.new(0, 70, 0, 15)
+TheNoButton.Font = Enum.Font.SourceSans
+TheNoButton.Text = "No"
+TheNoButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TheNoButton.TextSize = 14.000
+TheNoButton.MouseButton1Click:Connect(function()
+WarningBox.Visible = false
 end)
 
 Script1.Name = "Script1"
