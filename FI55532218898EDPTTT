@@ -80,7 +80,7 @@ local VersionNumberV = "1.9"
 local ChangeLine1 = "*Added Other Warning"
 local ChangeLine2 = "*Added FreeCam"
 local ChangeLine3 = "*Another Update On Antidetection"
-local ChangeLine4 = ""
+local ChangeLine4 = "*Added More Strength"
 -- Instances:
 print "Starting"
 local Valuee = Instance.new("NumberValue")
@@ -251,12 +251,9 @@ wait (0.8)
 
 local function Oof(iinstance)
         if(iinstance ~= PL) then
-            spawn(function()
-            while true do
-            game:GetService("RunService").Stepped:wait()
+            game:GetService("RunService").RenderStepped:Connect(function()
             iinstance.MaximumSimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
             iinstance.SimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
-            end
             end)
         end
 end
