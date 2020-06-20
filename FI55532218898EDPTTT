@@ -83,7 +83,7 @@ end)
 local VersionNumberV = "1.92"
 local ChangeLine1 = "*Made a bit smoother"
 local ChangeLine2 = "*Added Auto Block Fetching"
-local ChangeLine3 = ""
+local ChangeLine3 = "*Fixed Bug in this update*"
 local ChangeLine4 = ""
 -- Instances:
 print "Starting"
@@ -235,7 +235,7 @@ local function BlockFetchers(part)
    temp.ThrustD = 0
    temp.ThrustP = 0
    -- turn
-   temp.MaxTorque = 0,0,0
+   temp.MaxTorque = Vector3.new(0, 0, 0)
    temp.TurnD = 0
    temp.TurnP = 0
    -- fire
