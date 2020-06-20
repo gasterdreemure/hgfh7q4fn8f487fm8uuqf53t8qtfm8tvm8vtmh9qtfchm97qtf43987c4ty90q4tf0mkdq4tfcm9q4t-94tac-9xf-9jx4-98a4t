@@ -51,6 +51,7 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= PL) then
             spawn(function()
             while true do
+			game:GetService("Workspace").StreamingEnabled = true
             game.workspace.FilteringEnabled = false
             iinstance.MaximumSimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
             iinstance.SimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
