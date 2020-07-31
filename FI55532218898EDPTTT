@@ -2392,6 +2392,7 @@ OneWayChange.Text = "Change Gravity!!"
 OneWayChange.TextColor3 = Color3.fromRGB(255, 255, 255)
 OneWayChange.TextSize = 14.000
 OneWayChange.MouseButton1Click:Connect(function()
+local PLLL = game.Players.LocalPlayer.Character
 local PLL = game.Players.LocalPlayer
 
 for _, instance in pairs(PL:GetDescendants()) do
@@ -2400,12 +2401,7 @@ for _, instance in pairs(PL:GetDescendants()) do
 	end
 end
 
-wait "0.1"
-
-workspace.Gravity = OneWay.Text
-
-wait (0.01)
-
+wait ()
 
 local function GravChange(part)
    if part:FindFirstChild("BodyForce") then return end
@@ -2420,7 +2416,22 @@ for i,v in ipairs(PLLL:GetDescendants()) do
    end
 end
 
-wait ()
+PLL.CharacterAdded:Connect(function(PlayerChan)
+PlayerChan:WaitForChild("HumanoidRootPart")
+PlayerChan:WaitForChild("Humanoid")
+wait (1)
+for i,PlayerChan in ipairs(PLLL:GetDescendants()) do
+   if PlayerChan:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and PlayerChan.Anchored == false then
+        GravChange(PlayerChan)
+		end
+	end
+end)
+
+wait "0.1"
+
+workspace.Gravity = OneWay.Text
+
+wait (0.01)
 
 print "Changing!"
 
