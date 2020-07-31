@@ -41,7 +41,6 @@ end)
 -- /\
 
 wait ()
-
 local player = game.Players.LocalPlayer
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
@@ -52,7 +51,6 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= PL) then
             spawn(function()
             while true do
-            game.workspace.FilteringEnabled = false
             iinstance.MaximumSimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
             sethiddenproperty(iinstance, "SimulationRadius", -math.pow(-math.huge,-math.huge)*-math.huge*2)
             game:GetService("RunService").Stepped:wait()
@@ -78,8 +76,8 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "1.96"
-local ChangeLine1 = "*Script Runs Smoother"
+local VersionNumberV = "1.97"
+local ChangeLine1 = "*Added Simulation Focus"
 local ChangeLine2 = ""
 local ChangeLine3 = ""
 local ChangeLine4 = ""
@@ -238,7 +236,6 @@ spawn(function()
 while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -257,6 +254,7 @@ local function Oof(iinstance)
             game:GetService("RunService").RenderStepped:Connect(function()
             iinstance.MaximumSimulationRadius = -math.pow(-math.huge,-math.huge)*-math.huge*2
             sethiddenproperty(iinstance, "SimulationRadius", -math.pow(-math.huge,-math.huge)*-math.huge*2)
+			wait()
             end)
         end
 end
@@ -273,6 +271,27 @@ wait ()
 
 game.Players.PlayerAdded:Connect(function(player)
     Oof(player)
+end)
+
+wait ()
+
+local function Nope(iinstance)
+        if(iinstance ~= PL) then
+            game:GetService("RunService").RenderStepped:Connect(function()
+			game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
+			iinstance.ReplicationFocus = iinstance.Character.HumanoidRootPart
+			game.workspace.FilteringEnabled = false
+			wait(1)
+            end)
+        end
+end
+
+for _, iinstance in pairs(game.Players:GetPlayers()) do
+	Nope(iinstance)
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    Nope(player)
 end)
 
 print "Finished"
@@ -459,10 +478,6 @@ TheYesButtonUnder.Text = "Yes"
 TheYesButtonUnder.TextColor3 = Color3.fromRGB(255, 255, 255)
 TheYesButtonUnder.TextSize = 14.000
 TheYesButtonUnder.MouseButton1Click:Connect(function()
-
-game.workspace.FilteringEnabled = false
-settings().Physics.AllowSleep = false
-game:GetService("RunService").Stepped:wait()
 for _, instance in pairs(game:GetService("Workspace"):GetDescendants()) do
 	if instance:IsA("LocalScript") then if(instance.Name == "Animate" == false) then
         instance:Destroy()
