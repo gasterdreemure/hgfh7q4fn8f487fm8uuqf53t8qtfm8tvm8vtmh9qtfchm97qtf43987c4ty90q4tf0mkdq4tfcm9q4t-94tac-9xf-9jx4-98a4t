@@ -3089,19 +3089,34 @@ NoBlackHole.Text = "Remove BlackHole"
 NoBlackHole.TextColor3 = Color3.fromRGB(255, 255, 255)
 NoBlackHole.TextSize = 14.000
 NoBlackHole.MouseButton1Click:Connect(function()
-_G.BlockCheck = "false"
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then 
 		instance.Parent.CanCollide = true
 	end
 end
-
+wait "0"
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then
 		instance:Destroy()
 	end
 end
+wait "0.05"
+for _, instance in pairs(workspace:GetDescendants()) do
+	if instance:IsA("RocketPropulsion") then if instance.Name == "BlockFecher" == false then
+		instance:Destroy()
+		end
+	end
+end
+wait "0.05"
+for _, instance in pairs(game.workspace:GetDescendants()) do
+	if instance:IsA("BodyForce") then
+      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+		instance:Destroy()
+        end
+	end
+end
+print "Removed!"
 end)
 
 BlackHolePower.Name = "BlackHolePower"
