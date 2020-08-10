@@ -210,6 +210,7 @@ local BlackHoleLable = Instance.new("TextLabel")
 local BlockRotBoostTotal = Instance.new("TextButton")
 local BlockBoostTotal = Instance.new("TextButton")
 local MiscMover4 = Instance.new("TextButton")
+local MiscMover5 = Instance.new("TextButton")
 -- /\
 for _, instance in pairs(game.CoreGui:GetDescendants()) do
 	if instance:IsA("ScreenGui") then
@@ -3595,7 +3596,41 @@ movetool.Deactivated:Connect(function()
     mouse.TargetFilter = nil
     movingpart.Velocity = Vector3.new(0,0,0)
 end)
+end)
 
+MiscMover5.Name = "MiscMover5"
+MiscMover5.Parent = S12
+MiscMover5.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MiscMover5.Position = UDim2.new(-1.87399995, 0, -1.99999952, 0)
+MiscMover5.Size = UDim2.new(0, 140, 0, 15)
+MiscMover5.Font = Enum.Font.SourceSans
+MiscMover5.Text = "Teleport Players|Mostly Client"
+MiscMover5.TextColor3 = Color3.fromRGB(255, 255, 255)
+MiscMover5.TextSize = 13.000
+MiscMover5.MouseButton1Click:Connect(function()
+local PLRS = game.Players.LocalPlayer
+local targetname = MiscPlayerName.Text
+local arget = game:GetService("Players")[targetname]
+local check = game.workspace:GetDescendants()
+for i = 1, 1 do
+       spawn(function()
+       while true do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
+       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
+       game:GetService("RunService").Stepped:wait()
+       end
+       end)
+       for i, v in ipairs(check) do
+        if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
+            if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "HumanoidRootPart") then
+                v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 0.1, 0)
+              v.Velocity = Vector3.new(0,6,0)
+			end
+	 	  end
+        end
+      end
+    end
+  end
 end)
 
 Line.Name = "Line"
