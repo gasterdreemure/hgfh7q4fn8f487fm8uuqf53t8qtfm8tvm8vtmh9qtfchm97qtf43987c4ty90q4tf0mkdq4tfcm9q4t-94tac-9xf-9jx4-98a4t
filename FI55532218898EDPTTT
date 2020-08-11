@@ -4,28 +4,53 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 	Waiting:Destroy()
     game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
+	game.Players.LocalPlayer.PlatformName = "Administrator"
     wait ()
     game.workspace.FilteringEnabled = false
 	game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 end
 wait ()
 -- Gui to Lua
+local tsss = game:GetService("TeleportService")
+local pll = game:GetService("Players").LocalPlayer
+local Exploit = (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (is_sirhurt_closure and "Sirhurt") or (syn and "SynapseX") or ('free')
+
+if Exploit == 'ProtoSmasher' then
+    getgenv().sethiddenproperty = set_hidden_prop
+elseif Exploit == 'Sentinel' then
+	local Waiting = Instance.new("Message",workspace)
+	Waiting.Text = 'Sentinel May Not Be Supported'
+	wait "2.5"
+	Waiting:Destroy()
+elseif Exploit == 'free' then
+	local Waiting = Instance.new("Message",workspace)
+	Waiting.Text = 'Expoit Not Supported'
+	wait "2.5"
+	tsss:Teleport(game.PlaceId, pll)
+	print "Teleported"
+end
+
+print "Starting"
+local heartbeat = game:GetService("RunService").Heartbeat
 local AdministratorPowers = game:GetService("Players").LocalPlayer
 game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "100000000")
-wait ()
+game.Players.LocalPlayer.PlatformName = "Administrator"
+sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "100000000000")
+wait (0.25)
 print "Changed To Administrator Privilege"
 game:GetService("Players").LocalPlayer.CameraMode = "Classic"
 game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = "400"
 game:GetService("Workspace").Camera.CameraType = "Custom"
 game:GetService("Workspace").StreamingEnabled = true
 game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
-
 game:GetService("RunService").RenderStepped:Connect(function()
 game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
+game.Players.LocalPlayer.DataComplexityLimit = 999999999
+sethiddenproperty(game.workspace, "StreamingMinRadius" , 2097087)
+sethiddenproperty(game.workspace, "StreamingTargetRadius" , 2097088)
 end)
-
+sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
 -- \/ Part Of Riptxde's Script
 local NetworkAcces = coroutine.create(function()
     spawn(function()
@@ -60,7 +85,6 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
 end
 
 --             \/
-local heartbeat = game:GetService("RunService").Heartbeat
 spawn(function()
     while true do heartbeat:Wait()
     for i,v in pairs(game.Players:GetPlayers()) do
@@ -76,13 +100,12 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.05"
-local ChangeLine1 = "*Added Btools"
-local ChangeLine2 = "*Added Total Velocity"
-local ChangeLine3 = "*Bug Fixes"
+local VersionNumberV = "2.06"
+local ChangeLine1 = "*Added Fix"
+local ChangeLine2 = ""
+local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
-print "Starting"
 local Valuee = Instance.new("NumberValue")
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
@@ -2534,17 +2557,6 @@ for i,v in ipairs(PLLL:GetDescendants()) do
         GravChange(v)
    end
 end
-
-PLL.CharacterAdded:Connect(function(PlayerChan)
-PlayerChan:WaitForChild("HumanoidRootPart")
-PlayerChan:WaitForChild("Humanoid")
-wait (1)
-for i,PlayerChan in ipairs(PLLL:GetDescendants()) do
-   if PlayerChan:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and PlayerChan.Anchored == false then
-        GravChange(PlayerChan)
-		end
-	end
-end)
 
 wait "0.1"
 
