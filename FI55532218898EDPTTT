@@ -120,7 +120,7 @@ local VersionNumberV = "2.08"
 local ChangeLine1 = "*Added Hidden Gui"
 local ChangeLine2 = "*Script Is Now Sneaky*"
 local ChangeLine3 = "*Added Anti Claim Patch!"
-local ChangeLine4 = ""
+local ChangeLine4 = "*Also May be Faster"
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
@@ -1420,13 +1420,9 @@ end
 
 wait "0.2"
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
@@ -1527,13 +1523,9 @@ local arget = game:GetService("Players")[targetname]
 local save = arget.Character.HumanoidRootPart
 local PLRS = game.Players.LocalPlayer
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 
 local function zeroGrav(part)
    local temp = Instance.new("RocketPropulsion")
@@ -1584,13 +1576,9 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[BlockPlayerName.Text].Character.HumanoidRootPart.Position
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
    local temp = Instance.new("BodyPosition")
@@ -1635,13 +1623,9 @@ end
 
 wait "1"
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
@@ -2077,13 +2061,9 @@ end
 wait "0.5"
 
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyGyro") then return end
    local temp = Instance.new("BodyGyro")
@@ -2239,13 +2219,9 @@ end
 
 wait "0.001"
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyAngularVelocity") then return end
    local temp = Instance.new("BodyAngularVelocity")
@@ -2735,13 +2711,9 @@ end
 wait "0.4"
 
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyThrust") then return end
    local temp = Instance.new("BodyThrust")
@@ -2835,13 +2807,9 @@ AnchorBlocks.TextColor3 = Color3.fromRGB(255, 255, 255)
 AnchorBlocks.TextSize = 14.000
 AnchorBlocks.MouseButton1Click:Connect(function()
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
@@ -2920,13 +2888,9 @@ HatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
 HatLuanch.TextSize = 14.000
 HatLuanch.MouseButton1Click:Connect(function()
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
 		v.Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
@@ -2996,13 +2960,9 @@ UnHatLuanch.Text = "Spawn The Hats In"
 UnHatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
 UnHatLuanch.TextSize = 14.000
 UnHatLuanch.MouseButton1Click:Connect(function()
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
@@ -3324,13 +3284,9 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
    local temp = Instance.new("BodyPosition")
@@ -3398,13 +3354,9 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
    local temp = Instance.new("BodyPosition")
@@ -3471,13 +3423,9 @@ end
  
 wait ()
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 
 local function zeroGrav(part)
    if part:FindFirstChild("BodyVelocity") then return end
@@ -4002,13 +3950,9 @@ end
 
 wait "0.01"
 
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
@@ -4043,13 +3987,9 @@ for _, instance in pairs(PLLL:GetDescendants()) do
 end
 
 wait "0.01"
-spawn(function()
-while true do
 game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
-end
-end)
 
 local NetworkAccesss = coroutine.create(function()
     spawn(function()
