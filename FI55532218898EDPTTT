@@ -30,6 +30,20 @@ elseif Exploit == 'free' then
 	print "Teleported"
 end
 
+-- \/ From Infinite Yield
+if BH_LOADED then
+	warn ("Block Hub is already running!")
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Block Hub";
+        Text = "Block Hub is already running!"; 
+        Duration = 1;
+        })
+	return
+end
+
+pcall(function() getgenv().BH_LOADED  = true end)
+--/\ 
+
 print "Starting"
 local heartbeat = game:GetService("RunService").Heartbeat
 local AdministratorPowers = game:GetService("Players").LocalPlayer
@@ -106,7 +120,6 @@ local ChangeLine2 = "*Script Is Now Sneaky*"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
-local Valuee = Instance.new("NumberValue")
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
 local Scrip = Instance.new("Frame")
@@ -235,28 +248,8 @@ local BlockBoostTotal = Instance.new("TextButton")
 local MiscMover4 = Instance.new("TextButton")
 local MiscMover5 = Instance.new("TextButton")
 -- /\
-for _, instance in pairs(game.CoreGui:GetDescendants()) do
-	if instance:IsA("ScreenGui") then
-	    if instance.Name == "BlockHub" == true then
-        workspace.Gravity = game:GetService("CoreGui").GravityValue.Value
-        wait ()
-		instance:Destroy()
-        game.StarterGui:SetCore("SendNotification", {
-        Title = "Block Hub";
-        Text = "Removed Old Instance"; 
-        Duration = 0.5;
-        })
-        wait (0.08)
-        game:GetService("CoreGui").GravityValue:Destroy()
-	 end
-   end
- end
-
-wait (0.001)
-Valuee.Name = "GravityValue"
-Valuee.Parent = game.CoreGui
-Valuee.RobloxLocked = true
-Valuee.Value = game.workspace.Gravity
+wait()
+--\/
 wait (0.001)
 BlockHub = nil
 if (not is_sirhurt_closure) and (syn and syn.protect_gui) then
@@ -291,6 +284,7 @@ else
 	Main.ResetOnSpawn = false
 	BlockHub = Main
 end
+-- /\ Credits To Infinite Yield
 --Properties:
 local tsss = game:GetService("TeleportService")
 local pll = game:GetService("Players").LocalPlayer
