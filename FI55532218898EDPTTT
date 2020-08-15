@@ -19,12 +19,12 @@ if Exploit == 'ProtoSmasher' then
     getgenv().sethiddenproperty = set_hidden_prop
 elseif Exploit == 'Sentinel' then
 	local Waiting = Instance.new("Message",workspace)
-	Waiting.Text = 'Sentinel May Not Be Supported Contact Owner If Broken'
+	Waiting.Text = 'Sentinel May Not Be Supported Contact Owner If Broken.'
 	wait "2.5"
 	Waiting:Destroy()
 elseif Exploit == 'free' then
 	local Waiting = Instance.new("Message",workspace)
-	Waiting.Text = 'Expoit Not Supported Contact Owner If Broken'
+	Waiting.Text = 'Expoit Not Supported Contact Owner If Broken.'
 	wait "2.5"
 	tsss:Teleport(game.PlaceId, pll)
 	print "Teleported"
@@ -32,7 +32,7 @@ end
 
 -- \/ From Infinite Yield
 if BH_LOADED then
-	warn ("Block Hub is already running!")
+	warn ("Block Hub is already running")
         game.StarterGui:SetCore("SendNotification", {
         Title = "Block Hub";
         Text = "Block Hub is already running!"; 
