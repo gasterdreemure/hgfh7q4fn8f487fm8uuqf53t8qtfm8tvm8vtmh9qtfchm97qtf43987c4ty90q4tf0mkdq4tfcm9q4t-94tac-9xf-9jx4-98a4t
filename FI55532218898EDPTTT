@@ -100,9 +100,9 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.06"
-local ChangeLine1 = "*Added Fix"
-local ChangeLine2 = ""
+local VersionNumberV = "2.08"
+local ChangeLine1 = "*Added Hidden Gui"
+local ChangeLine2 = "*Script Is Now Sneaky*"
 local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
@@ -257,12 +257,40 @@ Valuee.Name = "GravityValue"
 Valuee.Parent = game.CoreGui
 Valuee.RobloxLocked = true
 Valuee.Value = game.workspace.Gravity
-
 wait (0.001)
-BlockHub.Name = "BlockHub"
-BlockHub.Parent = game.CoreGui
-BlockHub.DisplayOrder = 999999997
-BlockHub.ResetOnSpawn = false
+BlockHub = nil
+if (not is_sirhurt_closure) and (syn and syn.protect_gui) then
+	local Main = Instance.new("ScreenGui")
+	Main.Name = "BlockHub"
+	syn.protect_gui(Main)
+	Main.Parent = game:GetService("CoreGui")
+	Main.DisplayOrder = 999999997
+	Main.ResetOnSpawn = false
+	BlockHub = Main
+elseif PROTOSMASHER_LOADED and get_hidden_gui then
+	local Main = Instance.new("ScreenGui")
+	Main.Name = "BlockHub"
+	Main.Parent = get_hidden_gui()
+	Main.DisplayOrder = 999999997
+	Main.ResetOnSpawn = false
+	BlockHub = Main
+elseif elysianexecute and gethui then
+	local Main = Instance.new("ScreenGui")
+	Main.Name = "BlockHub"
+	Main.Parent = gethui()
+	Main.DisplayOrder = 999999997
+	Main.ResetOnSpawn = false
+	BlockHub = Main
+elseif game:GetService("CoreGui"):FindFirstChild('RobloxGui') then
+	BlockHub = game:GetService("CoreGui").RobloxGui
+else
+	local Main = Instance.new("ScreenGui")
+	Main.Name = "BlockHub"
+	Main.Parent = game:GetService("CoreGui")
+	Main.DisplayOrder = 999999997
+	Main.ResetOnSpawn = false
+	BlockHub = Main
+end
 --Properties:
 local tsss = game:GetService("TeleportService")
 local pll = game:GetService("Players").LocalPlayer
@@ -314,7 +342,6 @@ local function Nope(iinstance)
         if(iinstance ~= PL) then
             game:GetService("RunService").RenderStepped:Connect(function()
 			game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
-			iinstance.ReplicationFocus = iinstance.Character.HumanoidRootPart
 			game.workspace.FilteringEnabled = false
 			wait(1)
             end)
