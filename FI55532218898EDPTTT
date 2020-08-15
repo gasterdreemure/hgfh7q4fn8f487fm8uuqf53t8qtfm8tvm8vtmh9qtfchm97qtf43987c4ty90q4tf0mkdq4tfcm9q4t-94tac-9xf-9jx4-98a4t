@@ -47,6 +47,7 @@ pcall(function() getgenv().BH_LOADED  = true end)
 print "Starting"
 local heartbeat = game:GetService("RunService").Heartbeat
 local AdministratorPowers = game:GetService("Players").LocalPlayer
+local DValue = game.workspace.FallenPartsDestroyHeight
 game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
 game.Players.LocalPlayer.PlatformName = "Administrator"
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "100000000000")
@@ -57,6 +58,7 @@ game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = "400"
 game:GetService("Workspace").Camera.CameraType = "Custom"
 game:GetService("Workspace").StreamingEnabled = true
 game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
+game.workspace.FallenPartsDestroyHeight = DValue + (-4)
 game:GetService("RunService").RenderStepped:Connect(function()
 game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge*1.5
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
@@ -117,7 +119,7 @@ end)
 local VersionNumberV = "2.08"
 local ChangeLine1 = "*Added Hidden Gui"
 local ChangeLine2 = "*Script Is Now Sneaky*"
-local ChangeLine3 = ""
+local ChangeLine3 = "*Added Anti Claim Patch"
 local ChangeLine4 = ""
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
@@ -1832,7 +1834,8 @@ for i = 1, 2 do
     for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then
- 				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+15,v.CFrame.Z)
+ 				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+20,v.CFrame.Z)
+				v.CanCollide = false
                 v.Velocity = Vector3.new(0,-200,0)
 			end
 	 	end
