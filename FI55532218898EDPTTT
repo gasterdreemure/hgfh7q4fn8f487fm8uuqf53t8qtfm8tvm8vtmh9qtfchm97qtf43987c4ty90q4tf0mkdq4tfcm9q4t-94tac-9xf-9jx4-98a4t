@@ -3882,7 +3882,7 @@ wait ()
 print "Checking Game"
 if game.PlaceId == 606849621 then
     wait ()
-    loadstring(game:HttpGet("https://pastebin.com/raw/keJsQVjE"))()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ZPc9s5Kt"))()
     else
     warn "Nay"
 end
