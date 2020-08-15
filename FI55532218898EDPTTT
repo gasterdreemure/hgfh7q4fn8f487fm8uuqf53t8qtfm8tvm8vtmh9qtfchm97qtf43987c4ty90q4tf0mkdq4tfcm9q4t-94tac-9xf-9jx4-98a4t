@@ -1835,7 +1835,6 @@ for i = 1, 2 do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+20,v.CFrame.Z)
-				v.CanCollide = false
                 v.Velocity = Vector3.new(0,-200,0)
 			end
 	 	end
