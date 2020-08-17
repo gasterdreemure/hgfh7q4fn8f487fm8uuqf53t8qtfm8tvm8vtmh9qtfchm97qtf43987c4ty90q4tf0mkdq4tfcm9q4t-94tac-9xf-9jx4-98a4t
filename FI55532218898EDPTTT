@@ -116,11 +116,11 @@ end)
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.08"
-local ChangeLine1 = "*Added Hidden Gui"
-local ChangeLine2 = "*Script Is Now Sneaky*"
-local ChangeLine3 = "*Added Anti Claim Patch!"
-local ChangeLine4 = "*Also May be Faster"
+local VersionNumberV = "2.09"
+local ChangeLine1 = "*Updated Hat Luancher"
+local ChangeLine2 = ""
+local ChangeLine3 = ""
+local ChangeLine4 = ""
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
@@ -2895,6 +2895,7 @@ game:GetService("RunService").Stepped:wait()
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
 		v.Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
+		v.Handle.CanCollide = true
 	end
 end
 wait ()
@@ -2968,11 +2969,11 @@ game:GetService("RunService").Stepped:wait()
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
 		v.Handle:FindFirstChildOfClass("SpecialMesh"):Destroy()
+		v.Handle.CanCollide = true
 	end
 end
 wait ()
-wait "0.001"
-    do
+do
     for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if (v:IsA("Accessory")) then
     v.Parent = workspace
@@ -3069,6 +3070,7 @@ BlackHoleNoClip.Text = "Spawn BlackHole (NoClip)"
 BlackHoleNoClip.TextColor3 = Color3.fromRGB(255, 255, 255)
 BlackHoleNoClip.TextSize = 14.000
 BlackHoleNoClip.MouseButton1Click:Connect(function()
+_G.BlackHoleKey = true
 local targetname = BlackHolePlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local tor = arget.Character.HumanoidRootPart
@@ -3088,8 +3090,9 @@ local function BlackHole(part)
    temp.Parent.CanCollide = false
 end
 
-local near = coroutine.resume(coroutine.create(function()
-game:GetService("RunService").RenderStepped:Connect(function()
+spawn(function()
+while _G.BlackHoleKey == true do
+wait ()
 	local region = Region3.new(
 	  Vector3.new(tor.Position.X - tor.Size.X/2 - attackrange, tor.Position.Y - tor.Size.Y/2 - attackrange, tor.Position.Z - tor.Size.Z/2 - attackrange),
 	  Vector3.new(tor.Position.X + tor.Size.X/2 + attackrange, tor.Position.Y + tor.Size.Y/2 + attackrange, tor.Position.Z + tor.Size.Z/2 + attackrange)
@@ -3102,8 +3105,8 @@ for i,v in ipairs(workspace:FindPartsInRegion3(region)) do
    end
 end
 end
+end
 end)
-end))
 
 print "BlackHole Created"
 
@@ -3119,6 +3122,7 @@ BlackHoleClip.Text = "Spawn BlackHole (Clip)"
 BlackHoleClip.TextColor3 = Color3.fromRGB(255, 255, 255)
 BlackHoleClip.TextSize = 14.000
 BlackHoleClip.MouseButton1Click:Connect(function()
+_G.BlackHoleKey = true
 local targetname = BlackHolePlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local tor = arget.Character.HumanoidRootPart
@@ -3137,9 +3141,10 @@ local function BlackHolee(part)
    temp:fire()
 end
 
-local near = coroutine.resume(coroutine.create(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-	local region = Region3.new(
+spawn(function()
+while _G.BlackHoleKey == true do
+wait ()
+    local region = Region3.new(
 	  Vector3.new(tor.Position.X - tor.Size.X/2 - attackrange, tor.Position.Y - tor.Size.Y/2 - attackrange, tor.Position.Z - tor.Size.Z/2 - attackrange),
 	  Vector3.new(tor.Position.X + tor.Size.X/2 + attackrange, tor.Position.Y + tor.Size.Y/2 + attackrange, tor.Position.Z + tor.Size.Z/2 + attackrange)
 	)
@@ -3151,8 +3156,8 @@ for i,v in ipairs(workspace:FindPartsInRegion3(region)) do
    end
 end
 end
+end
 end)
-end))
 
 print "BlackHole Created"
 
@@ -3169,6 +3174,7 @@ NoBlackHole.TextColor3 = Color3.fromRGB(255, 255, 255)
 NoBlackHole.TextSize = 14.000
 NoBlackHole.MouseButton1Click:Connect(function()
 
+_G.BlackHoleKey = false
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then 
 		instance.Parent.CanCollide = true
