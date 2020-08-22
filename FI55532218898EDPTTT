@@ -5,24 +5,26 @@ if not game:IsLoaded() then
 	Waiting:Destroy()
     game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
 	game.Players.LocalPlayer.PlatformName = "Administrator"
-    wait ()
-    game.workspace.FilteringEnabled = false
-	game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 end
 wait ()
 -- Gui to Lua
 local tsss = game:GetService("TeleportService")
 local pll = game:GetService("Players").LocalPlayer
-local Exploit = (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (is_sirhurt_closure and "Sirhurt") or (syn and "SynapseX") or ('free')
+local Exploit = (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (is_sirhurt_closure and "Sirhurt") or (syn and "SynapseX") or ('other')
 
 if Exploit == 'ProtoSmasher' then
+	print "Exploit: ProtoSmasher ( Nice )"
     getgenv().sethiddenproperty = set_hidden_prop
+elseif Exploit == 'SynapseX' then 
+	print "Exploit: Synapse X ( Nice x2 )"
 elseif Exploit == 'Sentinel' then
+	print "Exploit: Sentinel "
 	local Waiting = Instance.new("Message",workspace)
 	Waiting.Text = 'Sentinel May Not Be Supported Contact Owner If Broken.'
 	wait "2.5"
 	Waiting:Destroy()
-elseif Exploit == 'free' then
+elseif Exploit == 'other' then
+	print "Exploit: Undetectable "
 	local Waiting = Instance.new("Message",workspace)
 	Waiting.Text = 'Expoit Not Supported Contact Owner If Broken.'
 	wait "2.5"
@@ -50,7 +52,6 @@ local AdministratorPowers = game:GetService("Players").LocalPlayer
 local DValue = game.workspace.FallenPartsDestroyHeight
 game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
 game.Players.LocalPlayer.PlatformName = "Administrator"
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "100000000000")
 wait (0.25)
 print "Changed To Administrator Privilege"
 game:GetService("Players").LocalPlayer.CameraMode = "Classic"
@@ -60,17 +61,42 @@ game:GetService("Workspace").StreamingEnabled = true
 game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 game.workspace.FallenPartsDestroyHeight = DValue + (-4)
 game.Players.LocalPlayer.MaximumSimulationRadius = 999999999999999
+game.workspace.FilteringEnabled = false
+game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius", "99999999999999")
 game.Players.LocalPlayer.CameraMinZoomDistance = math.huge - math.huge
 game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge - math.huge
+
+if Exploit == 'SynapseX' then
+game:GetService("RunService").RenderStepped:Connect(function()
+setsimulationradius(99999999999999)
+game.Players.LocalPlayer.DataComplexityLimit = 999999999
+sethiddenproperty(game.workspace, "StreamingMinRadius" , 2097087)
+sethiddenproperty(game.workspace, "StreamingTargetRadius" , 2097088)
+end)
+else 
 game:GetService("RunService").RenderStepped:Connect(function()
 sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game.Players.LocalPlayer.DataComplexityLimit = 999999999
 sethiddenproperty(game.workspace, "StreamingMinRadius" , 2097087)
 sethiddenproperty(game.workspace, "StreamingTargetRadius" , 2097088)
 end)
-sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius",math.huge)
+end
+sethiddenproperty(game.Players.LocalPlayer,"MaximumSimulationRadius", "99999999999999")
 -- \/ Part Of Riptxde's Script
+
+if Exploit == 'SynapseX' then
+local NetworkAcces = coroutine.create(function()
+    spawn(function()
+    while true do
+    game:GetService("RunService").Stepped:wait()
+    settings().Physics.AllowSleep = false
+    setsimulationradius(99999999999999)
+    end
+    end)
+    coroutine.resume(NetworkAcces)
+end)
+else 
 local NetworkAcces = coroutine.create(function()
     spawn(function()
     while true do
@@ -81,6 +107,8 @@ local NetworkAcces = coroutine.create(function()
     end)
     coroutine.resume(NetworkAcces)
 end)
+end
+
 -- /\
 
 wait ()
@@ -92,10 +120,10 @@ local PL = game.Players.LocalPlayer
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= PL) then
+			iinstance.MaximumSimulationRadius = (-99999999999999)
             spawn(function()
             while true do
-            iinstance.MaximumSimulationRadius = "-math.pow*-math.huge"
-            sethiddenproperty(iinstance, "SimulationRadius", "-99999999999999")
+            sethiddenproperty(iinstance, "SimulationRadius", -99999999999999)
             game:GetService("RunService").Stepped:wait()
             end
         end)
@@ -103,23 +131,36 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
 end
 
 --             \/
+if Exploit == 'SynapseX' then
+spawn(function()
+    while true do heartbeat:Wait()
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v == game.Players.LocalPlayer == false then
+            setsimulationradius(99999999999999)
+            sethiddenproperty(v, "SimulationRadius", -99999999999999)
+            end
+        end
+    end
+end)
+else 
 spawn(function()
     while true do heartbeat:Wait()
     for i,v in pairs(game.Players:GetPlayers()) do
         if v == game.Players.LocalPlayer == false then
             sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-            sethiddenproperty(v, "SimulationRadius", "-99999999999999")
+            sethiddenproperty(v, "SimulationRadius", -99999999999999)
             end
         end
     end
 end)
+end
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.1"
-local ChangeLine1 = "*Automatic Noclip Cam"
-local ChangeLine2 = "*Runs Faster Now"
-local ChangeLine3 = ""
+local VersionNumberV = "2.2"
+local ChangeLine1 = "*Synapse X Will Run Better"
+local ChangeLine2 = "*Runs Even Faster Now"
+local ChangeLine3 = "*Fixed Lag Issue"
 local ChangeLine4 = ""
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
@@ -291,15 +332,27 @@ end
 local tsss = game:GetService("TeleportService")
 local pll = game:GetService("Players").LocalPlayer
 
+if Exploit == 'SynapseX' then
 spawn(function()
 while true do
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
+setsimulationradius(99999999999999)
+game.workspace.FilteringEnabled = false
 game:GetService("RunService").Stepped:wait()
 end
 end)
--- i know FilteringEnabled = false dose nothing but just becuase
-wait "0.01"
+else 
+spawn(function()
+while true do
+sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
+game.workspace.FilteringEnabled = false
+game:GetService("RunService").Stepped:wait()
+end
+end)
+end
 
+-- i know FilteringEnabled = false dose nothing but just becuase
+
+wait "0.01"
 game.StarterGui:SetCore("SendNotification", {
 Title = "Block Hub"; 
 Text = "Bypassing The Matrix Please Wait"; 
@@ -309,11 +362,11 @@ wait (0.8)
 
 local function Oof(iinstance)
         if(iinstance ~= PL) then
-            game:GetService("RunService").RenderStepped:Connect(function()
-            iinstance.MaximumSimulationRadius = "-math.pow*-math.huge"
-            sethiddenproperty(iinstance, "SimulationRadius", "-99999999999999")
-			wait()
-            end)
+			iinstance.MaximumSimulationRadius = (-99999999999999)
+            while iinstance == true do 
+            sethiddenproperty(iinstance, "SimulationRadius", -99999999999999)
+			game:GetService("RunService").Stepped:wait()
+            end
         end
 end
 
@@ -596,7 +649,7 @@ BlockDiscarder.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 BlockDiscarder.Position = UDim2.new(-1.86899996, 0, -11.3336678, 0)
 BlockDiscarder.Size = UDim2.new(0, 140, 0, 15)
 BlockDiscarder.Font = Enum.Font.SourceSans
-BlockDiscarder.Text = "Recover Full FPS(Temp)"
+BlockDiscarder.Text = "Recover All FPS(Temp)"
 BlockDiscarder.TextColor3 = Color3.fromRGB(255, 255, 255)
 BlockDiscarder.TextSize = 14.000
 BlockDiscarder.MouseButton1Click:Connect(function()
@@ -604,12 +657,6 @@ local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 for i = 1, 1 do
-       spawn(function()
-       while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
        wait "0.1"
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
@@ -617,7 +664,7 @@ for i = 1, 1 do
  				v.CFrame = CFrame.new(v.CFrame.X,BlockNumberCheck+-20,v.CFrame.Z)
 			end
 	 	end
-       end
+    end
 end
 end)
 
@@ -1401,7 +1448,6 @@ end
 
 wait "0.2"
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
@@ -1503,7 +1549,6 @@ local arget = game:GetService("Players")[targetname]
 local save = arget.Character.HumanoidRootPart
 local PLRS = game.Players.LocalPlayer
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 
 local function zeroGrav(part)
@@ -1555,7 +1600,6 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[BlockPlayerName.Text].Character.HumanoidRootPart.Position
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
@@ -1601,7 +1645,6 @@ end
 
 wait "1"
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
@@ -1784,12 +1827,6 @@ RemoverBlocks.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
-spawn(function()
-    while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-    end
-end)
 for i = 1, 2 do
     for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
@@ -1835,12 +1872,6 @@ local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       spawn(function()
-       while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
@@ -1876,12 +1907,6 @@ local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       spawn(function()
-       while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
@@ -1912,12 +1937,6 @@ local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       spawn(function()
-       while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "Torso") then
@@ -1968,8 +1987,6 @@ local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , 3, ca.CFrame.Z+-ca.Focus.Z)
 local arget = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
@@ -2033,7 +2050,6 @@ end
 wait "0.5"
 
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyGyro") then return end
@@ -2190,7 +2206,6 @@ end
 
 wait "0.001"
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyAngularVelocity") then return end
@@ -2680,8 +2695,6 @@ end
 
 wait "0.4"
 
-
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyThrust") then return end
@@ -2776,7 +2789,6 @@ AnchorBlocks.TextColor3 = Color3.fromRGB(255, 255, 255)
 AnchorBlocks.TextSize = 14.000
 AnchorBlocks.MouseButton1Click:Connect(function()
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
@@ -2856,7 +2868,6 @@ HatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
 HatLuanch.TextSize = 14.000
 HatLuanch.MouseButton1Click:Connect(function()
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
@@ -2928,8 +2939,6 @@ UnHatLuanch.Text = "Spawn The Hats In"
 UnHatLuanch.TextColor3 = Color3.fromRGB(255, 255, 255)
 UnHatLuanch.TextSize = 14.000
 UnHatLuanch.MouseButton1Click:Connect(function()
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-game:GetService("RunService").Stepped:wait()
 
 for _,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetAccessories()) do
 	if v:FindFirstChild('Handle') and v.Handle:FindFirstChildOfClass('SpecialMesh') then
@@ -3256,7 +3265,6 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
@@ -3325,7 +3333,6 @@ wait "0.01"
 
 local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
    if part:FindFirstChild("BodyPosition") then return end
@@ -3393,7 +3400,6 @@ end
  
 wait ()
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
 game:GetService("RunService").Stepped:wait()
 
 local function zeroGrav(part)
@@ -3565,12 +3571,6 @@ local targetname = MiscPlayerName.Text
 local arget = game:GetService("Players")[targetname]
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
-       spawn(function()
-       while true do
-       sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-       game:GetService("RunService").Stepped:wait()
-       end
-       end)
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "HumanoidRootPart") then
@@ -3918,9 +3918,6 @@ end
 
 wait "0.01"
 
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-game:GetService("RunService").Stepped:wait()
-
 local function zeroGrav(part)
    if part:FindFirstChild("BodyForce") then return end
    local temp = Instance.new("BodyForce")
@@ -3954,9 +3951,18 @@ for _, instance in pairs(PLLL:GetDescendants()) do
 end
 
 wait "0.01"
-sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-game:GetService("RunService").Stepped:wait()
 
+if Exploit == 'SynapseX' then 
+local NetworkAccesss = coroutine.create(function()
+    spawn(function()
+    while true do
+    settings().Physics.AllowSleep = false
+    setsimulationradius(99999999999999)
+    end
+    end)
+    coroutine.resume(NetworkAccesss)
+end)
+else
 local NetworkAccesss = coroutine.create(function()
     spawn(function()
     while true do
@@ -3966,6 +3972,7 @@ local NetworkAccesss = coroutine.create(function()
     end)
     coroutine.resume(NetworkAccesss)
 end)
+end
 
 wait"0.01"
 
@@ -3978,17 +3985,32 @@ end
 wait"0.01"
 workspace.Gravity = OGravity.Text
 
+if Exploit == 'SynapseX' then 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= PL) then
             spawn(function()
             while true do
-            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
-            sethiddenproperty(iinstance, "SimulationRadius", "-99999999999999")
+            setsimulationradius(99999999999999)
+            sethiddenproperty(iinstance, "SimulationRadius", -99999999999999)
 			game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
             game:GetService("RunService").Stepped:wait()
             end
         end)
     end
+end
+else 
+for _, iinstance in pairs(game.Players:GetPlayers()) do
+        if(iinstance ~= PL) then
+            spawn(function()
+            while true do
+            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", "99999999999999")
+            sethiddenproperty(iinstance, "SimulationRadius", -99999999999999)
+			game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
+            game:GetService("RunService").Stepped:wait()
+            end
+        end)
+    end
+end
 end
 wait ()
 game.StarterGui:SetCore("SendNotification", {
