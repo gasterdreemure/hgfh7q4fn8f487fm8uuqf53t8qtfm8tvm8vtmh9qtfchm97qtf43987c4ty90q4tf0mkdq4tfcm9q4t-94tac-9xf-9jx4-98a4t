@@ -157,10 +157,10 @@ end
 --            /\ Part Made by TomQ
 
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.2"
-local ChangeLine1 = "*Synapse X Will Run Better"
-local ChangeLine2 = "*Runs Even Faster Now"
-local ChangeLine3 = "*Fixed Lag Issue"
+local VersionNumberV = "2.25"
+local ChangeLine1 = "*Added Infinite Yeild"
+local ChangeLine2 = "*Adding Vr Soon*"
+local ChangeLine3 = ""
 local ChangeLine4 = ""
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
@@ -290,6 +290,7 @@ local BlockRotBoostTotal = Instance.new("TextButton")
 local BlockBoostTotal = Instance.new("TextButton")
 local MiscMover4 = Instance.new("TextButton")
 local MiscMover5 = Instance.new("TextButton")
+local MiscMover6 = Instance.new("TextButton")
 -- /\
 wait()
 --\/
@@ -682,7 +683,7 @@ FreeCam.MouseButton1Click:Connect(function()
 spawn(function()
 local message = Instance.new("Message",workspace)
 message.Text = "Press LeftShift And P At The Same Time To Get In And Out Of Free Cam"
-wait(1)
+wait(2.5)
 message:Destroy()
 end)
 
@@ -3582,6 +3583,20 @@ for i = 1, 1 do
       end
     end
   end
+end)
+
+MiscMover6.Name = "MiscMover6"
+MiscMover6.Parent = S12
+MiscMover6.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+MiscMover6.Position = UDim2.new(-1.87399995, 0, -0.5999999, 0)
+MiscMover6.Size = UDim2.new(0, 140, 0, 15)
+MiscMover6.Font = Enum.Font.SourceSans
+MiscMover6.Text = "Infinite Yeild (Less Lag)"
+MiscMover6.TextColor3 = Color3.fromRGB(255, 255, 255)
+MiscMover6.TextSize = 14.000
+MiscMover6.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastebin.com/raw/ZEjA9mNe"))()
+MiscMover6:Destroy()
 end)
 
 Line.Name = "Line"
