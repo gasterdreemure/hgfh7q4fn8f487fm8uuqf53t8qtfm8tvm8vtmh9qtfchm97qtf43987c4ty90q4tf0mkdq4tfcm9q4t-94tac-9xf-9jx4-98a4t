@@ -166,10 +166,10 @@ local PL = game.Players.LocalPlayer
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
-			sethidden(iinstance, "MaximumSimulationRadius", -99999999999999)
+			sethidden(iinstance, "MaximumSimulationRadius", 0/0)
             spawn(function()
             while iinstance do
-            sethidden(iinstance, "SimulationRadius", -99999999999999)
+            sethidden(iinstance, "SimulationRadius", 0/0)
             game:GetService("RunService").Stepped:wait()
             end
         end)
@@ -179,11 +179,11 @@ end
 --             \/
 for i,v in pairs(game.Players:GetPlayers()) do
     if v == game.Players.LocalPlayer == false then
-		v.MaximumSimulationRadius = (-99999999999999)
-		sethidden(v, "MaximumSimulationRadius", -99999999999999)
+		v.MaximumSimulationRadius = (0/0)
+		sethidden(v, "MaximumSimulationRadius", 0/0)
         spawn(function()
             while v == true do heartbeat:Wait()
-            sethidden(v, "SimulationRadius", -99999999999999)
+            sethidden(v, "SimulationRadius", 0/0)
             end
         end)
     end
@@ -193,9 +193,9 @@ wait()
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
 local VersionNumberV = "2.48"
 local ChangeLine1 = "*Added Tween Teleport"
-local ChangeLine2 = "Changed Bunch Of Code Will Run Better"
+local ChangeLine2 = "*Will Run Bit Better"
 local ChangeLine3 = "*Will Be Working On Area fling*"
-local ChangeLine4 = ""
+local ChangeLine4 = "*Fixed Semi Player Teleport"
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
@@ -415,10 +415,10 @@ wait (0.8)
 
 local function Oof(iinstance)
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
-			sethidden(iinstance, "MaximumSimulationRadius", -99999999999999)
+			sethidden(iinstance, "MaximumSimulationRadius", 0/0)
             spawn(function()
             while iinstance do
-            sethidden(iinstance, "SimulationRadius", -99999999999999)
+            sethidden(iinstance, "SimulationRadius", 0/0)
             game:GetService("RunService").Stepped:wait()
 			wait()
             end
@@ -3853,7 +3853,7 @@ for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "HumanoidRootPart") then
-                v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 0.1, 0)
+				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 0.1, 0)}):Play()
               v.Velocity = Vector3.new(0,6,0)
 			end
 	 	  end
@@ -3875,7 +3875,7 @@ MiscMover6.TextSize = 14.000
 MiscMover6.MouseButton1Click:Connect(function()
 MiscMover6:Destroy()
 wait()
-loadstring(game:HttpGetAsync("https://pastebin.com/raw/ZEjA9mNe"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
 MiscMover7.Name = "MiscMover7"
@@ -4244,7 +4244,7 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
             spawn(function()
             while iinstance do
-            sethidden(iinstance, "SimulationRadius", -99999999999999)
+            sethidden(iinstance, "SimulationRadius", 0/0)
             game:GetService("RunService").Stepped:wait()
             end
         end)
