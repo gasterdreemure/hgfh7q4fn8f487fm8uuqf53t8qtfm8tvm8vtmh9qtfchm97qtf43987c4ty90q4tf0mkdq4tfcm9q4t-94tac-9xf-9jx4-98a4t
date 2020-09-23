@@ -1,10 +1,11 @@
 if not game:IsLoaded() then
 	local Waiting = Instance.new("Message",workspace)
-	Waiting.Text = 'Gravity Hub is waiting for the game to load'
+	Waiting.Text = 'Block Hub is waiting for the game to load'
 	game.Loaded:Wait()
 	Waiting:Destroy()
     game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
 	game.Players.LocalPlayer.PlatformName = "Administrator"
+	sethiddenproperty(game:GetService("Players").LocalPlayer,"AccountAgeReplicate", 177423647)
 end
 wait ()
 -- Gui to Lua
@@ -12,6 +13,7 @@ local tsss = game:GetService("TeleportService")
 local pll = game:GetService("Players").LocalPlayer
 local gethidden = gethiddenproperty or get_hidden_property or get_hidden_prop
 local Exploit = (secure_load and "Sentinel") or (pebc_execute and "ProtoSmasher") or (is_sirhurt_closure and "Sirhurt") or (syn and "SynapseX") or ('other')
+sethiddenproperty(game:GetService("Players").LocalPlayer,"AccountAgeReplicate", 177423647)
 
 if Exploit == 'ProtoSmasher' then
 	print "Exploit: ProtoSmasher (Nice)"
@@ -24,17 +26,17 @@ elseif Exploit == 'Sentinel' then
 	Waiting.Text = 'Sentinel May Not Be Supported Contact Owner If Broken.'
 	wait "2.5"
 	Waiting:Destroy()
+elseif Exploit == 'Sirhurt' then
+	print "Exploit: Sirhurt"
+
 elseif Exploit == 'other' then
 	print "Exploit: Undetectable "
 	local Waiting = Instance.new("Message",workspace)
 	Waiting.Text = 'Expoit Not Supported Contact Owner If Broken.'
 	wait "2.5"
-	tsss:Teleport(game.PlaceId, pll)
+	tsss:Teleport(game.PlaceId)
 	print "Teleported"
 end
-
-local sethidden = sethiddenproperty or set_hidden_property or set_hidden_prop
-local setsimulationr = setsimulationradius or set_simulation_radius
 
 -- \/ From Infinite Yield
 if BH_LOADED then
@@ -49,13 +51,26 @@ end
 
 pcall(function() getgenv().BH_LOADED  = true end)
 --/\ 
-
+game.Workspace.AllowThirdPartySales = false
+local sethidden = sethiddenproperty or set_hidden_property or set_hidden_prop
+local setsimulationr = setsimulationradius or set_simulation_radius
+game:GetService("Workspace").StreamingEnabled = true
+game:GetService("Workspace"):SetPhysicsThrottleEnabled(true)
+-- \/
+_G.BlackHoleKey = nil
+_G.AreaFling = nil
+_G.HumanoidRootPart = nil
+_G.God = nil
+_G.objs = nil
+_G.objsf = nil
+_G.BlockCheck = nil
+-- _G Keys /\
 print "Starting"
 local heartbeat = game:GetService("RunService").Heartbeat
 local AdministratorPowers = game:GetService("Players").LocalPlayer
 local DValue = game.workspace.FallenPartsDestroyHeight
 game:GetService("Players").LocalPlayer.OsPlatform = "Administrator"
-game.Players.LocalPlayer.PlatformName = "Administrator"
+game:GetService("Players").LocalPlayer.PlatformName = "Administrator"
 -- Credits to someone, will add once found
 wait (0.25)
 _G.objs = {}
@@ -107,23 +122,29 @@ wait(1)
 game.workspace.FilteringEnabled = false
 game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
 -- ye
-spoof(game.Players.LocalPlayer, "MaximumSimulationRadius", 1000)
--- same bit here too
+if Exploit == 'SynapseX' then
+setsimulationr(gethidden(game.Players.LocalPlayer,"SimulationRadius"),1000)
+wait(0.5)
+setsimulationr(0.5/0,1/0)
+else
 sethidden(game.Players.LocalPlayer, "MaximumSimulationRadius", 1000)
-wait()
-game.Players.LocalPlayer.CameraMinZoomDistance = math.huge - math.huge
-game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge - math.huge
+wait(0.5)
 sethidden(game.Players.LocalPlayer,"MaximumSimulationRadius", 1/0)
+end
+wait ()
+-- \/
+-- out of use temp spoof ()
+-- /\ same here too
 if Exploit == 'SynapseX' then
 game:GetService("RunService").RenderStepped:Connect(function()
-setsimulationr(1e308)
+setsimulationr(0.5/0)
 game.Players.LocalPlayer.DataComplexityLimit = 999999999
 sethidden(game.workspace, "StreamingMinRadius" , 2097087)
 sethidden(game.workspace, "StreamingTargetRadius" , 2097088)
 end)
 else 
 game:GetService("RunService").RenderStepped:Connect(function()
-sethidden(game.Players.LocalPlayer, "SimulationRadius", 1e308)
+sethidden(game.Players.LocalPlayer, "SimulationRadius", 0.5/0)
 game.Players.LocalPlayer.DataComplexityLimit = 999999999
 sethidden(game.workspace, "StreamingMinRadius" , 2097087)
 sethidden(game.workspace, "StreamingTargetRadius" , 2097088)
@@ -136,7 +157,7 @@ local NetworkAcces = coroutine.create(function()
     while true do
     game:GetService("RunService").Stepped:wait()
     settings().Physics.AllowSleep = false
-    setsimulationr(1e308)
+    setsimulationr(0.5/0)
     end
     end)
 end)
@@ -147,7 +168,7 @@ local NetworkAcces = coroutine.create(function()
     while true do
     game:GetService("RunService").Stepped:wait()
     settings().Physics.AllowSleep = false
-    sethidden(game.Players.LocalPlayer, "SimulationRadius", 1e308)
+    sethidden(game.Players.LocalPlayer, "SimulationRadius", 0.5/0)
     end
     end)
 end)
@@ -160,12 +181,18 @@ local PLRS = game.Players.LocalPlayer
 local check = game.workspace:GetDescendants()
 local BlockNumberCheck = game.workspace.FallenPartsDestroyHeight
 local PL = game.Players.LocalPlayer
+local Players = game:GetService("Players")
+local BHMouse = Players.LocalPlayer:GetMouse()
+local BFLYINGH = nil
+local QEFlyBH = nil
+local BHfFlySpeed = nil
+local BVehicleFlySpeedH = nil
 
 for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
 			sethidden(iinstance, "MaximumSimulationRadius", 0/0)
             spawn(function()
-            while iinstance do
+            while iinstance ~= nil do
             sethidden(iinstance, "SimulationRadius", 0/0)
             game:GetService("RunService").Stepped:wait()
             end
@@ -178,21 +205,20 @@ for i,v in pairs(game.Players:GetPlayers()) do
     if v == game.Players.LocalPlayer == false then
 		sethidden(v, "MaximumSimulationRadius", 0/0)
         spawn(function()
-            while v == true do heartbeat:Wait()
+            while v ~= nil do heartbeat:Wait()
             sethidden(v, "SimulationRadius", 0/0)
             end
         end)
     end
 end
 --            /\ Part Made by TomQ
-game.workspace.FallenPartsDestroyHeight = DValue + (-4)
 wait()
 -- Version: 3.2 (Note To Self:REMEMBER TO CHANGE UPDATE LOG!)
-local VersionNumberV = "2.6"
-local ChangeLine1 = "*Added 2nd Page"
-local ChangeLine2 = "*Added Invisibility/God"
-local ChangeLine3 = "*Added Area Fling (Needs Some Fixing)"
-local ChangeLine4 = "*Fixed Up Bugs"
+local VersionNumberV = "2.65"
+local ChangeLine1 = "*Strengthened The Script"
+local ChangeLine2 = "*Fixed Invisibility/God"
+local ChangeLine3 = ""
+local ChangeLine4 = ""
 -- Instances:
 local BlockHub = Instance.new("ScreenGui")
 local Title = Instance.new("TextLabel")
@@ -342,6 +368,7 @@ local AreaFlingRange = Instance.new("TextBox")
 local Script14 = Instance.new("TextButton")
 local S14 = Instance.new("Frame")
 local Invison = Instance.new("TextButton")
+local Invisonnopl = Instance.new("TextButton")
 local Invisoff = Instance.new("TextButton")
 -- /\
 wait()
@@ -392,24 +419,26 @@ end
 -- /\ Credits To Infinite Yield
 wait()
 --Properties:
-local tsss = game:GetService("TeleportService")
-local pll = game:GetService("Players").LocalPlayer
 
 if Exploit == 'SynapseX' then
 spawn(function()
 while true do
-setsimulationr(1e308)
+setsimulationr(0.5/0)
 game.workspace.FilteringEnabled = false
 game:GetService("NetworkClient"):SetOutgoingKBPSLimit(1/0)
+game.Players.LocalPlayer.CameraMinZoomDistance = math.huge - math.huge
+game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge - math.huge
 wait()
 end
 end)
 else
 spawn(function()
 while true do
-sethidden(game.Players.LocalPlayer, "SimulationRadius", 1e308)
+sethidden(game.Players.LocalPlayer, "SimulationRadius", 0.5/0)
 game.workspace.FilteringEnabled = false
 game:GetService("NetworkClient"):SetOutgoingKBPSLimit(1/0)
+game.Players.LocalPlayer.CameraMinZoomDistance = math.huge - math.huge
+game.Players.LocalPlayer.CameraMaxZoomDistance = math.huge - math.huge
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -418,21 +447,23 @@ end
 -- i know FilteringEnabled = false dose nothing but just becuase
 
 wait ()
+
 game.StarterGui:SetCore("SendNotification", {
 Title = "Block Hub"; 
 Text = "Bypassing The Matrix Please Wait"; 
-Duration = 1; 
+Duration = 2; 
 })
 wait (0.8)
 
 local function Oof(iinstance)
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
+			iinstance.OsPlatform = "ASROS"
+			iinstance.PlatformName = "ASROS"
 			sethidden(iinstance, "MaximumSimulationRadius", 0/0)
             spawn(function()
-            while iinstance do
+            while iinstance ~= nil do
             sethidden(iinstance, "SimulationRadius", 0/0)
-            game:GetService("RunService").Stepped:wait()
-			wait()
+			wait(0.00005)
             end
         end)
     end
@@ -453,6 +484,22 @@ game.Players.PlayerAdded:Connect(function(player)
 end)
 
 wait ()
+
+for i,v in ipairs(game.workspace:GetDescendants()) do
+   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
+           v.Locked = false
+		   sethidden(v,"NetworkIsSleeping",false)
+       end
+end
+
+workspace.DescendantAdded:Connect(function(part)
+   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and part.Anchored == false then
+           part.Locked = false
+		   sethidden(part,"NetworkIsSleeping",false)
+       end
+end)
+
+game.workspace.FallenPartsDestroyHeight = DValue + (-4)
 
 print "Finished"
 wait "1"
@@ -521,7 +568,123 @@ function getRoot(char)
 	return rootPart
 end
 
-_G.objsf = false
+-- \/ Full Credits To Infinite Yield For The Fly Script 
+BFLYINGH = false
+QEFlyBH = true
+BHfFlySpeed = 1.5
+BVehicleFlySpeedH = 1.5
+function BSFLYH(vfly)
+	repeat wait() until Players.LocalPlayer and Players.LocalPlayer.Character and getRoot(Players.LocalPlayer.Character) and Players.LocalPlayer.Character:FindFirstChild('Humanoid')
+	repeat wait() until BHMouse
+	
+	local T = getRoot(Players.LocalPlayer.Character)
+	local CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+	local lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+	local SPEED = 0
+	
+	local function BFLYH()
+		BFLYINGH = true
+		local BG = Instance.new('BodyGyro', T)
+		BG.Name = "CreditsTo"
+		local BV = Instance.new('BodyVelocity', T)
+		BV.Name = "InfiniteYield-Dev"
+		BG.P = 9e4
+		BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
+		BG.cframe = T.CFrame
+		BV.velocity = Vector3.new(0, 0, 0)
+		BV.maxForce = Vector3.new(9e9, 9e9, 9e9)
+		spawn(function()
+			repeat wait()
+				if not vfly and Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
+					Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
+				end
+				if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q + CONTROL.E ~= 0 then
+					SPEED = 50
+				elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q + CONTROL.E ~= 0) and SPEED ~= 0 then
+					SPEED = 0
+				end
+				if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 or (CONTROL.Q + CONTROL.E) ~= 0 then
+					BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+					lCONTROL = {F = CONTROL.F, B = CONTROL.B, L = CONTROL.L, R = CONTROL.R}
+				elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and (CONTROL.Q + CONTROL.E) == 0 and SPEED ~= 0 then
+					BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+				else
+					BV.velocity = Vector3.new(0, 0, 0)
+				end
+				BG.cframe = workspace.CurrentCamera.CoordinateFrame
+			until not BFLYINGH
+			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+			lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+			SPEED = 0
+			BG:destroy()
+			BV:destroy()
+			if Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
+				Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
+			end
+		end)
+	end
+	BHMouse.KeyDown:connect(function(KEY)
+		if KEY:lower() == 'w' then
+			if vfly then
+				CONTROL.F = BVehicleFlySpeedH
+			else
+				CONTROL.F = BHfFlySpeed
+			end
+		elseif KEY:lower() == 's' then
+			if vfly then
+				CONTROL.B = - BVehicleFlySpeedH
+			else
+				CONTROL.B = - BHfFlySpeed
+			end
+		elseif KEY:lower() == 'a' then
+			if vfly then
+				CONTROL.L = - BVehicleFlySpeedH
+			else
+				CONTROL.L = - BHfFlySpeed
+			end
+		elseif KEY:lower() == 'd' then 
+			if vfly then
+				CONTROL.R = BVehicleFlySpeedH
+			else
+				CONTROL.R = BHfFlySpeed
+			end
+		elseif QEFlyBH and KEY:lower() == 'e' then
+			if vfly then
+				CONTROL.Q = BVehicleFlySpeedH*2
+			else
+				CONTROL.Q = BHfFlySpeed*2
+			end
+		elseif QEFlyBH and KEY:lower() == 'q' then
+			if vfly then
+				CONTROL.E = -BVehicleFlySpeedH*2
+			else
+				CONTROL.E = -BHfFlySpeed*2
+			end
+		end
+	end)
+	BHMouse.KeyUp:connect(function(KEY)
+		if KEY:lower() == 'w' then
+			CONTROL.F = 0
+		elseif KEY:lower() == 's' then
+			CONTROL.B = 0
+		elseif KEY:lower() == 'a' then
+			CONTROL.L = 0
+		elseif KEY:lower() == 'd' then
+			CONTROL.R = 0
+		elseif KEY:lower() == 'e' then
+			CONTROL.Q = 0
+		elseif KEY:lower() == 'q' then
+			CONTROL.E = 0
+		end
+	end)
+	BFLYH()
+end
+
+function BNOFLYH()
+	BFLYINGH = false
+	Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
+end
+-- /\
 local function FreeCamms()
 _G.objsf = true
 wait()
@@ -1543,8 +1706,9 @@ GravityChanger.TextSize = 14.000
 GravityChanger.MouseButton1Click:Connect(function()
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-		instance:Destroy()
+	if instance:IsA("BodyForce") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 
@@ -1565,16 +1729,7 @@ for i,v in ipairs(workspace:GetDescendants()) do
        end
    end
 end
-
-workspace.DescendantAdded:Connect(function(part)
-   if part:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and part.Anchored == false then
-       if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           zeroGrav(part)
-       end
-   end
-end)
-
-wait"0.1"
+wait ()
 print "Gravity Changed!"
 
 end)
@@ -1648,7 +1803,7 @@ wait "0.1"
 
 local targetname = BlockPlayerName.Text
 local arget = game:GetService("Players")[targetname]
-local save = arget.Character.HumanoidRootPart
+local save = getRoot(arget.Character)
 local PLRS = game.Players.LocalPlayer
 
 game:GetService("RunService").Stepped:wait()
@@ -1700,7 +1855,8 @@ end
 
 wait "0.01"
 
-local savepos = game:GetService("Players")[BlockPlayerName.Text].Character.HumanoidRootPart.Position
+local saveposss = getRoot(game:GetService("Players")[BlockPlayerName.Text].Character)
+local savepos = saveposss.Position
 
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
@@ -1745,7 +1901,7 @@ for _, instance in pairs(game.workspace:GetDescendants()) do
 	end
 end
 
-wait "1"
+wait (0.1)
 
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
@@ -1779,14 +1935,6 @@ for _, instance in pairs(game.workspace:GetDescendants()) do
 	end
 end
 wait "1.4"
-for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-		instance:Destroy()
-        end
-	end
-end
-wait "0.5"
 for i,v in ipairs(workspace:GetDescendants()) do
    if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
        if not (part:IsDescendantOf(game.Players.LocalPlayer.Character)) then
@@ -1796,21 +1944,6 @@ for i,v in ipairs(workspace:GetDescendants()) do
 end
 wait"0.1"
 print "KO!"
-
-local function Fix(part)
-   if part:FindFirstChild("BodyForce") then return end
-   local temp = Instance.new("BodyForce")
-   temp.Parent = part
-   temp.Force = part:GetMass() * Vector3.new(GravityX.Text,workspace.Gravity*GravityY.Text,GravityZ.Text)
-end
-
-for i,v in ipairs(workspace:GetDescendants()) do
-   if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
-       if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then
-           Fix(v)
-       end
-   end
-end
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("BodyForce") then
@@ -1832,59 +1965,24 @@ ForceRemover.Text = "Stop The Force(Buggy)"
 ForceRemover.TextColor3 = Color3.fromRGB(255, 255, 255)
 ForceRemover.TextSize = 14.000
 ForceRemover.MouseButton1Click:Connect(function()
-
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then 
 		instance.Parent.CanCollide = true
 	end
 end
-wait "0.05"
-for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
-	end
-end
-wait "0.05"
-for _, instance in pairs(workspace:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
-	end
-end
-wait "0.05"
-for _, instance in pairs(game.Players:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
-	end
-end
-wait "0.05"
-for _, instance in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
-	end
-end
-
+wait ()
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then
 		instance:Destroy()
 	end
 end
-wait "0.05"
-for _, instance in pairs(workspace:GetDescendants()) do
-	if instance:IsA("RocketPropulsion") then if instance.Name == "BlockFecher" == false then
-		instance:Destroy()
-		end
-	end
-end
-wait "0.05"
+wait ()
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyForce") then
-      if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+	if instance:IsA("BodyPosition") then
 		instance:Destroy()
-        end
 	end
 end
 print "Removed!"
-
 end)
 
 Script3.Name = "Script3"
@@ -1972,12 +2070,13 @@ BlockTeleporter.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
-				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)}):Play()
+				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = Ccc.CFrame + Vector3.new(0, 5, 0)}):Play()
                 v.Velocity = Vector3.new(0,0,0)
 				v.RotVelocity = Vector3.new(0,0,0)
 			end
@@ -2008,12 +2107,13 @@ end)
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
-				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)}):Play()
+				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = Ccc.CFrame + Vector3.new(0, 10, 0)}):Play()
                 v.Velocity = Vector3.new(0,0,0)
 				v.RotVelocity = Vector3.new(0,0,0)
  				wait ""
@@ -2039,12 +2139,13 @@ NPCTeleport.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "Torso") then
-				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 7, 0)}):Play()
+				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = Ccc.CFrame + Vector3.new(0, 7, 0)}):Play()
               v.Velocity = Vector3.new(0,1,0)
 			end
 	 	  end
@@ -2079,13 +2180,14 @@ local targetname = TelePlayerName.Text
 local ca = game.workspace.Camera
 local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , 3, ca.CFrame.Z+-ca.Focus.Z)
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
 			v.CanCollide = false
-			game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)}):Play()
+			game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = Ccc.CFrame + Vector3.new(0, 10, 0)}):Play()
 			v.Velocity = -cam*0.5*v:GetMass()*0.4
             v.RotVelocity = Vector3.new(0,0,0)
 			v.CanCollide = true
@@ -2144,12 +2246,13 @@ NTNPCTeleport.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "Torso") then
-                v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 7, 0)
+                v.CFrame = Ccc.CFrame + Vector3.new(0, 7, 0)
               v.Velocity = Vector3.new(0,1,0)
 			end
 	 	  end
@@ -2184,13 +2287,14 @@ local targetname = TelePlayerName.Text
 local ca = game.workspace.Camera
 local cam = Vector3.new(ca.CFrame.X+-ca.Focus.X , 3, ca.CFrame.Z+-ca.Focus.Z)
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
 			if not (v:IsDescendantOf(game.Players.LocalPlayer.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
 			v.CanCollide = false
-			v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+			v.CFrame = Ccc.CFrame + Vector3.new(0, 10, 0)
 			v.Velocity = -cam*0.5*v:GetMass()*0.4
             v.RotVelocity = Vector3.new(0,0,0)
 			v.CanCollide = true
@@ -2222,12 +2326,13 @@ end)
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
- 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 10, 0)
+ 				v.CFrame = Ccc.CFrame + Vector3.new(0, 10, 0)
                 v.Velocity = Vector3.new(0,0,0)
 				v.RotVelocity = Vector3.new(0,0,0)
  				wait ""
@@ -2254,12 +2359,13 @@ NTBlockTeleporter.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local targetname = TelePlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
         if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if(v.Name ~= "HumanoidRootPart")and(v.Name ~= "LeftArm")and(v.Name ~= "RightArm")and(v.Name ~= "Tip")and(v.Name ~= "Weld")and(v.Name ~= "light")and(v.Name ~= "Ammo")and(v.Name ~= "Body")and(v.Name ~= "Center")and(v.Name ~= "Taser")and(v.Name ~= "Handcuffs")and(v.Name ~= "UpperTorso")and(v.Name ~= "LowerTorso")and(v.Name ~= "LeftFoot")and(v.Name ~= "RightFoot")and(v.Name ~= "LeftHand")and(v.Name ~= "RightHand")and(v.Name ~= "RightUpperArm")and(v.Name ~= "LeftLowerArm")and(v.Name ~= "RightLowerArm")and(v.Name ~= "RightUpperLeg")and(v.Name ~= "LeftUpperLeg")and(v.Name ~= "LeftLowerLeg")and(v.Name ~= "RightLowerLeg")and(v.Name ~= "HumanoidRootPart")and(v.Name ~= "Torso")and(v.Name ~= "Right Leg")and(v.Name ~= "Right Arm")and(v.Name ~= "Left Arm")and(v.Name ~= "Left Leg")then
- 				v.CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 5, 0)
+ 				v.CFrame = Ccc.CFrame + Vector3.new(0, 5, 0)
                 v.Velocity = Vector3.new(0,0,0)
 				v.RotVelocity = Vector3.new(0,0,0)
 			end
@@ -2311,8 +2417,9 @@ GyroUp.TextSize = 14.000
 GyroUp.MouseButton1Click:Connect(function()
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyGyro") then
-		instance:Destroy()
+	if instance:IsA("BodyGyro") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 
@@ -3031,18 +3138,22 @@ UnAnchor.TextColor3 = Color3.fromRGB(255, 255, 255)
 UnAnchor.TextSize = 14.000
 UnAnchor.MouseButton1Click:Connect(function()
 for _, instance in pairs(game.workspace:GetDescendants()) do
-    if instance:IsA("BodyPosition") then 
-        instance:Destroy()
+    if instance:IsA("BodyPosition") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then 
+			instance.Parent.CanCollide = true
+        	instance:Destroy()
+		end
     end
 end
 wait "0.05"
 for _, instance in pairs(game.workspace:GetDescendants()) do
-    if instance:IsA("BodyGyro") then if instance.Name == "ANCNC" == true then
-		instance.Parent.CanCollide = true
-		instance:Destroy()
+    if instance:IsA("BodyGyro") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then if instance.Name == "ANCNC" == true then
+			instance.Parent.CanCollide = true
+			instance:Destroy()
+		end
     end
 end
 end
+print "Fixed"
 end)
 
 AnchorBlocks.Name = "AnchorBlocks"
@@ -3057,14 +3168,16 @@ AnchorBlocks.TextSize = 14.000
 AnchorBlocks.MouseButton1Click:Connect(function()
 print "Freezing Blocks!"
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
+	if instance:IsA("BodyPosition") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyGyro") then
-		instance:Destroy()
+	if instance:IsA("BodyGyro") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 wait()
@@ -3101,14 +3214,16 @@ AnchorBlocksNC.TextSize = 14.000
 AnchorBlocksNC.MouseButton1Click:Connect(function()
 print "Freezing Blocks!"
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyPosition") then
-		instance:Destroy()
+	if instance:IsA("BodyPoseition") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 
 for _, instance in pairs(game.workspace:GetDescendants()) do
-	if instance:IsA("BodyGyro") then
-		instance:Destroy()
+	if instance:IsA("BodyGyro") then if not (instance:IsDescendantOf(game.Players.LocalPlayer.Character)) then
+			instance:Destroy()
+		end
 	end
 end
 wait()
@@ -3204,7 +3319,7 @@ if (v:IsA("Accessory")) then
 v.Parent = workspace
 end
 end
-wait "0.00001"
+wait ()
 for _, instance in pairs(game.workspace:GetDescendants()) do
 	if instance:IsA("RocketPropulsion") then if instance.Name == "BlockFecher" == false then
 		instance:Destroy()
@@ -3212,7 +3327,7 @@ for _, instance in pairs(game.workspace:GetDescendants()) do
 	end
 end
 
-wait "0"
+wait ()
 
 local targetname = BlockPlayerName_2.Text
 local arget = game:GetService("Players")[targetname]
@@ -3222,9 +3337,9 @@ local PLRS = game.Players.LocalPlayer
 local function zeroGrav(part)
    local temp = Instance.new("RocketPropulsion")
    temp.Target = save
-   temp.MaxSpeed = 1e6
-   temp.MaxThrust = part:GetMass() *400000
-   temp.ThrustP = 1e6
+   temp.MaxSpeed = 9e9
+   temp.MaxThrust = part:GetMass() *450000
+   temp.ThrustP = 9e9
    temp.Parent = part
    temp:fire()
    temp.Parent.CanCollide = false
@@ -3370,7 +3485,7 @@ BlackHoleNoClip.MouseButton1Click:Connect(function()
 _G.BlackHoleKey = true
 local targetname = BlackHolePlayerName.Text
 local arget = game:GetService("Players")[targetname]
-local tor = arget.Character.HumanoidRootPart
+local tor = getRoot(arget.Character)
 local PLRS = game.Players.LocalPlayer
 local attackrange = BlackHolePower.Text
 
@@ -3424,7 +3539,7 @@ BlackHoleClip.MouseButton1Click:Connect(function()
 _G.BlackHoleKey = true
 local targetname = BlackHolePlayerName.Text
 local arget = game:GetService("Players")[targetname]
-local tor = arget.Character.HumanoidRootPart
+local tor = getRoot(arget.Character)
 local PLRS = game.Players.LocalPlayer
 local attackrange = BlackHolePower.Text
 
@@ -3590,7 +3705,8 @@ end
 
 wait "0.01"
 
-local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
+local saveposss = game:GetService("Players")[MiscPlayerName.Text]
+local savepos = getRoot(saveposss.Character)
 
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
@@ -3658,7 +3774,8 @@ end
 
 wait "0.01"
 
-local savepos = game:GetService("Players")[MiscPlayerName.Text].Character.HumanoidRootPart.Position
+local saveposss = game:GetService("Players")[MiscPlayerName.Text]
+local savepos = getRoot(saveposss.Character)
 
 game:GetService("RunService").Stepped:wait()
 local function zeroGrav(part)
@@ -3896,12 +4013,13 @@ MiscMover5.MouseButton1Click:Connect(function()
 local PLRS = game.Players.LocalPlayer
 local targetname = MiscPlayerName.Text
 local arget = game:GetService("Players")[targetname]
+local Ccc = getRoot(arget.Character)
 local check = game.workspace:GetDescendants()
 for i = 1, 1 do
        for i, v in ipairs(check) do
         if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
             if not (v:IsDescendantOf(PLRS.Character)) then if not (v:IsDescendantOf(arget.Character)) then if (v.Name == "HumanoidRootPart") then
-				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = arget.Character.HumanoidRootPart.CFrame + Vector3.new(0, 0.1, 0)}):Play()
+				game:GetService("TweenService"):Create(v, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = Ccc.CFrame + Vector3.new(0, 0.1, 0)}):Play()
               v.Velocity = Vector3.new(0,6,0)
 			end
 	 	  end
@@ -4007,7 +4125,7 @@ AreaFling.MouseButton1Click:Connect(function()
 _G.AreaFling = true
 local targetname = AreaPlayerName.Text
 local arget = game:GetService("Players")[targetname]
-local tor = arget.Character.HumanoidRootPart
+local tor = getRoot(arget.Character)
 local PLRS = game.Players.LocalPlayer
 local attackrange = AreaFlingRange.Text
 
@@ -4021,11 +4139,11 @@ end
 end)
 wait()
 spawn(function()
-while _G.AreaFling == true do wait ()
-for i,v in ipairs(workspace:FindPartsInRegion3(_G.region,nil,10)) do
+while _G.AreaFling == true do game:GetService("RunService").Stepped:wait()
+for i,v in ipairs(workspace:FindPartsInRegion3(_G.region,nil,40)) do
    if v:IsA("BasePart" or "UnionOperation" or "Model"or "MeshPart"or "Part") and v.Anchored == false then
-       if not (v:IsDescendantOf(PLRS.Character)) then wait ()
-           v.Velocity = v:GetMass()* Vector3.new(v.Velocity.X,v.Velocity.Y + math.random(10,20),v.Velocity.Z)
+       if not (v:IsDescendantOf(PLRS.Character)) then
+           v.Velocity = v:GetMass()* Vector3.new(v.Velocity.X,v.Velocity.Y + math.random(15,20),v.Velocity.Z)
 		   v.RotVelocity = v:GetMass()* Vector3.new((v.RotVelocity.X + math.random(1,4)),(v.RotVelocity.Y + math.random(1,4)),(v.RotVelocity.Z + math.random(1,4)))
        end
    end
@@ -4106,53 +4224,217 @@ Invison.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 Invison.Position = UDim2.new(-1.85202193, 0, -0.018999815, 0)
 Invison.Size = UDim2.new(0, 140, 0, 15)
 Invison.Font = Enum.Font.SourceSans
-Invison.Text = "Spooky Mode On"
+Invison.Text = "God Mode On (With Player)"
 Invison.TextColor3 = Color3.fromRGB(255, 255, 255)
 Invison.TextSize = 14.000
 Invison.MouseButton1Click:Connect(function()
-game:GetService("Players").LocalPlayer.Character.Parent = nil
-wait ()
-local Player = game.Players.LocalPlayer
-local CCFrame = Player.Character.HumanoidRootPart.CFrame
-local CFrameX = (CCFrame.X + 1)
-local CFrameY = (CCFrame.Y + 100)
-local CFrameZ = (CCFrame.Z + 1)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub";
+Text = "Please Wait 11 Seconds";
+Duration = 10.6;
+})
+game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+game.Players.LocalPlayer.Character.Humanoid.BreakJointsOnDeath = false
+game.Players.CharacterAutoLoads = false
+    _G.God = true
+local PCHL = game.Players.LocalPlayer.Character
+local PCHLH = PCHL.Humanoid
+local PCHLHRP =  PCHL.HumanoidRootPart
+local SBXHRP = Instance.new("SelectionBox",PCHLHRP)
+    SBXHRP.Name = "IHopeYourHavingAGoodDay"
+    SBXHRP.Adornee = PCHLHRP
+local MPW = Instance.new("Model", nil)
+local PPRS1 = Instance.new("Part", MPW)
+    PPRS1.Name="Torso"
+    PPRS1.CanCollide = false
+    PPRS1.Anchored = true
+local PPRS2 = Instance.new("Part", MPW)
+    PPRS2.Name="Head"
+    PPRS2.Anchored = true
+    PPRS2.CanCollide = false
+local PPRS3 = Instance.new("Humanoid", MPW)
+    PPRS3.Name="Humanoid"
+    PPRS3.MaxHealth = (1/0)
+    PPRS3.Health = (1/0)
+    PPRS1.Position = Vector3.new(1000,10000,1000)
+    PPRS2.Position = Vector3.new(1000,9992,1000)
+        game.Players.LocalPlayer.Character=MPW
+        MPW.Parent = nil
+    wait(5)
+        game.Players.LocalPlayer.Character=PCHL
+    wait(6)
+
 wait()
-_G.God = true
 spawn(function()
-while _G.God == true do
+    while _G.God == true and PCHLH ~= nil do
+    wait()
+        PCHLH.BreakJointsOnDeath = false
+        PCHLH:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+    wait()
+    end
+end)
+
+spawn(function()
+    while _G.God == true and PCHLHRP ~= nil do wait ()
+    PCHLHRP.CanCollide = true
+    PCHLHRP.CanCollide = true
+    end
+end) 
+
+spawn(function()
+    while _G.God == true and PCHLHRP ~= nil do
+    wait ()
+    _G.HumanoidRootPart = PCHLHRP.CFrame
+    end
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub"; 
+Text = "Finnished"; 
+Duration = 2;
+})
+end)
+
+Invisonnopl.Name = "Invisonnopl"
+Invisonnopl.Parent = S14
+Invisonnopl.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+Invisonnopl.Position = UDim2.new(-1.85202193, 0, 1.38100016, 0)
+Invisonnopl.Size = UDim2.new(0, 140, 0, 15)
+Invisonnopl.Font = Enum.Font.SourceSans
+Invisonnopl.Text = "God Mode On (No Player)"
+Invisonnopl.TextColor3 = Color3.fromRGB(255, 255, 255)
+Invisonnopl.TextSize = 14.000
+Invisonnopl.MouseButton1Click:Connect(function()
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub";
+Text = "Please Wait 11 Seconds";
+Duration = 10.6;
+})
 wait()
-Player.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
-if CCFrame ~= CFrame.new(CFrameX,CFrameY,CFrameZ) then
-wait()
-game:GetService("TweenService"):Create(getRoot(Player.Character), TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = CFrame.new(CFrameX,CFrameY,CFrameZ)}):Play()
-end
+game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+game.Players.LocalPlayer.Character.Humanoid.BreakJointsOnDeath = false
+game.Players.CharacterAutoLoads = false
+    _G.God = true
+local PCHL = game.Players.LocalPlayer.Character
+local PCHLH = PCHL.Humanoid
+local PCHLHRP =  PCHL.HumanoidRootPart
+local SBXHRP = Instance.new("SelectionBox",PCHLHRP)
+    SBXHRP.Name = "IHopeYourHavingAGoodDay"
+    SBXHRP.Adornee = PCHLHRP
+local MPW = Instance.new("Model", nil)
+local PPRS1 = Instance.new("Part", MPW)
+    PPRS1.Name="Torso"
+    PPRS1.CanCollide = false
+    PPRS1.Anchored = true
+local PPRS2 = Instance.new("Part", MPW)
+    PPRS2.Name="Head"
+    PPRS2.Anchored = true
+    PPRS2.CanCollide = false
+local PPRS3 = Instance.new("Humanoid", MPW)
+    PPRS3.Name="Humanoid"
+    PPRS3.MaxHealth = (1/0)
+    PPRS3.Health = (1/0)
+    PPRS1.Position = Vector3.new(1000,10000,1000)
+    PPRS2.Position = Vector3.new(1000,9992,1000)
+        game.Players.LocalPlayer.Character=MPW
+        MPW.Parent = nil
+    wait(5)
+        game.Players.LocalPlayer.Character=PCHL
+    wait(6)
+spawn(function()
+    while _G.God == true and PCHLH ~= nil do
+    wait()
+        PCHLH.BreakJointsOnDeath = false
+        PCHLH:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+    wait()
+    end
+end)
+spawn(function()
+    while _G.God == true and PCHLHRP ~= nil do
+    wait ()
+    _G.HumanoidRootPart = PCHLHRP.CFrame
+    end
+end)
+wait ()
+spawn(function()
+for i,v in pairs(PCHL:GetChildren()) do
+	if v ~= PCHLHRP and v.Name ~= "Humanoid" then
+		v:Destroy()
+	end
 end
 end)
-FreeCam.Visible = false
-FreeHelper.Visible = true
+wait ()
+	BNOFLYH()
+	wait()
+	BSFLYH()
+wait (1)
+spawn(function()
+    while _G.God == true and PCHLHRP ~= nil do wait ()
+    PCHLHRP.CanCollide = false
+    end
+end)
 wait()
-if _G.objsf == false then
-FreeCamms()
-print "God Mode On Press LeftShift And P At The Same Time To Get In And Out Of FreeCam"
-else
-print "God Mode On, Free Cam Already Activated Press LeftShift And P At The Same To Use Free Cam"
-end
-wait()
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub"; 
+Text = "Finnished"; 
+Duration = 2;
+})
 end)
 
 Invisoff.Name = "Invisoff"
 Invisoff.Parent = S14
 Invisoff.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-Invisoff.Position = UDim2.new(-1.85202193, 0, 1.46666694, 0)
+Invisoff.Position = UDim2.new(-1.852, 0, 2.8, 0)
 Invisoff.Size = UDim2.new(0, 140, 0, 15)
 Invisoff.Font = Enum.Font.SourceSans
 Invisoff.Text = "Spooky Mode Off"
 Invisoff.TextColor3 = Color3.fromRGB(255, 255, 255)
 Invisoff.TextSize = 14.000
 Invisoff.MouseButton1Click:Connect(function()
-game:GetService("Players").LocalPlayer.Character.Parent = game.Workspace
-_G.God = false
+game.StarterGui:SetCore("SendNotification", {
+Title = "Block Hub";
+Text = "Respawning";
+Duration = 6.5;
+})
+game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+game.Players.LocalPlayer.Character.Humanoid.BreakJointsOnDeath = true
+game.Players.CharacterAutoLoads = true
+    _G.God = false
+	game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CanCollide = true
+	wait()
+	BNOFLYH()
+	wait()
+    game.Players.LocalPlayer.Character.Humanoid.Health = (0)
+    game.Players.LocalPlayer.Character.Humanoid.MaxHealth = (0)
+    game.Players.LocalPlayer.Character:BreakJoints()
+	game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CanCollide = true
+local PCHL = game.Players.LocalPlayer.Character
+local GHRP = PCHL:FindFirstChild('HumanoidRootPart')
+local MPW =Instance.new("Model", nil)
+local PPRS1 =  Instance.new("Part", MPW)
+    PPRS1.Name="Torso"
+    PPRS1.CanCollide = false
+    PPRS1.Anchored = true
+local PPRS2 =Instance.new("Part", MPW)
+    PPRS2.Name="Head"
+    PPRS2.Anchored = true
+    PPRS2.CanCollide = false
+local PPRS3 = Instance.new("Humanoid", MPW)
+    PPRS3.Name="Humanoid"
+    PPRS1.Position = Vector3.new(1000,10000,1000)
+    PPRS2.Position = Vector3.new(1000,9992,1000)
+    game.Players.LocalPlayer.Character = MPW
+    wait(5)
+    game.Players.LocalPlayer.Character = PCHL
+    wait(1.05)
+    game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+wait(0.05)
+local LPHFFC = nil
+local DValue = game.workspace.FallenPartsDestroyHeight
+local LPHRPCF = Vector3.new(_G.HumanoidRootPart)
+repeat wait() LPHFFC = game.Players.LocalPlayer.Character:FindFirstChild("Head") until LPHFFC ~= nil
+wait(1)
+game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(0.5, Enum.EasingStyle.Linear), {CFrame = _G.HumanoidRootPart }):Play()
 print "God Mode Off"
 end)
 
@@ -4468,7 +4750,7 @@ local NetworkAccesss = coroutine.create(function()
     spawn(function()
     while true do
     game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
-    setsimulationr(1e308)
+    setsimulationr(0.5/0)
     end
     end)
     coroutine.resume(NetworkAccesss)
@@ -4478,7 +4760,7 @@ local NetworkAccesss = coroutine.create(function()
     spawn(function()
     while true do
     game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
-    sethidden(game.Players.LocalPlayer, "SimulationRadius", 1e308)
+    sethidden(game.Players.LocalPlayer, "SimulationRadius", 0.5/0)
     end
     end)
     coroutine.resume(NetworkAccesss)
@@ -4496,19 +4778,27 @@ end
 wait"0.01"
 workspace.Gravity = OGravity.Text
 
+spawn(function()
+while true do wait()
+	game:GetService("Players").LocalPlayer.ReplicationFocus = workspace
+	sethidden(Workspace,"StreamingPauseMode",Enum.StreamingPauseMode.Disabled)
+	game.Workspace.AllowThirdPartySales = false
+end
+end)
+
 wait()
 
 if Exploit == 'SynapseX' then
 spawn(function()
 while true do
-setsimulationr(1e308)
-game:GetService("RunService").Stepped:wait()
+setsimulationr(0.5/0)
+wait()
 end
 end)
 else 
 spawn(function()
 while true do
-sethidden(game.Players.LocalPlayer, "SimulationRadius", 1e308)
+sethidden(game.Players.LocalPlayer, "SimulationRadius", 0.5/0)
 game:GetService("RunService").Stepped:wait()
 end
 end)
@@ -4520,15 +4810,13 @@ for _, iinstance in pairs(game.Players:GetPlayers()) do
         if(iinstance ~= game:GetService("Players").LocalPlayer) then
 			sethidden(iinstance, "MaximumSimulationRadius", 0/0)
             spawn(function()
-            while iinstance do
-            sethidden(iinstance, "SimulationRadius", 0/0)
-            game:GetService("RunService").Stepped:wait()
-            end
+			spoof(iinstance,"SimulationRadius",0/0)
         end)
     end
 end
 
 wait ()
+
 game.StarterGui:SetCore("SendNotification", {
 Title = "Block Hub"; 
 Text = "Loaded!"; 
